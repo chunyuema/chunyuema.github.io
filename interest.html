@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang = "en">
+  <head>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link href="style.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="script.js"></script>
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" /> -->
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
+    <title>Personal Website: Chunyue Ma</title>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-dark navbar-expand-sm bg-primary fixed-top">
+      <div class="container">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <a class="navbar-brand mr-auto" href="./index.html"><span class="fa fa-home fa-lg"></span></a>
+          <div class="collapse navbar-collapse" id="Navbar">
+              <ul class="navbar-nav mr-auto">
+                  <li class="nav-item"><a class="nav-link" href="#"></a></li>
+                  <li class="nav-item"><a class="nav-link" href="./index.html">About</a></li>
+                  <li class="nav-item"><a class="nav-link" href="./index.html">Skills</a></li>
+                  <li class="nav-item"><a class="nav-link" href="./projects.html">Projects</a></li>
+                  <li class="nav-item active"><a class="nav-link" href="#">Interests</a></li>
+                  <li class="nav-item"><a class="nav-link" href="./index.html">Contact</a></li>
+              </ul> 
+          </div>           
+      </div>
+    </nav>
+
+    <hr>
+    <section class="container">
+      <div class="row row-content">
+        <div class="col-12">
+          <h2 id="section-name">Machine Learning</i></h2>
+          <p>
+            I am interested in learning about various Machine Learning concepts and also algorithms. 
+            On Codeacademy, I completed the entire module on ML with panda, NumPy and scikit-learn packages from Python.
+            This not only allowed me to learn to work with the package, but also the mathematical and statistical
+            intuition that ML algorithms heavily rely on. 
+          </p>
+          <p>
+            At Wes, I am also learning how to use R to work on data science projects as well. 
+            At this moment, I am familiar with machine learning projects processes including data collection, data preparation, 
+            model selection, training of the model as well as model evaluation. 
+            You can find some of my latest projects in the data science area.
+          </p>
+
+          <ul class="nav nav-pills">
+            <li class="nav-item">
+              <a class="nav-link active" href="#project1" role="tab" data-toggle="tab">Parkinson Predictor</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#project2" role="tab" data-toggle="tab">US WildFire Predictor</a>
+            </li>
+          </ul>
+
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade show active" id="project1">
+              <h3>Parkson Disease Predictor</h3>
+              <p class="d-done d-sm-block"> 
+                In order to thoroughly undertand the ML algorithms behind K-nearest neighbours,
+                I adapted online tutorials from the MIT OCW and coded in Python the actual KNN algorithm.
+                This project makes use of the algorithm and two datasets on Parkison patients from UCI. 
+                The model is trained with the first dataset and then evaluated with the predictions on
+                whether a given set of patient data frmo the second data set indicates Parkison disease.
+              </p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="project2">
+              <h3>Wildfire Predictor</h3>
+              <p class="d-done d-sm-block"> Current in progress</p>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      <br>
+      <br>
+      <div class="row row-content">
+        <div class="col-12">
+            <h2 id="section-name">Artificial Intelligence</h2>
+            <p> 
+              I am also very interested in the AI field!
+              To delve deeper into the AI area, 
+              I experimented with the minmax algorithms (with alpha-beta pruning) through coding Tic Tac Toe and Connect Four Games 
+              in Python. 
+            </p>
+  
+            <ul class="nav nav-pills">
+              <li class="nav-item">
+                <a class="nav-link active" href="#project3" role="tab" data-toggle="tab">Tic Tac Toe Game</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#project4" role="tab" data-toggle="tab">Connect Four Game</a>
+              </li>
+            </ul>
+  
+            <div class="tab-content">
+              <div role="tabpanel" class="tab-pane fade show active" id="project3">
+                <h3>Tic Tac Toe Game</h3>
+                <p class="d-done d-sm-block"> 
+                  This is a Python Tic Tac Toe Game using minmax algorithms.
+                  You can set the level of difficulty and try to beat the computer!
+                </p>
+              </div>
+              <div role="tabpanel" class="tab-pane fade" id="project4">
+                <h3>Connect Four Game</h3>
+                <p class="d-done d-sm-block"> 
+                  This is a Python Connect Four Games which added a pruning layer to the minmax algorithms. 
+                  Give it a try and see if you can win the computer :)
+                </p>
+              </div>
+              
+            </div>
+        </div>
+      </div>
+    </section>
+    
+      
+      <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
+    <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  </body>
+  
+</html>
