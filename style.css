@@ -153,13 +153,14 @@ h2 {
 .tab-content {
     border-left: 1px solid #ddd;
     border-right: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	border-top: 1px solid #ddd;
     padding: 10px;
 }
 
 .nav-pills > li > a.active {
-	background-color: rgb(236, 213, 0) !important;
-	color: black !important;
+	background-color: #0275d8!important;
+	color: white !important;
 }
   
 .nav-pills > li > a:hover {
