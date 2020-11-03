@@ -12,8 +12,9 @@
     <link href="bootstrap.min.css" rel="stylesheet">
     <link href="style.css" type="text/css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <link href="node_modules/bootstrap-social/bootstrap-social.css" rel="stylesheet">
+    <link href="font-awesome.min.css" rel="stylesheet">
+    <!-- <link href="node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet"> -->
+    <!-- <link href="node_modules/bootstrap-social/bootstrap-social.css" rel="stylesheet"> -->
     
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
   </head>
@@ -32,7 +33,7 @@
                   <li class="nav-item"><a class="nav-link" href="./index.html">Skills</a></li>
                   <li class="nav-item"><a class="nav-link" href="./projects.html">Projects</a></li>
                   <li class="nav-item active"><a class="nav-link" href="#">Interests</a></li>
-                  <li class="nav-item"><a class="nav-link" href="./index.html">Contact</a></li>
+                  <!-- <li class="nav-item"><a class="nav-link" href="./index.html">Contact</a></li> -->
               </ul> 
           </div>           
       </div>
@@ -72,18 +73,24 @@
 
           <div class="tab-content">
             <div role="tabpanel" class="tab-pane fade show active" id="project1">
-              <h3>Parkson Disease Predictor</h3>
-              <p class="d-done d-sm-block"> 
-                In order to thoroughly undertand the ML algorithms behind K-nearest neighbours,
-                I adapted online tutorials from the MIT OCW and coded in Python the actual KNN algorithm.
-                This project makes use of the algorithm and two datasets on Parkison patients from UCI. 
-                The model is trained with the first dataset and then evaluated with the predictions on
-                whether a given set of patient data frmo the second data set indicates Parkison disease.
-              </p>
+              <div class="container">
+                <br>
+                <h3>Parkson Disease Predictor</h3>
+                <p class="d-done d-sm-block"> 
+                  In order to thoroughly undertand the ML algorithms behind K-nearest neighbours,
+                  I adapted online tutorials from the MIT OCW and coded in Python the actual KNN algorithm.
+                  This project makes use of the algorithm and two datasets on Parkison patients from UCI. 
+                  The model is trained with the first dataset and then evaluated with the predictions on
+                  whether a given set of patient data frmo the second data set indicates Parkison disease.
+                </p>
+              </div>
             </div>
             <div role="tabpanel" class="tab-pane fade" id="project2">
-              <h3>Wildfire Predictor</h3>
-              <p class="d-done d-sm-block"> Currently in progress. Stay tuned!</p>
+              <div class="container">
+                <br>
+                <h3>Wildfire Predictor</h3>
+                <p class="d-done d-sm-block"> Currently in progress. Stay tuned!</p>
+              </div>
             </div>
             
           </div>
@@ -108,9 +115,6 @@
               </div>
             </div>
             <br>
-            <p> 
-              
-            </p>
   
             <ul class="nav nav-pills">
               <li class="nav-item">
@@ -123,20 +127,26 @@
   
             <div class="tab-content">
               <div role="tabpanel" class="tab-pane fade show active" id="project3">
-                <h3>Tic Tac Toe Game</h3>
-                <p class="d-done d-sm-block"> 
-                  This is a Python Tic Tac Toe Game using minmax algorithms.
-                  You can set the level of difficulty and try to beat the computer!
-                </p>
+                <div class="container">
+                  <br>
+                  <h3>Tic Tac Toe Game</h3>
+                  <p class="d-done d-sm-block"> 
+                    This is a Python Tic Tac Toe Game using minmax algorithms.
+                    You can set the level of difficulty and try to beat the computer!
+                  </p>
+                </div>
+                
               </div>
               <div role="tabpanel" class="tab-pane fade" id="project4">
-                <h3>Connect Four Game</h3>
-                <p class="d-done d-sm-block"> 
-                  This is a Python Connect Four Games which added a pruning layer to the minmax algorithms. 
-                  Give it a try and see if you can win the computer :)
-                </p>
+                <div class="container">
+                  <br>
+                  <h3>Connect Four Game</h3>
+                  <p class="d-done d-sm-block"> 
+                    This is a Python Connect Four Games which added a pruning layer to the minmax algorithms. 
+                    Give it a try and see if you can win the computer :)
+                  </p>
+                </div>
               </div>
-              
             </div>
         </div>
       </div>
