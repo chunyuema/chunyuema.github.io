@@ -21,32 +21,81 @@
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
               <span class="navbar-toggler-icon"></span>
           </button>
-          <a class="navbar-brand mr-auto" href="./index.html"><span class="fa fa-home fa-lg"></span></a>
-          <div class="collapse navbar-collapse" id="Navbar">
-              <ul class="navbar-nav mr-auto">
-                  <li class="nav-item"><a class="nav-link" href="#"></a></li>
-                  <li class="nav-item"><a class="nav-link" href="./index.html">About</a></li>
-                  <li class="nav-item active"><a class="nav-link" href="#">Projects</a></li>
-                  <li class="nav-item"><a class="nav-link" href="./interest.html">Blogs</a></li>
+          <div class="collapse navbar-collapse float-md-end" id="Navbar"> 
+              <ul class="navbar-nav mr-auto float-md-start">
+                  <li class="nav-item lead"><a class="nav-link" href="./about.html">About</a></li>
+                  <li class="nav-item lead active"><a class="nav-link" href="#">Projects</a></li>
+                  <li class="nav-item lead"><a class="nav-link" href="./interest.html">Blogs</a></li>
               </ul> 
-          </div>           
+          </div>  
+          <a class="navbar-brand mr-auto float-end" href="./index.html"><span class="fa fa-home fa-lg text-white"></span></a>
       </div>
     </nav>
-    <hr>
     
-    <!-- Coding Project Section -->
     <section class="container">
-      <div class="alert alert-success" role="alert">
+      
+      <div class="alert d-flex justify-content-between alert-info align-items-center" role="alert">
         <b>Web Develpment Projects</b>
-        <span class="badge-pill badge-danger"> 3 Projects</span>
+        <span class="badge badge-danger badge-pill">4 Projects</span>
       </div>
+
       <div class="row">
-        <div>
+        <div class="col-sm-12 d-flex align-items-stretch">
+          <div class="card">
+            <img class="card-img-top border-bottom" src="./img/inprogress.jpeg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Web Dev Learning Tracker 
+                <span class="badge badge-primary">React</span>
+                <span class="badge badge-info">Spring</span>
+              </h5>
+              <p class="card-text">
+                In progress: A tracking web app for aspiring web developers to visualize completeness of their skillsets and track learning progresses
+              </p>
+              <!-- <a href="#" target="_blank" class="btn btn-primary">Welcome to YouthHack CT!</a> -->
+            </div>
+          </div>
         </div>
       </div>
-    </section>
+      <br>
 
-    <section class="container">
+      <div class="row">
+        <div class="col-sm-6 d-flex align-items-stretch">
+          <div class="card">
+            <img class="card-img-top border border-bottom" src="./img/wes-goldilock.png" alt="demo image for app">
+            <div class="card-body">
+              <h5 class="card-title">Wes-Goldilocks 
+                <span class="badge badge-primary">React</span>
+              </h5>
+              <p class="card-text">
+                A hackathon <b>first prize winner</b> frontend app which helps Wesleyan students to budget their point usages.  
+              </p>
+              <a href="http://wes-goldilocks.herokuapp.com/" target="_blank" class="btn btn-primary">Try the App</a>
+              <br>
+              <small>test username: <i>user1</i> and test password: <i>pw1</i></small>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 d-flex align-items-stretch">
+          <div class="card">
+            <img class="card-img-top border border-bottom" src="./img/song-rater.png" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Song Rating Platform 
+                <span class="badge badge-primary">React</span>
+                <span class="badge badge-success">Django</span>
+              </h5>
+              <p class="card-text">
+                A fullstack song rater app which allows user to rate and comment on the songs, as well as see other users' reviews. 
+              </p>
+              
+              <a href="https://github.com/chunyuema/react-projects-practices" target="_blank" class="btn btn-primary">Try the App</a>
+              <br>
+              <small>test user: <i>chunyuema</i> and test password: <i>password</i></small>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+
       <div class="row">
         <div class="col-sm-6 d-flex align-items-stretch">
           <div class="card">
@@ -79,83 +128,52 @@
           </div>
         </div>
       </div>
-      <br>
-      <div class="row">
-        <div class="col-sm-12 d-flex align-items-stretch">
-          <div class="card">
-            <img class="card-img-top" src="./img/youthhack.png" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">YHCT Website 
-                <span class="badge badge-danger">CSS</span>
-                <span class="badge badge-info">HTML</span>
-                <span class="badge badge-warning">JavaScript</span>
-              </h5>
-              <p class="card-text">
-                As the Vice President of of YouthHack Connecticut, 
-                I developed and implemented the official website for YouthHack Connecticut using HTML5, CSS3 and Boostrap Framework. The website has already been live for event publicity and registration purposes.
-              </p>
-              <a href="https://ct.youthhack.net/" target="_blank" class="btn btn-primary">Welcome to YouthHack CT!</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <br>
-
+      <br> 
+      
     </section>
 
     <section class="container">
-      <div class="alert alert-success" role="alert">
-        <b>Programming Projects</b>
-        <span class="badge-pill badge-danger"> 2 Projects</span>
+      <div class="alert d-flex justify-content-between alert-info align-items-center" role="alert">
+        <b>Algorithm Projects</b>
+        <span class="badge badge-danger badge-pill">3 Projects</span>
       </div>
-      <div class="row">
-        <div>
-        </div>
-      </div>
-    </section>
 
-    <section class="container">
-      <div class="row">
-        <div class="col-sm-6 d-flex align-items-stretch">
-          <div class="card">
-            <img class="card-img-top" src="./img/hangman.png" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">Hangman Game 
-                <span class="badge badge-success">Python</span>
-              </h5>
-              <p class="card-text">
-                This is the final project of an introduction to programming class I took at Wesleyan Univeristy.
-                In two weeks time, I learned how to code in Python, famialrized with various data strucures and programming concepts. 
-                To test my knowledge, I created this Hangman Game with a graphic user interface (GUI) with TKinter. 
-                This was the start of my programming journey. 
-              </p>
-              <a href="https://github.com/chunyuema/hangman-game" target="_blank" class="btn btn-primary">Try it out!</a>
-            </div>
+      <div class="list-group">
+        <a href="https://github.com/chunyuema/java-ds" class="list-group-item list-group-item-action flex-column align-items-start active">
+          <div class="d-flex w-100 justify-content-between">
+            
+            <h5 class="mb-1">Implement the Data Structure Challenge <span class="badge badge-light">Java</span> </h5>
+            <small>In Progress</small>
           </div>
-        </div>
-        <div class="col-sm-6 d-flex align-items-stretch">
-          <div class="card">
-            <img class="card-img-top" src="./img/unnamed.jpg" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">Financial Analysis Model 
-                <span class="badge badge-success">Python</span>
-              </h5>
-              <p class="card-text">
-                During the summer internship at China Minsheng Trust Co.Ltd, 
-                I quickly realized the redundancy of standard analysis for a company's yearly financial statement.
-                With Python, I initiated this project to "automate" the analysis process. 
-                This model inquires users for the span of years to be analyzed and the directory to the excel file containing financial data. 
-                It would then output analysis of companies' financial situtaion by grabbing the data from an Excel sheet.
-              </p>
-              <a href="https://github.com/chunyuema/financial-analysis-model" target="_blank" class="btn btn-primary">Check Out the Code!</a>
-            </div>
+          <p class="mb-1">A challenge to implement various data structures in Java.</p>
+          <small>Click to view git repository</small>
+        </a>
+        <a href="https://github.com/chunyuema/financial-analysis-model" class="list-group-item list-group-item-action flex-column align-items-start">
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">Connect Four Game <span class="badge badge-dark">Python</span> </h5>
+            <small class="text-muted">Finished Project</small>
           </div>
-        </div>
+          <p class="mb-1">A connect four game using classic minimax algorithm with alpha-beta pruning.</p>
+          <small class="text-muted">Click to view git repository</small>
+        </a>
+        <a href="https://github.com/chunyuema/financial-analysis-model" class="list-group-item list-group-item-action flex-column align-items-start">
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">Financial Analysis Model <span class="badge badge-dark">Python</span></h5>
+            <small class="text-muted">Finished Project</small>
+          </div>
+          <p class="mb-1">A python program that interacts with excels, auto-extracts financial data and output analysis of companies' financial situtaion through calculating and visualizing various indicators.</p>
+          <small class="text-muted">Click to view git repository</small>
+        </a>
       </div>
-      <p></p>
+      <hr>
     </section>
-
-    
+    <footer class="mt-auto text-muted">
+      <p class="text-center">
+        A portfolio website for <span class="text-dark">Chunyue Ma </span>
+        <a href="https://github.com/chunyuema"><i class="fab fa-github text-muted"></i> GitHub</a>
+        <a href="https://www.linkedin.com/in/chunyue-ma-7b944717a/"><span class="fab fa-linkedin-in text-muted"></span> LinkedIn</a>
+      </p>
+    </footer>
       
     <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
