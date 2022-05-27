@@ -27,7 +27,7 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-dark navbar-expand-sm bg-primary fixed-top">
+    <nav class="navbar navbar-dark navbar-expand-sm bg-dark fixed-top">
       <div class="container">
         <button
           class="navbar-toggler"
@@ -37,16 +37,21 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
+
         <div class="collapse navbar-collapse float-md-end" id="Navbar">
           <ul class="navbar-nav mr-auto float-md-start">
             <li class="nav-item lead">
-              <a class="nav-link" href="./about.html">About</a>
-            </li>
-            <li class="nav-item lead active">
-              <a class="nav-link" href="#">Projects</a>
+              <a class="nav-link" href="./projects.html">Research</a>
             </li>
             <li class="nav-item lead">
-              <a class="nav-link" href="./interest.html">Blogs</a>
+              <a class="nav-link" href="./interest.html">Notes</a>
+            </li>
+            <li class="nav-item lead">
+              <a
+                class="nav-link"
+                href="https://liberating-push-54a.notion.site/Chunyue-s-Resume-da6bc94872c945fca41e3723f61a65e7"
+                >SWE</a
+              >
             </li>
           </ul>
         </div>
@@ -56,41 +61,7 @@
       </div>
     </nav>
 
-    <section class="container">
-      <div
-        class="alert d-flex justify-content-between alert-info align-items-center"
-        role="alert"
-      >
-        <b>Web Develpment Projects</b>
-        <span class="badge badge-danger badge-pill">4 Projects</span>
-      </div>
-
-      <div class="row">
-        <div class="col-sm-12 d-flex align-items-stretch">
-          <div class="card">
-            <img
-              class="card-img-top border-bottom"
-              src="./img/inprogress.jpeg"
-              alt="Card image cap"
-            />
-            <div class="card-body">
-              <h5 class="card-title">
-                Web Dev Learning Tracker
-                <span class="badge badge-primary">React</span>
-                <span class="badge badge-info">Spring</span>
-              </h5>
-              <p class="card-text">
-                In progress: A tracking web app for aspiring web developers to
-                visualize completeness of their skillsets and track learning
-                progresses
-              </p>
-              <!-- <a href="#" target="_blank" class="btn btn-primary">Welcome to YouthHack CT!</a> -->
-            </div>
-          </div>
-        </div>
-      </div>
-      <br />
-
+    <!-- <section class="container">
       <div class="row">
         <div class="col-sm-6 d-flex align-items-stretch">
           <div class="card">
@@ -217,89 +188,86 @@
         </div>
       </div>
       <br />
-    </section>
+    </section> -->
 
     <section class="container">
-      <div
-        class="alert d-flex justify-content-between alert-info align-items-center"
-        role="alert"
-      >
-        <b>Algorithm Projects</b>
-        <span class="badge badge-danger badge-pill">3 Projects</span>
-      </div>
-
       <div class="list-group">
         <a
-          href="https://github.com/chunyuema/java-ds"
-          class="list-group-item list-group-item-action flex-column align-items-start active"
-        >
-          <div class="d-flex w-100 justify-content-between">
-            <h5 class="mb-1">
-              Implement the Data Structure Challenge
-              <span class="badge badge-light">Java</span>
-            </h5>
-            <small>In Progress</small>
-          </div>
-          <p class="mb-1">
-            A challenge to implement various data structures in Java.
-          </p>
-          <small>Click to view git repository</small>
-        </a>
-        <a
-          href="https://github.com/chunyuema/financial-analysis-model"
+          href="#"
           class="list-group-item list-group-item-action flex-column align-items-start"
         >
           <div class="d-flex w-100 justify-content-between">
-            <h5 class="mb-1">
-              Connect Four Game <span class="badge badge-dark">Python</span>
+            <h5 class="mb-1 text-primary">
+              Recurrent Neural Networks Prediction of Path Features in
+              Dynamically Changing Graphs
             </h5>
-            <small class="text-muted">Finished Project</small>
+            <small>Completed</small>
           </div>
+          <br />
           <p class="mb-1">
-            A connect four game using classic minimax algorithm with alpha-beta
-            pruning.
+            This research focuses on devising generalized methods to extract
+            characteristics of dynamic graphs, which support Q-value estimation
+            of reinforcement learning based routing algorithms in multi-hop
+            wireless mobile networks. Using Tensorflow, I implemented deep
+            recurrent (long short-term memory) neural networks to estimate
+            meeting intervals between pairs source and destination nodes in
+            mobile networks with decentralized local information.
           </p>
-          <small class="text-muted">Click to view git repository</small>
         </a>
         <a
-          href="https://github.com/chunyuema/financial-analysis-model"
+          href="#"
           class="list-group-item list-group-item-action flex-column align-items-start"
         >
           <div class="d-flex w-100 justify-content-between">
-            <h5 class="mb-1">
-              Parkson Disease Predictor
-              <span class="badge badge-dark">Python</span>
+            <h5 class="mb-1 text-primary">
+              Mutagenic Activation of Glutathione Peroxidase-4: Approaches in
+              Rational Design of Allosteric Drugs
             </h5>
-            <small class="text-muted">Finished Project</small>
+            <small class="text-muted">In Progress</small>
           </div>
+          <br />
           <p class="mb-1">
-            A K-nearest neighbour algorithm adapted from MIT OCW course
-            meterials which predicts the occurence of Parkinson diseases based
-            on patient data.
+            This research focuses on building a computational understanding of
+            the allosteric effect behind GPX4 protein mutations and exploring
+            the drug design possibility as a potential approach to tackle
+            Alzheimer’s Disease. I used high-performance computing clusters to
+            perform molecular dynamics simulation on GPX4 protein variants
+            Applied K-means clustering, MD-Markov State Model, and other machine
+            learning algorithms to analyze structural differences between GPX4
+            wild type protein system and that of its mutant variants. Using the
+            energetic networks of protein structures, I proposed a novel
+            approach of examining protein allosteric effects via the shortest
+            electrostatic pathways.
           </p>
-          <small class="text-muted">Click to view git repository</small>
         </a>
         <a
-          href="https://github.com/chunyuema/financial-analysis-model"
+          href="#"
           class="list-group-item list-group-item-action flex-column align-items-start"
         >
           <div class="d-flex w-100 justify-content-between">
-            <h5 class="mb-1">
-              Financial Analysis Model
-              <span class="badge badge-dark">Python</span>
+            <h5 class="mb-1 text-primary">
+              Active Generalizable Privacy Choice for GPC and Other Privacy
+              Preference Signals
             </h5>
-            <small class="text-muted">Finished Project</small>
+            <small class="text-muted">In Progress</small>
           </div>
+          <br />
           <p class="mb-1">
-            A python program that interacts with excels, auto-extracts financial
-            data and output analysis of companies' financial situtaion through
-            calculating and visualizing various indicators.
+            This research focuses on creating usable privacy configuration
+            schemes which allow active user privacy choices. We are developing a
+            chromium-based GPC) signals in the outgoing HTTP requests, allowing
+            users to opt-out from networks sharing and selling personal
+            information for ad purposes. We implemented the software
+            architecture to assign users to different privacy schemes for A/B
+            testing automatically. By collecting user behavioral data during
+            their interactions with the extension, we perform usability studies
+            of various hypothetical privacy permission schemes implemented at
+            the browser level.
           </p>
-          <small class="text-muted">Click to view git repository</small>
         </a>
       </div>
-      <hr />
     </section>
+    <hr />
     <footer class="mt-auto text-muted">
       <p class="text-center">
         A portfolio website for <span class="text-dark">Chunyue Ma </span>

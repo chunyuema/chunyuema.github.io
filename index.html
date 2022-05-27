@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="en" class="h-100">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta
@@ -8,64 +8,140 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <meta property="og:title" content="Personal Website" />
-    <meta property="og:image" content="./img/chunyuema.png" />
-    <meta
-      property="og:description"
-      content="Description that will show in the preview"
-    />
 
     <title>Chunyue Ma</title>
-
+    <!-- Bootstrap CSS -->
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
-    <link href="cover.css" rel="stylesheet" />
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
       rel="stylesheet"
     />
+    <link href="style.css" type="text/css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
   </head>
 
-  <body class="d-flex h-100 text-center text-dark">
-    <div
-      class="cover-container text-center d-flex w-100 h-100 p-3 mx-auto flex-column"
-    >
-      <main class="px-3 my-auto">
-        <img
-          class="rounded-circle img-fluid"
-          src="./img/chunyuema.png"
-          alt="photo"
-        />
-        <h1>Hello World...</h1>
+  <body>
+    <nav class="navbar navbar-dark navbar-expand-sm bg-dark fixed-top">
+      <div class="container">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#Navbar"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-        <p class="lead">
-          My name is
-          <span class="text-primary"><strong>Chunyue Ma</strong></span
-          >. Welcome to my personal website. Find out more about me as a
-          Computer Science person :)
-        </p>
+        <div class="collapse navbar-collapse float-md-end" id="Navbar">
+          <ul class="navbar-nav mr-auto float-md-start">
+            <li class="nav-item lead">
+              <a class="nav-link" href="./projects.html">Research</a>
+            </li>
+            <li class="nav-item lead">
+              <a class="nav-link" href="./interest.html">Notes</a>
+            </li>
+            <li class="nav-item lead">
+              <a
+                class="nav-link"
+                href="https://liberating-push-54a.notion.site/Chunyue-s-Resume-da6bc94872c945fca41e3723f61a65e7"
+                >SWE</a
+              >
+            </li>
+          </ul>
+        </div>
+        <a class="navbar-brand mr-auto float-end" href="./index.html"
+          ><span class="fa fa-home fa-lg text-white"></span
+        ></a>
+      </div>
+    </nav>
 
-        <p class="lead text-white-50">
-          <a href="./about.html" class="btn btn-lg btn-primary fw-bold"
-            >Let's Go</a
+    <section class="container">
+      <div class="row">
+        <div class="col-lg-3 col-md-3 col-sm-12 mx-auto my-auto">
+          <img
+            src="./img/chunyuema.png"
+            class="img-fluid rounded height: auto d-none d-lg-block img-thumbnail"
+          />
+        </div>
+        <div class="col-lg-9 col-md-12 col-sm-12 desc">
+          <h3>CHUNYUE MA</h3>
+          <p>
+            Welcome to my personal site! I am a Computer Science student at
+            Wesleyan University. Academically, I am interested in designing
+            high-performance infrastructures that facilitate data-intensive
+            computation. I am also passionable about solving real world issues
+            through computational simulation.
+          </p>
+          <a
+            role="button"
+            class="btn btn-primary"
+            href="https://liberating-push-54a.notion.site/Chunyue-s-Resume-da6bc94872c945fca41e3723f61a65e7"
+            target="_blank"
+            ><i class="fas fa-address-card"></i> <b>RESUME / CV</b></a
           >
-        </p>
-      </main>
-      <footer class="mt-auto text-muted">
-        <p class="text-center">
-          A portfolio website for <span class="text-dark">Chunyue Ma </span>
-          <a href="https://github.com/chunyuema"
-            ><i class="fab fa-github text-muted"></i> GitHub</a
-          >
-          <a href="https://www.linkedin.com/in/chunyue-ma-7b944717a/"
-            ><span class="fab fa-linkedin-in text-muted"></span> LinkedIn</a
-          >
-        </p>
-      </footer>
-    </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container">
+      <hr class="mb-0" />
+      <div class="card">
+        <h3 id="section-name" class="card-header bg-dark text-white">
+          Relevant Skills
+        </h3>
+        <div class="card-body">
+          <dl class="row">
+            <dt class="col-5 text-dark">Programming Languages</dt>
+            <dd class="col-7 text-muted">
+              Python; JavaScript; Java; R; C; SML; Bash
+            </dd>
+            <dt class="col-5 text-dark">Front End Skills</dt>
+            <dd class="col-7 text-muted">
+              HTML5; CSS3; JavaScript; React; Bootstrap; React Native; Flutter
+            </dd>
+            <dt class="col-5 text-dark">Back End Skills</dt>
+            <dd class="col-7 text-muted">Django; Node.js; Express.js</dd>
+            <dt class="col-5 text-dark">Other Tools</dt>
+            <dd class="col-7 text-muted">
+              MongoDB; SQL(MySQL); Docker; AWS; Version Control; Postman
+            </dd>
+          </dl>
+        </div>
+      </div>
+      <hr />
+    </section>
+
+    <footer class="container mt-auto text-muted">
+      <p class="text-center">
+        A portfolio website for <span class="text-dark">Chunyue Ma </span>
+        <a href="https://github.com/chunyuema"
+          ><i class="fab fa-github text-muted"></i> GitHub</a
+        >
+        <a href="https://www.linkedin.com/in/chunyue-ma-7b944717a/"
+          ><span class="fab fa-linkedin-in text-muted"></span> LinkedIn</a
+        >
+      </p>
+    </footer>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
