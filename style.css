@@ -1,4 +1,11 @@
 body {
   color: #111111;
-  margin-top: 10%;
+  margin-top: 5%;
+  padding-top: 50px;
 }
+
+/* @media (max-width: 979px) {
+  body {
+    padding-top: 0px;
+  }
+} */
