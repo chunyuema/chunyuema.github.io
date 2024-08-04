@@ -1,25 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import NameCard from './components/NameCard';
+import { Container, Box } from '@mui/material';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container maxWidth="sm">
+      <Box
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+        minHeight="100vh"
+      >
+        <NameCard
+          name="Chunyue Ma"
+          title="Software Engineer"
+          email="chunyuema01@gmail.com"
+        />
+      </Box>
+    </Container>
   );
 }
 
