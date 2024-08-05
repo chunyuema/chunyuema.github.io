@@ -6,9 +6,11 @@ import { Container, Box } from '@mui/material';
 function App() {
   return (
     <div>
+      {/* AppBar of resume app */}
       <AppBarComponent />
+    
+      {/* Main content of resume app */}
       <Container maxWidth="sm">
-        
         <Box
           display="flex"
           justifyContent="center"
