@@ -2,28 +2,27 @@ import './App.css';
 import NameCard from './components/NameCard';
 import AppBarComponent from './components/AppBar';
 import { Container, Box } from '@mui/material';
+import { Routes, Route } from 'react-router-dom';
+import AboutMe from './components/screen/AboutMe';
+import Layout from './components/layout/Layout';
 
 function App() {
   return (
     <div>
-      {/* AppBar of resume app */}
-      <AppBarComponent />
-    
-      {/* Main content of resume app */}
-      <Container maxWidth="sm">
-        <Box
-          display="flex"
-          justifyContent="center"
-          alignItems="center"
-          minHeight="100vh"
-        >
-          <NameCard
-            name="Chunyue Ma"
-            title="Software Engineer"
-            email="chunyuema01@gmail.com"
-          />
-        </Box>
-      </Container>
+      <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={
+          <div>
+            <NameCard
+              name="Chunyue Ma"
+              title="Software Engineer"
+              email="chunyuema01@gmail.com"
+            />
+          </div>
+        } />
+        <Route path="about" element={<AboutMe />} />
+      </Route>
+    </Routes>
     </div>
   );
 }

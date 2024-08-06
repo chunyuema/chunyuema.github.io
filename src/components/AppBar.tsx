@@ -11,6 +11,7 @@ import MenuItem from '@mui/material/MenuItem';
 import MenuIcon from '@mui/icons-material/Menu';
 import { styled } from '@mui/system';
 import { useMediaQuery, useTheme } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 // Define styles using styled
 const StyledToolbar = styled(Toolbar)(({ theme }) => ({
@@ -65,7 +66,7 @@ const AppBarComponent: React.FC = () => {
               onClose={handleMenuClose}
             >
               <MenuItem onClick={() => handleMenuItemClick(0)}>About</MenuItem>
-              <MenuItem onClick={() => handleMenuItemClick(1)}>Projects</MenuItem>
+              {/* <MenuItem onClick={() => handleMenuItemClick(1)}>Projects</MenuItem> */}
               <MenuItem onClick={() => handleMenuItemClick(2)}>Blogs</MenuItem>
             </Menu>
           </>
@@ -76,9 +77,8 @@ const AppBarComponent: React.FC = () => {
             textColor="inherit"
             indicatorColor="secondary"
           >
-            <Tab label="About" />
-            <Tab label="Projects" />
-            <Tab label="Blogs" />
+            <Tab label="About" component={Link} to="/about" />
+            <Tab label="Blogs" component={Link} to="/"/>
           </Tabs>
         )}
       </StyledToolbar>
