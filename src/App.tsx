@@ -1,15 +1,12 @@
 import './App.css';
 import NameCard from './components/NameCard';
-import AppBarComponent from './components/AppBar';
-import { Container, Box } from '@mui/material';
 import { Routes, Route } from 'react-router-dom';
 import AboutMe from './components/screen/AboutMe';
 import Layout from './components/layout/Layout';
 
 function App() {
   return (
-    <div>
-      <Routes>
+    <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={
           <div>
@@ -22,7 +19,6 @@ function App() {
         <Route path="/about" element={<AboutMe />} />
       </Route>
     </Routes>
-    </div>
   );
 }
 
