@@ -16,7 +16,6 @@ function App() {
             <NameCard
               name="Chunyue Ma"
               title="Software Engineer"
-              email="chunyuema01@gmail.com"
             />
           </div>
         } />

@@ -3,6 +3,7 @@ import { Container, Typography, Card, CardContent, Avatar, Grid } from '@mui/mat
 import { styled } from '@mui/material/styles';
 import profilePicture from "../../assets/chunyuema.png"
 import NameCard from '../NameCard';
+import EmploymentHistory from '../EmploymentHistory';
 
 const StyledContainer = styled(Container)({
     height: '85vh', // 80% height of the viewport
@@ -11,6 +12,8 @@ const StyledContainer = styled(Container)({
     justifyContent: 'center', // Center items vertically
     alignItems: 'center', // Center items horizontally
     padding: '0rem',
+    overflowY: 'auto',
+    maxHeight: 800
 });
 
 const StyledAvatar = styled(Avatar)({
@@ -32,10 +35,7 @@ const AboutMe: React.FC = () => {
             alt="Chunyue Ma"
             src={profilePicture} // Update with your image path
           />
-          <NameCard
-            name="Chunyue Ma"
-            title="Software Engineer"
-            email="chunyue.ma@example.com" />
+          <NameCard name="Chunyue Ma" title="Software Engineer"/>
         </Grid>
         <Grid item xs={12} sm={6} md={9}>
           <StyledCard>
@@ -58,8 +58,10 @@ const AboutMe: React.FC = () => {
                 is happening in the production such that we can always respond in the
                 most accurate and fast way possible?
               </Typography>
+              <EmploymentHistory />
             </CardContent>
           </StyledCard>
+          
         </Grid>
       </Grid>
     </StyledContainer>

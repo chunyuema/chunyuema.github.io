@@ -4,11 +4,11 @@ import { styled } from '@mui/material/styles';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import TwitterIcon from '@mui/icons-material/Twitter'; // Example additional icon
+import EmploymentHistory from './EmploymentHistory';
 
 interface NameCardProps {
   name: string;
   title: string;
-  email: string;
 }
 
 const StyledCard = styled(Card)({
@@ -16,10 +16,10 @@ const StyledCard = styled(Card)({
   margin: '1rem',
 });
 
-const NameCard: React.FC<NameCardProps> = ({ name, title, email }) => {
+const NameCard: React.FC<NameCardProps> = ({ name, title }) => {
   return (
     <StyledCard>
-      <CardContent>
+      <CardContent style={{ maxHeight: 200, overflowY: 'auto' }}>
         <Grid container direction="column" alignItems="center">
           <Grid item>
             <Typography variant="h6" align="center">
