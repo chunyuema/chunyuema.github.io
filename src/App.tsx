@@ -20,7 +20,7 @@ function App() {
             />
           </div>
         } />
-        <Route path="about" element={<AboutMe />} />
+        <Route path="/about" element={<AboutMe />} />
       </Route>
     </Routes>
     </div>
