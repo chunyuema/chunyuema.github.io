@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardContent, Typography, Grid, IconButton } from '@mui/material';
+import { Card, CardContent, Typography, Grid, IconButton, Button } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
@@ -12,8 +12,12 @@ interface NameCardProps {
 }
 
 const StyledCard = styled(Card)({
-  maxWidth: 300,
   margin: '1rem',
+  border: '1px solid #ddd',
+  borderRadius: 8,
+  boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
+  padding: 16,
+  backgroundColor: '#fff',
 });
 
 const NameCard: React.FC<NameCardProps> = ({ name, title }) => {
@@ -50,6 +54,16 @@ const NameCard: React.FC<NameCardProps> = ({ name, title }) => {
           </Grid>
         </Grid>
       </CardContent>
+      <Button
+        variant="contained"
+        color="primary"
+        fullWidth
+        href="https://chunyuema.notion.site/Chunyue-Ma-s-Resume-da6bc94872c945fca41e3723f61a65e7"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        View Resume
+      </Button>
     </StyledCard>
   );
 };

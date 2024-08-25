@@ -27,19 +27,20 @@ const AboutMe: React.FC = () => {
     <StyledContainer>
       <Grid container spacing={5} justifyContent="center" alignItems="center">
         <Grid item xs={12} sm={6} md={3}>
-        <Box 
-          display="flex" 
-          flexDirection="column" 
-          alignItems="center" 
-          justifyContent="center" 
-          height="100%" // Ensure the container takes the full height of the Grid item
-        >
-          <StyledAvatar
-            alt="Chunyue Ma"
-            src={profilePicture}
-          />
-          <NameCard name="Chunyue Ma" title="Software Engineer"/>
-        </Box>
+          <Box 
+            display="flex"
+            flexDirection="row" // Ensures side-by-side layout on small screens
+            alignItems="center" 
+            justifyContent="center" 
+            flexWrap="wrap" // Allows wrapping on smaller screens
+            height="100%" // Ensure the container takes the full height of the Grid item
+          >
+            <StyledAvatar
+              alt="Chunyue Ma"
+              src={profilePicture}
+            />
+            <NameCard name="Chunyue Ma" title="Software Engineer"/>
+          </Box>
         </Grid>
         <Grid item xs={12} sm={6} md={9}>
           <StyledCard>
