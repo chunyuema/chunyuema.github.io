@@ -1,52 +1,36 @@
 import React from 'react';
-import { Container, Typography, Card, CardContent, Avatar, Grid, Box } from '@mui/material';
+import { Container, Typography, Card, CardContent, Grid, } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import profilePicture from "../../assets/chunyuema.png"
 import NameCard from '../NameCard';
-import EmploymentHistory from '../EmploymentHistory';
 
 const StyledContainer = styled(Container)({
-    display: 'flex', // Use flexbox
-    flexDirection: 'column', // Stack items vertically
-    justifyContent: 'center', // Center items vertically
-    alignItems: 'center', // Center items horizontally
-});
-
-const StyledAvatar = styled(Avatar)({
-  width: 200,
-  height: 200,
-  margin: '0 auto',
+  display: 'flex', // Use flexbox
+  flexDirection: 'column', // Stack items vertically
+  justifyContent: 'center', // Center items vertically
+  alignItems: 'stretch', // Center items horizontally
 });
 
 const StyledCard = styled(Card)({
-  marginTop: '1rem',
+  margin: '1rem',
+  border: '1px solid #ddd',
+  borderRadius: 2,
+  boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
+  padding: 16,
+  backgroundColor: '#fff',
 });
 
 const AboutMe: React.FC = () => {
   return (
     <StyledContainer>
-      <Grid container spacing={5} justifyContent="center" alignItems="center">
-        <Grid item xs={12} sm={6} md={3}>
-          <Box 
-            display="flex"
-            flexDirection="row" // Ensures side-by-side layout on small screens
-            alignItems="center" 
-            justifyContent="center" 
-            flexWrap="wrap" // Allows wrapping on smaller screens
-            height="100%" // Ensure the container takes the full height of the Grid item
-          >
-            <StyledAvatar
-              alt="Chunyue Ma"
-              src={profilePicture}
-            />
-            <NameCard name="Chunyue Ma" title="Software Engineer"/>
-          </Box>
+      <Grid container alignItems="stretch">
+        <Grid item xs={12} sm={12} md={3} justifyContent={"center"} >
+          <NameCard name="Chunyue Ma" title="Software Engineer"/>
         </Grid>
-        <Grid item xs={12} sm={6} md={9}>
+        <Grid item xs={12} sm={12} md={9} justifyContent={"center"}>
           <StyledCard>
             <CardContent>
-              <Typography variant="h4" component="h1" gutterBottom>
-                Hello, Chunyue here!
+              <Typography variant="h5" component="h1" gutterBottom>
+                Hello World!
               </Typography>
               <Typography variant="body1" paragraph>
                 I am deeply passionate about working with and continually learning
@@ -64,8 +48,7 @@ const AboutMe: React.FC = () => {
                 most accurate and fast way possible?
               </Typography>
             </CardContent>
-          </StyledCard>
-          
+          </StyledCard>  
         </Grid>
       </Grid>
     </StyledContainer>
