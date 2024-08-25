@@ -45,11 +45,6 @@ const NameCard: React.FC<NameCardProps> = ({ name, title }) => {
                   <LinkedInIcon />
                 </IconButton>
               </Grid>
-              <Grid item>
-                <IconButton href="https://twitter.com/your-profile" target="_blank" aria-label="Twitter">
-                  <TwitterIcon />
-                </IconButton>
-              </Grid>
             </Grid>
           </Grid>
         </Grid>
