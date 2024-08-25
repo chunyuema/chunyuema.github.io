@@ -63,7 +63,6 @@ const AboutMe: React.FC = () => {
                 is happening in the production such that we can always respond in the
                 most accurate and fast way possible?
               </Typography>
-              <EmploymentHistory />
             </CardContent>
           </StyledCard>
           

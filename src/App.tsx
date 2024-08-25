@@ -3,13 +3,14 @@ import NameCard from './components/NameCard';
 import { Routes, Route } from 'react-router-dom';
 import AboutMe from './components/screen/AboutMe';
 import Layout from './components/layout/Layout';
+import EmploymentHistory from './components/EmploymentHistory';
 
 function App() {
   return (
-    <div>
-      <Layout />
+    <Layout>
       <AboutMe />
-    </div>
+      <EmploymentHistory />
+    </Layout>
   );
 }
 

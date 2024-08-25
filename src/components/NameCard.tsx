@@ -3,8 +3,6 @@ import { Card, CardContent, Typography, Grid, IconButton, Button } from '@mui/ma
 import { styled } from '@mui/material/styles';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import TwitterIcon from '@mui/icons-material/Twitter'; // Example additional icon
-import EmploymentHistory from './EmploymentHistory';
 
 interface NameCardProps {
   name: string;

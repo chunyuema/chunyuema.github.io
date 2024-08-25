@@ -1,14 +1,18 @@
 import React from 'react';
 import { Container } from '@mui/material';
-import { Outlet } from 'react-router-dom';
 import AppBarComponent from '../AppBar';
+import { Outlet } from 'react-router-dom'; // or any routing library you're using
 
-const Layout: React.FC = () => {
+interface LayoutProps {
+  children?: React.ReactNode;
+}
+
+const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <div>
       <AppBarComponent />
       <Container sx={{ mt: 2 }}>
-        <Outlet />
+        {children || <Outlet />}
       </Container>
     </div>
   );
