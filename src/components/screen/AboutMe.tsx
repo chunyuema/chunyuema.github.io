@@ -1,19 +1,15 @@
 import React from 'react';
-import { Container, Typography, Card, CardContent, Avatar, Grid } from '@mui/material';
+import { Container, Typography, Card, CardContent, Avatar, Grid, Box } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import profilePicture from "../../assets/chunyuema.png"
 import NameCard from '../NameCard';
 import EmploymentHistory from '../EmploymentHistory';
 
 const StyledContainer = styled(Container)({
-    height: '85vh', // 80% height of the viewport
     display: 'flex', // Use flexbox
     flexDirection: 'column', // Stack items vertically
     justifyContent: 'center', // Center items vertically
     alignItems: 'center', // Center items horizontally
-    padding: '0rem',
-    overflowY: 'auto',
-    maxHeight: 800
 });
 
 const StyledAvatar = styled(Avatar)({
@@ -31,11 +27,19 @@ const AboutMe: React.FC = () => {
     <StyledContainer>
       <Grid container spacing={5} justifyContent="center" alignItems="center">
         <Grid item xs={12} sm={6} md={3}>
+        <Box 
+          display="flex" 
+          flexDirection="column" 
+          alignItems="center" 
+          justifyContent="center" 
+          height="100%" // Ensure the container takes the full height of the Grid item
+        >
           <StyledAvatar
             alt="Chunyue Ma"
-            src={profilePicture} // Update with your image path
+            src={profilePicture}
           />
           <NameCard name="Chunyue Ma" title="Software Engineer"/>
+        </Box>
         </Grid>
         <Grid item xs={12} sm={6} md={9}>
           <StyledCard>

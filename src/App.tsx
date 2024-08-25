@@ -6,19 +6,10 @@ import Layout from './components/layout/Layout';
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route index element={
-          <div>
-            <NameCard
-              name="Chunyue Ma"
-              title="Software Engineer"
-            />
-          </div>
-        } />
-        <Route path="/about" element={<AboutMe />} />
-      </Route>
-    </Routes>
+    <div>
+      <Layout />
+      <AboutMe />
+    </div>
   );
 }
 

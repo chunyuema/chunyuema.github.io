@@ -77,7 +77,7 @@ const AppBarComponent: React.FC = () => {
             textColor="inherit"
             indicatorColor="secondary"
           >
-            <Tab label="About" component={Link} to="/about" />
+            <Tab label="About" component={Link} to="/" />
             <Tab label="Blogs" component={Link} to="/"/>
           </Tabs>
         )}
