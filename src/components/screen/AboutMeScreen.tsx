@@ -3,12 +3,14 @@ import { Container, Typography, Card, CardContent, Grid, } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import NameCard from '../NameCard';
 
-const StyledContainer = styled(Container)({
-  display: 'flex', // Use flexbox
-  flexDirection: 'column', // Stack items vertically
-  justifyContent: 'center', // Center items vertically
-  alignItems: 'stretch', // Center items horizontally
-});
+const CenteredContainer = styled(Container)(({ theme }) => ({
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center', // Centers horizontally
+  justifyContent: 'center', // Centers vertically
+  minHeight: '90vh', // Ensures the container takes up the full viewport height
+  padding: theme.spacing(2), // Optional: Add some padding
+}));
 
 const StyledCard = styled(Card)({
   margin: '1rem',
@@ -21,7 +23,7 @@ const StyledCard = styled(Card)({
 
 const AboutMe: React.FC = () => {
   return (
-    <StyledContainer>
+    <CenteredContainer>
       <Grid container alignItems="stretch">
         <Grid item xs={12} sm={12} md={3} justifyContent={"center"} >
           <NameCard name="Chunyue Ma" title="Software Engineer"/>
@@ -51,7 +53,7 @@ const AboutMe: React.FC = () => {
           </StyledCard>  
         </Grid>
       </Grid>
-    </StyledContainer>
+    </CenteredContainer>
   );
 };
 

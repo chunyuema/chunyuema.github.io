@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Container, AppBar, Tabs, Tab, Typography, Toolbar, useMediaQuery, useTheme, IconButton, Drawer, List, ListItem, ListItemText } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import AboutMe from "../screen/AboutMe";
-import EmploymentHistory from "../EmploymentHistory";
+import AboutMe from "../screen/AboutMeScreen";
 import { styled } from '@mui/system';
+import BlogPage from "../screen/BlogScreen";
 
 interface LayoutProps {
   children?: React.ReactNode;
@@ -29,14 +29,14 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     },
   }));
 
-  const CenteredContainer = styled(Container)(({ theme }) => ({
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center', // Centers horizontally
-    justifyContent: 'center', // Centers vertically
-    minHeight: '90vh', // Ensures the container takes up the full viewport height
-    padding: theme.spacing(2), // Optional: Add some padding
-  }));
+  // const CenteredContainer = styled(Container)(({ theme }) => ({
+  //   display: 'flex',
+  //   flexDirection: 'column',
+  //   alignItems: 'center', // Centers horizontally
+  //   justifyContent: 'center', // Centers vertically
+  //   minHeight: '90vh', // Ensures the container takes up the full viewport height
+  //   padding: theme.spacing(2), // Optional: Add some padding
+  // }));
 
   const handleDrawerOpen = () => {
     setDrawerOpen(true);
@@ -86,10 +86,10 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         </StyledToolbar>
       </AppBar>
 
-      <CenteredContainer>
+      <Container sx={{ padding: 3 }} >
         {activeTab === "aboutMe" && <AboutMe />}
-        {/* {activeTab === "resume" && <EmploymentHistory />} */}
-      </CenteredContainer>
+        {activeTab === "blogs" && <BlogPage />}
+      </Container>
     </div>
   );
 };

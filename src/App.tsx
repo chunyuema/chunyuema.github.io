@@ -1,13 +1,13 @@
 import './App.css';
-import AboutMe from './components/screen/AboutMe';
+import AboutMe from './components/screen/AboutMeScreen';
 import Layout from './components/layout/Layout';
-import EmploymentHistory from './components/EmploymentHistory';
+import BlogPage from './components/screen/BlogScreen';
 
 function App() {
   return (
     <Layout>
       <AboutMe />
-      <EmploymentHistory />
+      <BlogPage />
     </Layout>
   );
 }
