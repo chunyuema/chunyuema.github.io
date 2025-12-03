@@ -1,70 +1,73 @@
-import React, { useState } from "react";
-import { Container, AppBar, Tabs, Tab, Typography, Toolbar, useMediaQuery, useTheme, IconButton, Drawer, List, ListItem, ListItemText } from "@mui/material";
+// Layout.tsx
+import React, { ReactNode } from "react";
+import {
+  Container,
+  AppBar,
+  Tabs,
+  Tab,
+  Typography,
+  Toolbar,
+  useMediaQuery,
+  useTheme,
+  IconButton,
+  Drawer,
+  List,
+  ListItem,
+  ListItemText,
+} from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import AboutMe from "../screen/AboutMeScreen";
-import { styled } from '@mui/system';
-import BlogPage from "../screen/BlogScreen";
 
 interface LayoutProps {
-  children?: React.ReactNode;
+  children?: {
+    aboutMe: ReactNode;
+    blogs: ReactNode;
+  };
 }
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
-  const [activeTab, setActiveTab] = useState("aboutMe");
-  const [drawerOpen, setDrawerOpen] = useState(false);
-
-  const handleTabChange = (event: React.SyntheticEvent, newValue: string) => {
-    setActiveTab(newValue);
-  };
+  const [activeTab, setActiveTab] = React.useState("aboutMe");
+  const [drawerOpen, setDrawerOpen] = React.useState(false);
 
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("sm")); // Check if screen is small
-
-  // Define styles using styled
-  const StyledToolbar = styled(Toolbar)(({ theme }) => ({
-    display: 'flex',
-    justifyContent: 'space-between',
-    [theme.breakpoints.down('sm')]: {
-      justifyContent: 'space-between',
-    },
-  }));
-
-  // const CenteredContainer = styled(Container)(({ theme }) => ({
-  //   display: 'flex',
-  //   flexDirection: 'column',
-  //   alignItems: 'center', // Centers horizontally
-  //   justifyContent: 'center', // Centers vertically
-  //   minHeight: '90vh', // Ensures the container takes up the full viewport height
-  //   padding: theme.spacing(2), // Optional: Add some padding
-  // }));
-
-  const handleDrawerOpen = () => {
-    setDrawerOpen(true);
-  };
-
-  const handleDrawerClose = () => {
-    setDrawerOpen(false);
-  };
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
   return (
     <div>
       <AppBar position="static">
-        <StyledToolbar>
+        <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
           <Typography variant="h6">Chunyue's Personal Site</Typography>
+
           {isMobile ? (
             <>
-              <IconButton edge="start" color="inherit" aria-label="menu" onClick={handleDrawerOpen}>
+              <IconButton
+                edge="start"
+                color="inherit"
+                onClick={() => setDrawerOpen(true)}
+              >
                 <MenuIcon />
               </IconButton>
-              <Drawer anchor="right" open={drawerOpen} onClose={handleDrawerClose}>
+              <Drawer
+                anchor="right"
+                open={drawerOpen}
+                onClose={() => setDrawerOpen(false)}
+              >
                 <List>
-                  <ListItem onClick={() => { setActiveTab("aboutMe"); handleDrawerClose(); }}>
+                  <ListItem
+                    button
+                    onClick={() => {
+                      setActiveTab("aboutMe");
+                      setDrawerOpen(false);
+                    }}
+                  >
                     <ListItemText primary="About Me" />
                   </ListItem>
-                  <ListItem onClick={() => { setActiveTab("resume"); handleDrawerClose(); }}>
-                    <ListItemText primary="Resume" />
-                  </ListItem>
-                  <ListItem onClick={() => { setActiveTab("blogs"); handleDrawerClose(); }}>
+                  <ListItem
+                    button
+                    onClick={() => {
+                      setActiveTab("blogs");
+                      setDrawerOpen(false);
+                    }}
+                  >
                     <ListItemText primary="Blogs" />
                   </ListItem>
                 </List>
@@ -73,22 +76,20 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           ) : (
             <Tabs
               value={activeTab}
-              onChange={handleTabChange}
+              onChange={(e, val) => setActiveTab(val)}
               textColor="inherit"
               indicatorColor="secondary"
-              aria-label="tabs"
             >
               <Tab label="About Me" value="aboutMe" />
-              <Tab label="Resume" value="resume" />
               <Tab label="Blogs" value="blogs" />
             </Tabs>
           )}
-        </StyledToolbar>
+        </Toolbar>
       </AppBar>
 
-      <Container sx={{ padding: 3 }} >
-        {activeTab === "aboutMe" && <AboutMe />}
-        {activeTab === "blogs" && <BlogPage />}
+      <Container sx={{ py: 4 }}>
+        {activeTab === "aboutMe" && children?.aboutMe}
+        {activeTab === "blogs" && children?.blogs}
       </Container>
     </div>
   );

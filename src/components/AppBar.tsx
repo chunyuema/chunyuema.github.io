@@ -1,35 +1,37 @@
-// AppBarComponent.tsx
-import React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
-import IconButton from '@mui/material/IconButton';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
-import MenuIcon from '@mui/icons-material/Menu';
-import { styled } from '@mui/system';
-import { useMediaQuery, useTheme } from '@mui/material';
-import { Link } from 'react-router-dom';
+import React from "react";
+import {
+  AppBar,
+  Toolbar,
+  Typography,
+  Tabs,
+  Tab,
+  IconButton,
+  Menu,
+  MenuItem,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
+import { styled } from "@mui/system";
 
-// Define styles using styled
-const StyledToolbar = styled(Toolbar)(({ theme }) => ({
-  display: 'flex',
-  justifyContent: 'space-between',
-}));
+interface AppBarProps {
+  activeTab: "aboutMe" | "blogs";
+  setActiveTab: (tab: "aboutMe" | "blogs") => void;
+}
 
-const AppBarComponent: React.FC = () => {
-  const [value, setValue] = React.useState<number>(0);
+const StyledToolbar = styled(Toolbar)({
+  display: "flex",
+  justifyContent: "space-between",
+});
+
+const AppBarComponent: React.FC<AppBarProps> = ({
+  activeTab,
+  setActiveTab,
+}) => {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
-
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
-
-  const handleChange = (event: React.SyntheticEvent, newValue: number) => {
-    setValue(newValue);
-  };
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
   const handleMenuClick = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
@@ -39,46 +41,39 @@ const AppBarComponent: React.FC = () => {
     setAnchorEl(null);
   };
 
-  const handleMenuItemClick = (index: number) => {
-    setValue(index);
+  const handleMenuItemClick = (tab: "aboutMe" | "blogs") => {
+    setActiveTab(tab);
     handleMenuClose();
   };
 
   return (
-    <AppBar position="static">
+    <AppBar position="static" color="primary">
       <StyledToolbar>
-        <Typography variant="h6">
-            Chunyue's Personal Site
-        </Typography>
+        <Typography variant="h6">Chunyue's Personal Site</Typography>
+
         {isMobile ? (
           <>
-            <IconButton
-              edge="start"
-              color="inherit"
-              aria-label="menu"
-              onClick={handleMenuClick}
-            >
+            <IconButton color="inherit" onClick={handleMenuClick}>
               <MenuIcon />
             </IconButton>
-            <Menu
-              anchorEl={anchorEl}
-              open={open}
-              onClose={handleMenuClose}
-            >
-              <MenuItem onClick={() => handleMenuItemClick(0)}>About</MenuItem>
-              {/* <MenuItem onClick={() => handleMenuItemClick(1)}>Projects</MenuItem> */}
-              <MenuItem onClick={() => handleMenuItemClick(2)}>Blogs</MenuItem>
+            <Menu anchorEl={anchorEl} open={open} onClose={handleMenuClose}>
+              <MenuItem onClick={() => handleMenuItemClick("aboutMe")}>
+                About Me
+              </MenuItem>
+              <MenuItem onClick={() => handleMenuItemClick("blogs")}>
+                Blogs
+              </MenuItem>
             </Menu>
           </>
         ) : (
           <Tabs
-            value={value}
-            onChange={handleChange}
+            value={activeTab}
+            onChange={(e, v) => setActiveTab(v)}
             textColor="inherit"
             indicatorColor="secondary"
           >
-            <Tab label="About" component={Link} to="/" />
-            <Tab label="Blogs" component={Link} to="/"/>
+            <Tab label="About Me" value="aboutMe" />
+            <Tab label="Blogs" value="blogs" />
           </Tabs>
         )}
       </StyledToolbar>

@@ -1,14 +1,17 @@
-import './App.css';
-import AboutMe from './components/screen/AboutMeScreen';
-import Layout from './components/layout/Layout';
-import BlogPage from './components/screen/BlogScreen';
+// App.tsx
+import React from "react";
+import Layout from "./components/layout/Layout";
+import AboutMe from "./components/screen/AboutMeScreen";
+import BlogPage from "./components/screen/BlogScreen";
 
 function App() {
   return (
-    <Layout>
-      <AboutMe />
-      <BlogPage />
-    </Layout>
+    <Layout
+      children={{
+        aboutMe: <AboutMe />,
+        blogs: <BlogPage />,
+      }}
+    />
   );
 }
 
