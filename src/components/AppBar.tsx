@@ -15,8 +15,8 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { styled } from "@mui/system";
 
 interface AppBarProps {
-  activeTab: "aboutMe" | "blogs";
-  setActiveTab: (tab: "aboutMe" | "blogs") => void;
+  activeTab: "aboutMe" | "blogs" | "experiences";
+  setActiveTab: (tab: "aboutMe" | "blogs" | "experiences") => void;
 }
 
 const StyledToolbar = styled(Toolbar)({
@@ -33,6 +33,14 @@ const AppBarComponent: React.FC<AppBarProps> = ({
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
+  // Tab definitions
+  const tabs: { label: string; value: "aboutMe" | "experiences" | "blogs" }[] =
+    [
+      { label: "About Me", value: "aboutMe" },
+      { label: "Experiences", value: "experiences" },
+      { label: "Blogs", value: "blogs" },
+    ];
+
   const handleMenuClick = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
   };
@@ -41,7 +49,7 @@ const AppBarComponent: React.FC<AppBarProps> = ({
     setAnchorEl(null);
   };
 
-  const handleMenuItemClick = (tab: "aboutMe" | "blogs") => {
+  const handleMenuItemClick = (tab: "aboutMe" | "experiences" | "blogs") => {
     setActiveTab(tab);
     handleMenuClose();
   };
@@ -57,12 +65,15 @@ const AppBarComponent: React.FC<AppBarProps> = ({
               <MenuIcon />
             </IconButton>
             <Menu anchorEl={anchorEl} open={open} onClose={handleMenuClose}>
-              <MenuItem onClick={() => handleMenuItemClick("aboutMe")}>
-                About Me
-              </MenuItem>
-              <MenuItem onClick={() => handleMenuItemClick("blogs")}>
-                Blogs
-              </MenuItem>
+              {tabs.map((tab) => (
+                <MenuItem
+                  key={tab.value}
+                  selected={activeTab === tab.value}
+                  onClick={() => handleMenuItemClick(tab.value)}
+                >
+                  {tab.label}
+                </MenuItem>
+              ))}
             </Menu>
           </>
         ) : (
@@ -72,8 +83,9 @@ const AppBarComponent: React.FC<AppBarProps> = ({
             textColor="inherit"
             indicatorColor="secondary"
           >
-            <Tab label="About Me" value="aboutMe" />
-            <Tab label="Blogs" value="blogs" />
+            {tabs.map((tab) => (
+              <Tab key={tab.value} label={tab.label} value={tab.value} />
+            ))}
           </Tabs>
         )}
       </StyledToolbar>
