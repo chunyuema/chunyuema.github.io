@@ -1,6 +1,16 @@
 import React from "react";
 import { Container, Typography, Grid, Card, CardContent } from "@mui/material";
 import NameCard from "../NameCard";
+import SkillSet from "../Skill";
+import { FaReact, FaNodeJs, FaPython, FaDatabase } from "react-icons/fa";
+import { Skill } from "../Skill";
+
+const mySkills: Skill[] = [
+  { name: "Frontend", icon: FaReact, level: 40 },
+  { name: "Backend", icon: FaNodeJs, level: 70 },
+  { name: "Cloud & DevOps", icon: FaPython, level: 65 },
+  { name: "High Performance Compute", icon: FaDatabase, level: 10 },
+];
 
 const AboutMe: React.FC = () => (
   <Container sx={{ mt: 8, mb: 8, maxWidth: "1100px" }}>
@@ -8,15 +18,16 @@ const AboutMe: React.FC = () => (
       <Grid item xs={12} md={4}>
         <NameCard name="Chunyue Ma" title="Software Engineer @ AWS Lambda" />
       </Grid>
-
       <Grid item xs={12} md={8}>
+        <SkillSet title="Software Engineer Skill Set" skills={mySkills} />
+      </Grid>
+    </Grid>
+    <Grid container spacing={4} alignItems="stretch" sx={{ mt: 2 }}>
+      <Grid item xs={12}>
         <Card>
           <CardContent>
-            <Typography variant="h4" gutterBottom>
-              Hello World!
-            </Typography>
             <Typography paragraph>
-              Hi, I'm Chunyue, a software engineer passionate about
+              Hello World! I'm Chunyue, a software engineer passionate about
               understanding how code, machines, and software systems work under
               the hood. My key interest is exploring availability and resilience
               in large-scale software systems. I'm fascinated by how these
