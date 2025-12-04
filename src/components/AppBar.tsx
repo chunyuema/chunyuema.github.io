@@ -19,6 +19,11 @@ interface AppBarProps {
   setActiveTab: (tab: "aboutMe" | "blogs" | "experiences") => void;
 }
 
+const StyledToolbar = styled(Toolbar)({
+  display: "flex",
+  justifyContent: "space-between",
+});
+
 const AppBarComponent: React.FC<AppBarProps> = ({
   activeTab,
   setActiveTab,
@@ -51,37 +56,39 @@ const AppBarComponent: React.FC<AppBarProps> = ({
 
   return (
     <AppBar position="static" color="primary">
-      <Typography variant="h6">Chunyue's Personal Site</Typography>
+      <StyledToolbar>
+        <Typography variant="h6">Chunyue's Personal Site</Typography>
 
-      {isMobile ? (
-        <>
-          <IconButton color="inherit" onClick={handleMenuClick}>
-            <MenuIcon />
-          </IconButton>
-          <Menu anchorEl={anchorEl} open={open} onClose={handleMenuClose}>
+        {isMobile ? (
+          <>
+            <IconButton color="inherit" onClick={handleMenuClick}>
+              <MenuIcon />
+            </IconButton>
+            <Menu anchorEl={anchorEl} open={open} onClose={handleMenuClose}>
+              {tabs.map((tab) => (
+                <MenuItem
+                  key={tab.value}
+                  selected={activeTab === tab.value}
+                  onClick={() => handleMenuItemClick(tab.value)}
+                >
+                  {tab.label}
+                </MenuItem>
+              ))}
+            </Menu>
+          </>
+        ) : (
+          <Tabs
+            value={activeTab}
+            onChange={(e, v) => setActiveTab(v)}
+            textColor="inherit"
+            indicatorColor="secondary"
+          >
             {tabs.map((tab) => (
-              <MenuItem
-                key={tab.value}
-                selected={activeTab === tab.value}
-                onClick={() => handleMenuItemClick(tab.value)}
-              >
-                {tab.label}
-              </MenuItem>
+              <Tab key={tab.value} label={tab.label} value={tab.value} />
             ))}
-          </Menu>
-        </>
-      ) : (
-        <Tabs
-          value={activeTab}
-          onChange={(e, v) => setActiveTab(v)}
-          textColor="inherit"
-          indicatorColor="secondary"
-        >
-          {tabs.map((tab) => (
-            <Tab key={tab.value} label={tab.label} value={tab.value} />
-          ))}
-        </Tabs>
-      )}
+          </Tabs>
+        )}
+      </StyledToolbar>
     </AppBar>
   );
 };

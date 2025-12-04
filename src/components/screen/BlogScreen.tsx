@@ -86,10 +86,7 @@ const BlogPage: React.FC = () => {
   };
 
   return (
-    <Container sx={{ py: 8 }}>
-      <Typography variant="h4" mb={6} color="primary">
-        Chunyue's Blog
-      </Typography>
+    <Container>
       <AppBar position="static">
         <Toolbar sx={{ backgroundColor: "#111" }}>
           <Typography variant="h6" sx={{ flexGrow: 1 }}>
