@@ -10,7 +10,7 @@ import {
 } from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import profilePicture from "../assets/chunyuema.png";
+import profilePicture from "../assets/icon.png";
 
 interface NameCardProps {
   name: string;
