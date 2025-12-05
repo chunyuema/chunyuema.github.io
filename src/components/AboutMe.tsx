@@ -1,9 +1,9 @@
 import React from "react";
 import { Container, Typography, Grid, Card, CardContent } from "@mui/material";
-import NameCard from "../NameCard";
-import SkillSet from "../Skill";
+import NameCard from "./NameCard";
+import SkillSet from "./Skill";
 import { FaReact, FaNodeJs, FaPython, FaDatabase } from "react-icons/fa";
-import { Skill } from "../Skill";
+import { Skill } from "./Skill";
 
 const mySkills: Skill[] = [
   { name: "Frontend", icon: FaReact, level: 40 },

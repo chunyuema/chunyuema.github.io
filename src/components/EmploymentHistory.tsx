@@ -11,7 +11,10 @@ import {
   useMediaQuery,
 } from "@mui/material";
 
-import { EmploymentEntry, employmentHistoryData } from "../EmploymentEntry";
+import {
+  EmploymentEntry,
+  employmentHistoryData,
+} from "../data/EmploymentEntry";
 
 const EmploymentHistory: React.FC = () => {
   const theme = useTheme();

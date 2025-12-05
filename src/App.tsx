@@ -1,9 +1,9 @@
 // App.tsx
 import React from "react";
-import Layout from "./components/layout/Layout";
-import AboutMe from "./components/screen/AboutMeScreen";
-import BlogPage from "./components/screen/BlogScreen";
-import EmploymentHistory from "./components/screen/EmploymentHistory";
+import Layout from "./components/Layout";
+import AboutMe from "./components/AboutMe";
+import BlogPage from "./components/Blogs";
+import EmploymentHistory from "./components/EmploymentHistory";
 
 function App() {
   return (
