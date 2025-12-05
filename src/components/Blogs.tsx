@@ -65,11 +65,11 @@ const BlogPage: React.FC = () => {
   };
 
   return (
-    <Container>
+    <Container sx={{ py: 8 }}>
       <AppBar position="static">
         <Toolbar sx={{ backgroundColor: "#111" }}>
           <Typography variant="h6" sx={{ flexGrow: 1 }}>
-            All Posts
+            What I have been thinking about...
           </Typography>
           <Search>
             <SearchIconWrapper>

@@ -37,28 +37,36 @@ declare module "@mui/material/styles" {
 const theme = createTheme({
   palette: {
     mode: "dark",
-    primary: { main: "#7FDBFF" }, // soft cyan
-    secondary: { main: "#A0AEC0" }, // muted gray-blue
-    background: { default: "#121212", paper: "#1E1E1E" },
-    text: { primary: "#E0E0E0", secondary: "#A0AEC0" },
+    primary: { main: "#00FFEE" }, // neon cyan
+    secondary: { main: "#50FA7B" }, // neon green
+    background: { default: "#0D0D0D", paper: "#1A1A1A" }, // darker, terminal feel
+    text: { primary: "#E0E0E0", secondary: "#8BE9FD" },
   },
   typography: {
     fontFamily: "'JetBrains Mono', monospace",
-    h4: { fontWeight: 700, letterSpacing: "0.5px" },
-    h6: { fontWeight: 700, letterSpacing: "0.5px" },
+    h4: {
+      fontWeight: 700,
+      letterSpacing: "1px",
+      textShadow: "0 0 3px #00FFEE",
+    },
+    h6: {
+      fontWeight: 700,
+      letterSpacing: "0.5px",
+      textShadow: "0 0 2px #00FFEE",
+    },
     body1: { fontSize: "1rem", lineHeight: 1.7 },
     body2: { fontSize: "0.95rem", lineHeight: 1.6 },
-    subtitle1: { color: "#A0AEC0" },
-    subtitle2: { color: "#A0AEC0" },
+    subtitle1: { color: "#50FA7B" },
+    subtitle2: { color: "#8BE9FD" },
   },
   components: {
     MuiPaper: {
       styleOverrides: {
         root: {
           borderRadius: 12,
-          border: "1px solid #2C3E50", // subtle border
-          backgroundColor: "#1E1E1E",
-          boxShadow: "0 5px 15px rgba(0,0,0,0.2)",
+          border: "1px solid #00FFEE",
+          backgroundColor: "#1A1A1A",
+          boxShadow: "0 5px 20px rgba(0,255,238,0.2)",
           transition: "transform 0.2s, box-shadow 0.2s",
         },
       },
@@ -69,10 +77,11 @@ const theme = createTheme({
           textTransform: "none",
           fontFamily: "'JetBrains Mono', monospace",
           borderRadius: 8,
-          border: "1px solid #7FDBFF",
-          color: "#7FDBFF",
+          border: "1px solid #00FFEE",
+          color: "#00FFEE",
           "&:hover": {
-            backgroundColor: "rgba(127,219,255,0.1)",
+            backgroundColor: "rgba(0,255,238,0.1)",
+            boxShadow: "0 0 8px #00FFEE",
           },
         },
       },
@@ -80,15 +89,17 @@ const theme = createTheme({
     MuiAppBar: {
       styleOverrides: {
         root: {
-          backgroundColor: "#1E1E1E",
-          boxShadow: "0 2px 5px rgba(0,0,0,0.2)",
+          backgroundColor: "#1A1A1A",
+          boxShadow: "0 2px 10px rgba(0,255,238,0.2)",
         },
       },
     },
     MuiTabs: {
       styleOverrides: {
         indicator: {
-          backgroundColor: "#7FDBFF",
+          backgroundColor: "#00FFEE",
+          height: 3,
+          borderRadius: 2,
         },
       },
     },
@@ -100,24 +111,24 @@ const theme = createTheme({
         },
         secondary: {
           fontFamily: "'JetBrains Mono', monospace",
-          color: "#A0AEC0",
+          color: "#8BE9FD",
         },
       },
     },
   },
-
   custom: {
     timeline: {
       lineWidth: 4,
-      dotSize: 16,
+      dotSize: 18,
       cardPadding: 3,
       timelineLeft: 80,
       timelineLeftMobile: 40,
-      dotShadow: "0 0 10px rgba(127,219,255,0.3)",
+      dotShadow: "0 0 12px #00FFEE",
       cardHover: {
-        transform: "translateY(-4px)",
-        boxShadow: "0 8px 20px rgba(0,0,0,0.3)",
+        transform: "translateY(-5px)",
+        boxShadow: "0 10px 25px rgba(0,255,238,0.3)",
       },
+      cardMaxWidth: 500,
     },
   },
 });

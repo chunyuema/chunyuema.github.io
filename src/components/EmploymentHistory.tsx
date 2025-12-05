@@ -48,10 +48,6 @@ const EmploymentHistory: React.FC = () => {
 
   return (
     <Container sx={{ py: 8 }}>
-      <Typography variant="h4" mb={6} color="primary">
-        Employment History
-      </Typography>
-
       <Timeline position={isMobile ? "right" : "alternate"}>
         {employmentHistoryData.map((job, index) => (
           <TimelineItem key={index}>

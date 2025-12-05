@@ -33,7 +33,11 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
   return (
     <div>
-      <AppBar position="fixed" color="primary" sx={{ borderRadius: 0 }}>
+      <AppBar
+        position="fixed"
+        color="primary"
+        sx={{ borderRadius: 0, border: 0 }}
+      >
         <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
           <Typography variant="h6">Chunyue's Personal Site</Typography>
 
