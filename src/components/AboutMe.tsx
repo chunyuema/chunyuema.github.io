@@ -8,7 +8,6 @@ import {
   Box,
 } from "@mui/material";
 import NameCard from "./NameCard";
-import SkillSet from "./Skill";
 import { FaReact, FaNodeJs, FaPython, FaDatabase } from "react-icons/fa";
 import { Skill } from "./Skill";
 
