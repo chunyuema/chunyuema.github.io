@@ -60,10 +60,6 @@ const theme = createTheme({
           backgroundColor: "#1E1E1E",
           boxShadow: "0 5px 15px rgba(0,0,0,0.2)",
           transition: "transform 0.2s, box-shadow 0.2s",
-          // "&:hover": {
-          //   transform: "translateY(-4px)",
-          //   boxShadow: "0 8px 20px rgba(0,0,0,0.3)",
-          // },
         },
       },
     },

@@ -1,5 +1,12 @@
 import React from "react";
-import { Container, Typography, Grid, Card, CardContent } from "@mui/material";
+import {
+  Container,
+  Typography,
+  Grid,
+  Card,
+  CardContent,
+  Box,
+} from "@mui/material";
 import NameCard from "./NameCard";
 import SkillSet from "./Skill";
 import { FaReact, FaNodeJs, FaPython, FaDatabase } from "react-icons/fa";
@@ -14,17 +21,23 @@ const mySkills: Skill[] = [
 
 const AboutMe: React.FC = () => (
   <Container sx={{ mt: 8, mb: 8, maxWidth: "1100px" }}>
+    {/* ======= TOP SECTION ======= */}
     <Grid container spacing={4} alignItems="stretch">
-      <Grid item xs={12} md={4}>
+      <Grid
+        item
+        xs={12}
+        md={4}
+        sx={{
+          display: "flex",
+          alignItems: "center", // vertical center
+          justifyContent: "center", // horizontal center (optional)
+        }}
+      >
         <NameCard name="Chunyue Ma" title="Software Engineer @ AWS Lambda" />
       </Grid>
+
       <Grid item xs={12} md={8}>
-        <SkillSet title="Software Engineer Skill Set" skills={mySkills} />
-      </Grid>
-    </Grid>
-    <Grid container spacing={4} alignItems="stretch" sx={{ mt: 2 }}>
-      <Grid item xs={12}>
-        <Card>
+        <Card sx={{ height: "100%" }}>
           <CardContent>
             <Typography paragraph>
               Hello World! I'm Chunyue, a software engineer passionate about
@@ -32,10 +45,14 @@ const AboutMe: React.FC = () => (
               the hood. My key interest is exploring availability and resilience
               in large-scale software systems. I'm fascinated by how these
               complex projects maintain functionality while continuing to evolve
-              and deliver high performance. I'm also drawn to the observability
-              of cloud-native/distributed systems. I'm particularly intrigued by
-              whether we can truly understand the root causes of production
-              issues and how we can respond to them accurately and quickly.
+              and deliver high performance.
+            </Typography>
+            <Typography paragraph>
+              I'm also drawn to the observability of cloud-native/distributed
+              systems and whether we can truly understand the root causes of
+              production issues and respond accurately and quickly.
+            </Typography>
+            <Typography paragraph>
               Recently, I've been exploring green software engineering and
               high-performance computing. With today's growing demand for
               software and AI, I believe it's time for software engineers to be
@@ -45,6 +62,15 @@ const AboutMe: React.FC = () => (
         </Card>
       </Grid>
     </Grid>
+
+    {/* ======= SKILLS SECTION ======= */}
+    <Box sx={{ mt: 6 }}>
+      <Grid container justifyContent="center">
+        <Grid item xs={12} md={10}>
+          <SkillSet title="Software Engineer Skill Set" skills={mySkills} />
+        </Grid>
+      </Grid>
+    </Box>
   </Container>
 );
 
