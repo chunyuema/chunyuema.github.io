@@ -33,7 +33,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
   return (
     <div>
-      <AppBar position="static">
+      <AppBar position="fixed" color="primary" sx={{ borderRadius: 0 }}>
         <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
           <Typography variant="h6">Chunyue's Personal Site</Typography>
 
@@ -46,12 +46,14 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
               >
                 <MenuIcon />
               </IconButton>
+
+              {/* MOBILE DRAWER */}
               <Drawer
                 anchor="right"
                 open={drawerOpen}
                 onClose={() => setDrawerOpen(false)}
               >
-                <List>
+                <List sx={{ width: 200 }}>
                   <ListItem
                     button
                     onClick={() => {
@@ -61,6 +63,17 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                   >
                     <ListItemText primary="About Me" />
                   </ListItem>
+
+                  <ListItem
+                    button
+                    onClick={() => {
+                      setActiveTab("experiences");
+                      setDrawerOpen(false);
+                    }}
+                  >
+                    <ListItemText primary="Experiences" />
+                  </ListItem>
+
                   <ListItem
                     button
                     onClick={() => {
@@ -74,6 +87,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
               </Drawer>
             </>
           ) : (
+            /* DESKTOP TABS */
             <Tabs
               value={activeTab}
               onChange={(e, val) => setActiveTab(val)}
@@ -88,7 +102,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         </Toolbar>
       </AppBar>
 
-      <Container sx={{ py: 4 }}>
+      <Container sx={{ py: 10 }}>
         {activeTab === "aboutMe" && children?.aboutMe}
         {activeTab === "blogs" && children?.blogs}
         {activeTab === "experiences" && children?.employmentHistory}
