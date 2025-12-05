@@ -62,15 +62,6 @@ const AboutMe: React.FC = () => (
         </Card>
       </Grid>
     </Grid>
-
-    {/* ======= SKILLS SECTION ======= */}
-    <Box sx={{ mt: 6 }}>
-      <Grid container justifyContent="center">
-        <Grid item xs={12} md={10}>
-          <SkillSet title="Software Engineer Skill Set" skills={mySkills} />
-        </Grid>
-      </Grid>
-    </Box>
   </Container>
 );
 

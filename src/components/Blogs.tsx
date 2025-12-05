@@ -8,35 +8,14 @@ import {
   List,
   ListItem,
   ListItemText,
+  ListItemIcon,
   Divider,
   alpha,
   styled,
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
-
-interface BlogPost {
-  id: number;
-  title: string;
-  content: string;
-}
-
-const blogPosts: BlogPost[] = [
-  {
-    id: 1,
-    title: "First Blog Post",
-    content: "This is the content of the first blog post.",
-  },
-  {
-    id: 2,
-    title: "Second Blog Post",
-    content: "This is the content of the second blog post.",
-  },
-  {
-    id: 3,
-    title: "Third Blog Post",
-    content: "This is the content of the third blog post.",
-  },
-];
+import { blogPosts, BlogPost } from "../data/BlogEntry";
+import ArticleIcon from "@mui/icons-material/Article";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -108,8 +87,47 @@ const BlogPage: React.FC = () => {
       <List>
         {filteredPosts.map((post) => (
           <React.Fragment key={post.id}>
-            <ListItem>
-              <ListItemText primary={post.title} secondary={post.content} />
+            <ListItem
+              component="a"
+              href={post.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              button
+            >
+              <ListItem
+                component="a"
+                href={post.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                button
+              >
+                <ListItemIcon>
+                  <ArticleIcon />
+                </ListItemIcon>
+                <ListItemText
+                  primary={post.title}
+                  secondary={
+                    <>
+                      <Typography
+                        component="span"
+                        variant="body2"
+                        color="text.secondary"
+                        sx={{ display: "block" }}
+                      >
+                        {post.content}
+                      </Typography>
+                      <Typography
+                        component="span"
+                        variant="caption"
+                        color="text.secondary"
+                        sx={{ display: "block", mt: 0.5 }}
+                      >
+                        {new Date(post.date).toLocaleDateString()}
+                      </Typography>
+                    </>
+                  }
+                />
+              </ListItem>
             </ListItem>
             <Divider />
           </React.Fragment>
