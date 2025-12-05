@@ -47,8 +47,25 @@ const EmploymentHistory: React.FC = () => {
   };
 
   return (
-    <Container sx={{ py: 8 }}>
-      <Timeline position={isMobile ? "right" : "alternate"}>
+    <Container
+      sx={{
+        py: 8,
+        px: isMobile ? 2 : 0,
+        maxWidth: isMobile ? "100px" : "1100px",
+      }}
+    >
+      <Timeline
+        position={isMobile ? "right" : "alternate"}
+        sx={{
+          // Only adjust spacing for mobile
+          ...(isMobile && {
+            ml: theme.custom.timeline.timelineLeftMobile,
+            "& .MuiTimelineItem-root": {
+              minHeight: 100, // optional spacing between items
+            },
+          }),
+        }}
+      >
         {employmentHistoryData.map((job, index) => (
           <TimelineItem key={index}>
             {!isMobile && (

@@ -121,8 +121,8 @@ const theme = createTheme({
       lineWidth: 4,
       dotSize: 18,
       cardPadding: 3,
-      timelineLeft: 80,
-      timelineLeftMobile: 40,
+      timelineLeft: 10,
+      timelineLeftMobile: 0,
       dotShadow: "0 0 12px #00FFEE",
       cardHover: {
         transform: "translateY(-5px)",
