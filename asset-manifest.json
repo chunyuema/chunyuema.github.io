@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.js": "/static/js/main.615e15a9.js",
-    "static/media/chunyuema.png": "/static/media/chunyuema.bc09d97d5622a71b21c2.png",
+    "main.js": "/static/js/main.e24fb939.js",
+    "static/media/profile.png": "/static/media/profile.0218eb56e1bf74713b38.png",
     "index.html": "/index.html",
-    "main.615e15a9.js.map": "/static/js/main.615e15a9.js.map"
+    "main.e24fb939.js.map": "/static/js/main.e24fb939.js.map"
   },
   "entrypoints": [
-    "static/js/main.615e15a9.js"
+    "static/js/main.e24fb939.js"
   ]
 }
