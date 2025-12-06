@@ -20,7 +20,6 @@ interface LayoutProps {
   children?: {
     aboutMe: ReactNode;
     blogs: ReactNode;
-    employmentHistory: ReactNode;
   };
 }
 
@@ -99,7 +98,6 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
               indicatorColor="secondary"
             >
               <Tab label="About Me" value="aboutMe" />
-              <Tab label="Experiences" value="experiences" />
               <Tab label="Blogs" value="blogs" />
             </Tabs>
           )}
@@ -109,7 +107,6 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       <Container sx={{ py: 10 }}>
         {activeTab === "aboutMe" && children?.aboutMe}
         {activeTab === "blogs" && children?.blogs}
-        {activeTab === "experiences" && children?.employmentHistory}
       </Container>
     </div>
   );

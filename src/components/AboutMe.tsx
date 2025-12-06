@@ -10,6 +10,8 @@ import {
 import NameCard from "./NameCard";
 import { FaReact, FaNodeJs, FaPython, FaDatabase } from "react-icons/fa";
 import { Skill } from "./Skill";
+import { EmploymentEntry } from "../data/EmploymentEntry";
+import EmploymentHistory from "./EmploymentHistory";
 
 const mySkills: Skill[] = [
   { name: "Frontend", icon: FaReact, level: 40 },
@@ -61,6 +63,9 @@ const AboutMe: React.FC = () => (
         </Card>
       </Grid>
     </Grid>
+
+    {/* Employment History Section */}
+    <EmploymentHistory />
   </Container>
 );
 

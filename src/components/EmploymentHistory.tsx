@@ -4,18 +4,17 @@ import {
   Typography,
   Box,
   Paper,
-  List,
-  ListItem,
-  ListItemText,
   useTheme,
   useMediaQuery,
   Dialog,
   DialogTitle,
   DialogContent,
-  DialogContentText,
   IconButton,
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
+
+import StarIcon from "@mui/icons-material/Star"; // ⭐ Current job icon
+import WorkIcon from "@mui/icons-material/Work"; // 🏢 Past job icon
 
 import {
   Timeline,
@@ -25,6 +24,7 @@ import {
   TimelineContent,
   TimelineDot,
   TimelineOppositeContent,
+  timelineOppositeContentClasses,
 } from "@mui/lab";
 
 import {
@@ -38,13 +38,8 @@ const EmploymentHistory: React.FC = () => {
 
   const [selectedJob, setSelectedJob] = useState<EmploymentEntry | null>(null);
 
-  const handleCardClick = (job: EmploymentEntry) => {
-    setSelectedJob(job);
-  };
-
-  const handleClose = () => {
-    setSelectedJob(null);
-  };
+  const handleCardClick = (job: EmploymentEntry) => setSelectedJob(job);
+  const handleClose = () => setSelectedJob(null);
 
   return (
     <Container
@@ -55,77 +50,95 @@ const EmploymentHistory: React.FC = () => {
       }}
     >
       <Timeline
-        position={isMobile ? "right" : "alternate"}
         sx={{
-          // Only adjust spacing for mobile
-          ...(isMobile && {
-            ml: theme.custom.timeline.timelineLeftMobile,
-            "& .MuiTimelineItem-root": {
-              minHeight: 100, // optional spacing between items
-            },
-          }),
+          [`& .${timelineOppositeContentClasses.root}`]: { flex: 0.2 },
         }}
       >
-        {employmentHistoryData.map((job, index) => (
-          <TimelineItem key={index}>
-            {!isMobile && (
-              <TimelineOppositeContent color="text.secondary">
-                {job.dateRange}
-              </TimelineOppositeContent>
-            )}
+        {employmentHistoryData.map((job, index) => {
+          const isCurrent = index === 0;
 
-            <TimelineSeparator>
-              <TimelineDot color="primary" />
-              {index < employmentHistoryData.length - 1 && (
-                <TimelineConnector />
+          return (
+            <TimelineItem key={index}>
+              {!isMobile && (
+                <TimelineOppositeContent color="text.secondary">
+                  {isCurrent ? (
+                    <strong style={{ color: theme.palette.primary.main }}>
+                      {job.dateRange} (Current)
+                    </strong>
+                  ) : (
+                    job.dateRange
+                  )}
+                </TimelineOppositeContent>
               )}
-            </TimelineSeparator>
 
-            <TimelineContent sx={{ py: 2 }}>
-              <Paper
-                elevation={3}
-                onClick={() => handleCardClick(job)}
-                sx={{
-                  p: theme.spacing(theme.custom.timeline.cardPadding),
-                  maxWidth: theme.custom.timeline.cardMaxWidth,
-                  width: "100%",
-                  bgcolor: "background.paper",
-                  borderRadius: 2,
-                  transition: "transform 0.2s, box-shadow 0.2s",
-                  "&:hover": {
-                    transform: theme.custom.timeline.cardHover.transform,
-                    boxShadow: theme.custom.timeline.cardHover.boxShadow,
-                  },
-                  cursor: "pointer",
-                }}
-              >
-                <Typography
-                  variant="h6"
-                  color="primary"
-                  fontWeight="bold"
-                  gutterBottom
+              <TimelineSeparator>
+                <TimelineDot
+                  color={isCurrent ? "secondary" : "primary"}
+                  variant={isCurrent ? "filled" : "outlined"}
                 >
-                  {job.company} | {job.position}
-                </Typography>
+                  {isCurrent ? (
+                    <StarIcon fontSize="small" /> // ⭐ Current job
+                  ) : (
+                    <WorkIcon fontSize="small" /> // 🏢 Past jobs
+                  )}
+                </TimelineDot>
 
-                <Typography
-                  variant="subtitle2"
-                  color="text.secondary"
-                  gutterBottom
+                {index < employmentHistoryData.length - 1 && (
+                  <TimelineConnector />
+                )}
+              </TimelineSeparator>
+
+              <TimelineContent sx={{ py: 2 }}>
+                <Paper
+                  elevation={isCurrent ? 6 : 3}
+                  onClick={() => handleCardClick(job)}
+                  sx={{
+                    p: theme.spacing(theme.custom.timeline.cardPadding),
+                    maxWidth: theme.custom.timeline.cardMaxWidth,
+                    width: "100%",
+                    bgcolor: isCurrent
+                      ? theme.palette.secondary.light
+                      : "background.paper",
+                    borderLeft: isCurrent
+                      ? `6px solid ${theme.palette.secondary.main}`
+                      : "none",
+                    borderRadius: 2,
+                    transition: "transform 0.2s, box-shadow 0.2s",
+                    cursor: "pointer",
+                    "&:hover": {
+                      transform: theme.custom.timeline.cardHover.transform,
+                      boxShadow: theme.custom.timeline.cardHover.boxShadow,
+                    },
+                  }}
                 >
-                  {isMobile
-                    ? `${job.dateRange} — ${job.location}`
-                    : job.location}
-                </Typography>
+                  <Typography
+                    variant="h6"
+                    color={isCurrent ? "secondary" : "primary"}
+                    fontWeight="bold"
+                    gutterBottom
+                  >
+                    {job.company} | {job.position}
+                  </Typography>
 
-                <Typography variant="body2">Click to see details</Typography>
-              </Paper>
-            </TimelineContent>
-          </TimelineItem>
-        ))}
+                  <Typography
+                    variant="subtitle2"
+                    color="text.secondary"
+                    gutterBottom
+                  >
+                    {isMobile
+                      ? `${job.dateRange} — ${job.location}`
+                      : job.location}
+                  </Typography>
+
+                  <Typography variant="body2">Click to see details</Typography>
+                </Paper>
+              </TimelineContent>
+            </TimelineItem>
+          );
+        })}
       </Timeline>
 
-      {/* Popup Dialog for Job Details */}
+      {/* Popup Dialog */}
       <Dialog
         open={!!selectedJob}
         onClose={handleClose}
@@ -142,6 +155,7 @@ const EmploymentHistory: React.FC = () => {
             <CloseIcon />
           </IconButton>
         </DialogTitle>
+
         <DialogContent dividers>
           <Typography variant="subtitle2" color="text.secondary" gutterBottom>
             {selectedJob?.location} — {selectedJob?.dateRange}
