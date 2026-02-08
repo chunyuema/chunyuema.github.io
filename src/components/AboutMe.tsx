@@ -7,19 +7,9 @@ import {
     CardContent,
 } from "@mui/material";
 import NameCard from "./NameCard";
-import { FaReact, FaNodeJs, FaPython, FaDatabase } from "react-icons/fa";
-import { Skill } from "./Skill";
-import EmploymentHistory from "./EmploymentHistory";
-
-const mySkills: Skill[] = [
-    { name: "Frontend", icon: FaReact, level: 40 },
-    { name: "Backend", icon: FaNodeJs, level: 70 },
-    { name: "Cloud & DevOps", icon: FaPython, level: 65 },
-    { name: "High Performance Compute", icon: FaDatabase, level: 10 },
-];
 
 const AboutMe: React.FC = () => (
-    <Container sx={{ mt: 8, mb: 8, maxWidth: "1100px" }}>
+    <Container sx={{ mt: 15, mb: 8, maxWidth: "1100px" }}>
         {/* ======= TOP SECTION ======= */}
         <Grid container spacing={4} alignItems="stretch">
             <Grid
@@ -62,8 +52,6 @@ const AboutMe: React.FC = () => (
             </Grid>
         </Grid>
 
-        {/* Employment History Section */}
-        <EmploymentHistory />
     </Container>
 );
 
