@@ -1,11 +1,17 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #6EC1FF;
+  --color-secondary: #09406aff;
+  --color-background: #0A0A12;
+  --color-surface: rgba(255, 255, 255, 0.06);
+  --font-mono: 'JetBrains Mono', monospace;
+  
+  --shadow-neon: 0 0 14px rgba(110, 193, 255, 0.45);
+}
 
 :root {
   --foreground-rgb: 242, 240, 255;
-  --background-start-rgb: 10, 10, 18;
-  --background-end-rgb: 0, 0, 0;
 }
 
 body {
@@ -24,6 +30,6 @@ body {
   }
   
   .neon-border {
-    @apply border-primary/30 shadow-[0_0_14px_rgba(110,193,255,0.45)];
+    @apply border-primary/30 shadow-neon;
   }
 }

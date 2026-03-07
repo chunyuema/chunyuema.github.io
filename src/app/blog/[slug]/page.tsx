@@ -1,16 +1,13 @@
 import * as React from 'react';
 import { NotionAPI } from 'notion-client';
-import dynamic from 'next/dynamic';
-
-const NotionClientRenderer = dynamic(() => import('../../../components/NotionClientRenderer'), {
-  ssr: false,
-  loading: () => <p className="text-center py-10 text-gray-400">Loading post content...</p>
-});
+import NotionDynamicWrapper from '../../../components/NotionDynamicWrapper';
 
 const notion = new NotionAPI();
 
-export default async function NotionPage({ params }: { params: { slug: string } }) {
-  const { slug } = params;
+type Params = Promise<{ slug: string }>;
+
+export default async function NotionPage(props: { params: Params }) {
+  const { slug } = await props.params;
 
   try {
     const recordMap = await notion.getPage(slug);
@@ -21,7 +18,7 @@ export default async function NotionPage({ params }: { params: { slug: string } 
 
     return (
       <div className="container mx-auto py-20 px-4 max-w-4xl">
-        <NotionClientRenderer recordMap={recordMap} />
+        <NotionDynamicWrapper recordMap={recordMap} />
       </div>
     );
   } catch (error) {
