@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 242, 240, 255;
+  --background-start-rgb: 10, 10, 18;
+  --background-end-rgb: 0, 0, 0;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: #0A0A12;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl shadow-xl transition-all duration-300;
+  }
+  
+  .neon-text {
+    text-shadow: 0 0 8px rgba(110, 193, 255, 0.45);
+  }
+  
+  .neon-border {
+    @apply border-primary/30 shadow-[0_0_14px_rgba(110,193,255,0.45)];
+  }
+}
