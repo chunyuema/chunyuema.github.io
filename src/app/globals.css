@@ -1,17 +1,19 @@
 @import "tailwindcss";
+@source "../**/*.{ts,tsx}";
+
+:root {
+  --foreground-rgb: 242, 240, 255;
+  --primary: #6EC1FF;
+}
 
 @theme {
-  --color-primary: #6EC1FF;
+  --color-primary: var(--primary);
   --color-secondary: #09406aff;
   --color-background: #0A0A12;
   --color-surface: rgba(255, 255, 255, 0.06);
   --font-mono: 'JetBrains Mono', monospace;
   
   --shadow-neon: 0 0 14px rgba(110, 193, 255, 0.45);
-}
-
-:root {
-  --foreground-rgb: 242, 240, 255;
 }
 
 body {

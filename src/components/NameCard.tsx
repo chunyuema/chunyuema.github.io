@@ -9,12 +9,13 @@ interface NameCardProps {
 
 const NameCard: React.FC<NameCardProps> = ({ name, title }) => (
   <div className="flex flex-col items-center gap-4 p-6 glass-panel w-full">
-    <div className="relative w-40 h-40 rounded-full overflow-hidden border-2 border-white/20 shadow-lg">
+    <div className="relative w-40 h-40 rounded-full overflow-hidden border-2 border-white/20 shadow-lg" style={{ position: 'relative', width: '10rem', height: '10rem' }}>
       <Image
         src="/assets/profile.png"
         alt={name}
-        fill
-        className="object-cover"
+        width={160}
+        height={160}
+        className="object-cover rounded-full"
       />
     </div>
     
