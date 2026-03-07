@@ -1,14 +1,11 @@
 import React from "react";
-import {
-    Container,
-} from "@mui/material";
 import EmploymentHistory from "./EmploymentHistory";
 
 const Resume: React.FC = () => (
-    <Container sx={{ mt: 8, mb: 8, maxWidth: "1100px" }}>
+    <div className="container mx-auto mt-20 mb-20 px-4 max-w-[1100px]">
         {/* Employment History Section */}
         <EmploymentHistory />
-    </Container>
+    </div>
 );
 
 export default Resume;
