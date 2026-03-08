@@ -1,3 +1,5 @@
+export type EntryType = "professional" | "research";
+
 export interface EmploymentEntry {
   company: string;
   position: string;
@@ -6,6 +8,7 @@ export interface EmploymentEntry {
   descriptionPoints: string[];
   logoUrl?: string;
   technologies: string[];
+  type: EntryType;
 }
 
 export const employmentHistoryData: EmploymentEntry[] = [
@@ -14,6 +17,7 @@ export const employmentHistoryData: EmploymentEntry[] = [
     position: "Software Engineer II",
     location: "Dublin, Ireland",
     dateRange: "Sep 2024 – Present",
+    type: "professional",
     technologies: ["Java", "CloudFormation", "Lambda", "Microservices", "CDK"],
     descriptionPoints: [
       "Designed Function API and CloudFormation support of Lambda Managed Instance (Re:Invent 2025), defining architectural details involving 4 microservices; Coordinated code implementation, infrastructure build, and test-driven feature release",
@@ -27,6 +31,7 @@ export const employmentHistoryData: EmploymentEntry[] = [
     position: "Software Engineer I",
     location: "Seattle, USA",
     dateRange: "Sep 2022 – Aug 2024",
+    type: "professional",
     technologies: [
       "Java",
       "IAM",
@@ -46,6 +51,7 @@ export const employmentHistoryData: EmploymentEntry[] = [
     position: "Software Engineer Intern (SRE)",
     location: "Seattle, USA",
     dateRange: "Jun 2022 – Aug 2022",
+    type: "professional",
     technologies: ["React", ".NET", "Azure Resource Manager", "Key Vault"],
     descriptionPoints: [
       "Redesigned and implemented a deployment status dashboard of Azure Resource Manager (ARM) using React and .NET",
@@ -58,6 +64,7 @@ export const employmentHistoryData: EmploymentEntry[] = [
     position: "Software Engineer Intern (DevOps)",
     location: "Berlin, Germany",
     dateRange: "Jan 2022 – May 2022",
+    type: "professional",
     technologies: ["Python", "Docker", "GitHub Actions", "CloudWatch", "SES"],
     descriptionPoints: [
       "Implemented unit and integration tests; created and maintained a CI/CD pipeline for Jina Cloud (JCloud) using GitHub Actions",
@@ -69,6 +76,7 @@ export const employmentHistoryData: EmploymentEntry[] = [
     position: "Research Software Engineer",
     location: "Connecticut, USA",
     dateRange: "Jun 2021 – Jan 2022",
+    type: "research",
     technologies: [
       "JavaScript",
       "Firestore",
@@ -87,6 +95,7 @@ export const employmentHistoryData: EmploymentEntry[] = [
     position: "Research Software Engineer",
     location: "Connecticut, USA",
     dateRange: "May 2020 – Jun 2021",
+    type: "research",
     technologies: ["Bash", "Python", "HPC", "Molecular Dynamics"],
     descriptionPoints: [
       "Publication: Mutagenic Activation of GPX4: Approaches in Rational Design of Allosteric Drugs (DOI 10.1021/acsomega.2c01289)",
