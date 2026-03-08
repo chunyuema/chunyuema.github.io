@@ -50,9 +50,12 @@ export default function BlogPostLayout({ post, recordMap, slug }: BlogPostLayout
         
         {/* Animated Sticky Title */}
         <div className={`flex-1 transition-all duration-300 transform ${isScrolled ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'}`}>
-          <h2 className="text-sm md:text-base font-bold text-white truncate neon-text px-4 py-2 bg-white/5 border border-white/10 rounded-lg backdrop-blur-md">
-            {post?.title}
-          </h2>
+          <div className="flex items-center gap-3 px-4 py-2 bg-primary/10 border border-primary/20 rounded-xl backdrop-blur-md shadow-[0_0_20px_rgba(110,193,255,0.15)]">
+            <HiBookOpen className="w-4 h-4 text-primary shrink-0" />
+            <h2 className="text-sm md:text-base font-bold text-white truncate neon-text">
+              {post?.title}
+            </h2>
+          </div>
         </div>
       </div>
       
