@@ -2,6 +2,13 @@ import { BlogPost } from "../types/blog";
 
 export const blogPosts: BlogPost[] = [
     {
+        title: "Accelerators - GPU / FPGA",
+        content: "Exploration of hardware accelerators including GPUs and FPGAs, and their performance benefits in specialized computing tasks.",
+        url: "https://springbound.notion.site/Accelerators-GPU-FPGA-302e5d67dda6805da1c9f206f15e6c5e",
+        date: "2026-03-08",
+        tags: ["HPC", "GPU", "FPGA", "Hardware"]
+    },
+    {
         title: "Intro to HPC - NUMA Results",
         content: "An introduction to Non-Uniform Memory Access (NUMA) and its significant impact on high-performance computing performance results.",
         url: "https://springbound.notion.site/Intro-to-HPC-NUMA-Results-2fae5d67dda680a0812cc4ce0c9dcf7f",

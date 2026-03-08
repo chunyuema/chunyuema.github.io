@@ -104,7 +104,7 @@ function HomeContent({ initialTab }: { initialTab: string }) {
       )}
 
       {/* MAIN CONTENT */}
-      <main className="pt-24 pb-12 container mx-auto px-6 max-w-5xl">
+      <main className="pt-20 pb-12 container mx-auto px-6 max-w-5xl">
         <div className="transition-all duration-500 animate-in fade-in slide-in-from-bottom-4">
           {activeTab === "aboutMe" && <AboutMe />}
           {activeTab === "resume" && <Resume />}

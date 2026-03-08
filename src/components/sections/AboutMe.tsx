@@ -3,7 +3,7 @@ import NameCard from "../ui/NameCard";
 import { HiLightningBolt, HiEye, HiGlobeAlt, HiCode } from "react-icons/hi";
 
 const AboutMe: React.FC = () => (
-    <div className="container mx-auto mt-36 mb-24 px-4 max-w-[1100px]">
+    <div className="container mx-auto mt-20 mb-24 px-4 max-w-[1100px]">
         {/* ======= TOP SECTION: Profile & Intro ======= */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-12">
             <div className="lg:col-span-4 flex items-center justify-center">
