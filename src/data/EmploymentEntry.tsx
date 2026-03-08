@@ -13,7 +13,7 @@ export interface EmploymentEntry {
 
 export const employmentHistoryData: EmploymentEntry[] = [
   {
-    company: "Amazon Web Services",
+    company: "AWS Lambda",
     position: "Software Engineer II",
     location: "Dublin, Ireland",
     dateRange: "Sep 2024 – Present",
@@ -27,7 +27,7 @@ export const employmentHistoryData: EmploymentEntry[] = [
     ],
   },
   {
-    company: "Amazon Web Services",
+    company: "AWS Lambda",
     position: "Software Engineer I",
     location: "Seattle, USA",
     dateRange: "Sep 2022 – Aug 2024",
