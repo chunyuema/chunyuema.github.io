@@ -3,7 +3,7 @@ import { NotionAPI } from 'notion-client';
 import Link from 'next/link';
 import { HiArrowLeft } from 'react-icons/hi';
 import { blogPosts } from '../../../data/BlogEntry';
-import BlogPostLayout from '../../../components/BlogPostLayout';
+import BlogPostLayout from '../../../components/notion/BlogPostLayout';
 
 const notion = new NotionAPI();
 

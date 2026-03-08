@@ -1,10 +1,11 @@
 'use client';
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 import Link from 'next/link';
 import { HiArrowLeft, HiCalendar, HiBookOpen } from 'react-icons/hi';
-import { BlogPost } from '../data/BlogEntry';
+import { BlogPost } from '../../types/blog';
 import NotionDynamicWrapper from './NotionDynamicWrapper';
+import { useScroll } from '../../hooks/useScroll';
 
 interface BlogPostLayoutProps {
   post: BlogPost | undefined;
@@ -13,27 +14,8 @@ interface BlogPostLayoutProps {
 }
 
 export default function BlogPostLayout({ post, recordMap, slug }: BlogPostLayoutProps) {
-  const [isScrolled, setIsScrolled] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (scrollRef.current) {
-        setIsScrolled(scrollRef.current.scrollTop > 100);
-      }
-    };
-
-    const currentRef = scrollRef.current;
-    if (currentRef) {
-      currentRef.addEventListener('scroll', handleScroll);
-    }
-
-    return () => {
-      if (currentRef) {
-        currentRef.removeEventListener('scroll', handleScroll);
-      }
-    };
-  }, []);
+  const isScrolled = useScroll(scrollRef, 100);
 
   return (
     <div className="container mx-auto py-10 px-4 max-w-4xl h-[calc(100vh-4rem)] flex flex-col">

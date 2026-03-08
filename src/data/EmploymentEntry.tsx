@@ -1,15 +1,4 @@
-export type EntryType = "professional" | "research";
-
-export interface EmploymentEntry {
-  company: string;
-  position: string;
-  location: string;
-  dateRange: string;
-  descriptionPoints: string[];
-  logoUrl?: string;
-  technologies: string[];
-  type: EntryType;
-}
+import { EmploymentEntry } from "../types/employment";
 
 export const employmentHistoryData: EmploymentEntry[] = [
   {
@@ -32,13 +21,7 @@ export const employmentHistoryData: EmploymentEntry[] = [
     location: "Seattle, USA",
     dateRange: "Sep 2022 – Aug 2024",
     type: "professional",
-    technologies: [
-      "Java",
-      "IAM",
-      "Networking (IPv6)",
-      "CloudFormation",
-      "Internal AWS Tooling",
-    ],
+    technologies: ["Java", "IAM", "Networking (IPv6)", "CloudFormation", "Internal AWS Tooling"],
     descriptionPoints: [
       "Owned the design and implementation of recursive loop detection APIs and CloudFormation support; coordinated testing and release with 5 SDEs and product management team, saving Lambda from annual customer reimbursement by $1–3 million",
       "Implemented function API and CloudFormation support for the IPv6 network protocol, enhancing global protocol compatibility",
@@ -77,12 +60,7 @@ export const employmentHistoryData: EmploymentEntry[] = [
     location: "Connecticut, USA",
     dateRange: "Jun 2021 – Jan 2022",
     type: "research",
-    technologies: [
-      "JavaScript",
-      "Firestore",
-      "Google Cloud",
-      "Browser Extensions",
-    ],
+    technologies: ["JavaScript", "Firestore", "Google Cloud", "Browser Extensions"],
     descriptionPoints: [
       "Publication: Designing a Graphic User Interface for Global Privacy Control (DOI:10.56553/poppets-2024-0015)",
       "Developed a browser extension that attaches Do Not Track (DNT) signals to outgoing HTTP requests initiated from the browser",

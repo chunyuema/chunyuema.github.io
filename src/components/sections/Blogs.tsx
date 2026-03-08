@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from "react";
-import { blogPosts, BlogPost } from "../data/BlogEntry";
+import { blogPosts } from "../../data/BlogEntry";
+import { BlogPost } from "../../types/blog";
 import Link from 'next/link';
 import { HiSearch, HiBookOpen, HiTag, HiCalendar, HiClock, HiTerminal } from "react-icons/hi";
 

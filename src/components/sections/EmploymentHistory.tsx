@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import { HiStar, HiBriefcase, HiX, HiChip, HiLightningBolt, HiCode, HiTerminal, HiBeaker, HiDatabase, HiSearch } from "react-icons/hi";
 import { FaAws } from "react-icons/fa";
-import {
-  EmploymentEntry,
-  employmentHistoryData,
-} from "../data/EmploymentEntry";
+import { EmploymentEntry } from "../../types/employment";
+import { employmentHistoryData } from "../../data/EmploymentEntry";
 
 const EmploymentHistory: React.FC = () => {
   const [activeTab, setActiveTab] = useState<"professional" | "research">("professional");

@@ -5,9 +5,10 @@ import { FiMenu, FiX } from "react-icons/fi";
 import { useSearchParams } from "next/navigation";
 
 // Existing components - we will need to migrate these too
-import AboutMe from "../components/AboutMe";
-import BlogPage from "../components/Blogs";
-import Resume from "../components/Resume";
+import AboutMe from '../components/sections/AboutMe';
+import BlogPage from '../components/sections/Blogs';
+import Resume from '../components/sections/Resume';
+
 
 function HomeContent({ initialTab }: { initialTab: string }) {
   const searchParams = useSearchParams();

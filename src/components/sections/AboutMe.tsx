@@ -1,5 +1,5 @@
 import React from "react";
-import NameCard from "./NameCard";
+import NameCard from "../ui/NameCard";
 import { HiLightningBolt, HiEye, HiGlobeAlt, HiCode } from "react-icons/hi";
 
 const AboutMe: React.FC = () => (
