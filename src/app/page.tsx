@@ -1,16 +1,25 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import { FiMenu, FiX } from 'react-icons/fi';
+import { useSearchParams } from 'next/navigation';
 
 // Existing components - we will need to migrate these too
 import AboutMe from '../components/AboutMe';
 import BlogPage from '../components/Blogs';
 import Resume from '../components/Resume';
 
-export default function Home() {
-  const [activeTab, setActiveTab] = useState('aboutMe');
+function HomeContent({ initialTab }: { initialTab: string }) {
+  const searchParams = useSearchParams();
+  const [activeTab, setActiveTab] = useState(initialTab);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const tab = searchParams.get('tab');
+    if (tab && ['aboutMe', 'resume', 'blogs'].includes(tab)) {
+      setActiveTab(tab);
+    }
+  }, [searchParams]);
 
   const navItems = [
     { label: 'About Me', value: 'aboutMe' },
@@ -92,4 +101,20 @@ export default function Home() {
       </main>
     </div>
   );
+}
+
+export default function Home(props: { searchParams: Promise<{ [key: string]: string | string[] | undefined }> }) {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <HomeWrapper searchParams={props.searchParams} />
+    </Suspense>
+  );
+}
+
+function HomeWrapper({ searchParams }: { searchParams: Promise<{ [key: string]: string | string[] | undefined }> }) {
+  const resolvedParams = React.use(searchParams);
+  const tab = typeof resolvedParams.tab === 'string' ? resolvedParams.tab : 'aboutMe';
+  const initialTab = ['aboutMe', 'resume', 'blogs'].includes(tab) ? tab : 'aboutMe';
+  
+  return <HomeContent initialTab={initialTab} />;
 }

@@ -34,4 +34,16 @@ body {
   .neon-border {
     @apply border-primary/30 shadow-neon;
   }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-track {
+    @apply bg-white/5 rounded-full;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-white/10 rounded-full border-2 border-transparent bg-clip-padding hover:bg-white/20 transition-all;
+  }
 }
