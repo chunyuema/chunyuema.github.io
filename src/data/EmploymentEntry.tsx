@@ -1,3 +1,5 @@
+export type EntryType = "professional" | "research";
+
 export interface EmploymentEntry {
   company: string;
   position: string;
@@ -5,14 +7,18 @@ export interface EmploymentEntry {
   dateRange: string;
   descriptionPoints: string[];
   logoUrl?: string;
+  technologies: string[];
+  type: EntryType;
 }
 
 export const employmentHistoryData: EmploymentEntry[] = [
   {
-    company: "Amazon Web Services",
+    company: "AWS Lambda",
     position: "Software Engineer II",
     location: "Dublin, Ireland",
     dateRange: "Sep 2024 – Present",
+    type: "professional",
+    technologies: ["Java", "CloudFormation", "Lambda", "Microservices", "CDK"],
     descriptionPoints: [
       "Designed Function API and CloudFormation support of Lambda Managed Instance (Re:Invent 2025), defining architectural details involving 4 microservices; Coordinated code implementation, infrastructure build, and test-driven feature release",
       "Led the rollout of Lambda CRUD-L APIs migration from a monolithic API layer into a microservice, building and automating multi-region infrastructure including VPC peering, DNS delegation, and cross-account resource access in 10+ AWS regions",
@@ -21,10 +27,18 @@ export const employmentHistoryData: EmploymentEntry[] = [
     ],
   },
   {
-    company: "Amazon Web Services",
+    company: "AWS Lambda",
     position: "Software Engineer I",
     location: "Seattle, USA",
     dateRange: "Sep 2022 – Aug 2024",
+    type: "professional",
+    technologies: [
+      "Java",
+      "IAM",
+      "Networking (IPv6)",
+      "CloudFormation",
+      "Internal AWS Tooling",
+    ],
     descriptionPoints: [
       "Owned the design and implementation of recursive loop detection APIs and CloudFormation support; coordinated testing and release with 5 SDEs and product management team, saving Lambda from annual customer reimbursement by $1–3 million",
       "Implemented function API and CloudFormation support for the IPv6 network protocol, enhancing global protocol compatibility",
@@ -34,9 +48,11 @@ export const employmentHistoryData: EmploymentEntry[] = [
   },
   {
     company: "Microsoft Azure",
-    position: "Software Engineer Intern (Site Reliability Engineering)",
+    position: "Software Engineer Intern (SRE)",
     location: "Seattle, USA",
     dateRange: "Jun 2022 – Aug 2022",
+    type: "professional",
+    technologies: ["React", ".NET", "Azure Resource Manager", "Key Vault"],
     descriptionPoints: [
       "Redesigned and implemented a deployment status dashboard of Azure Resource Manager (ARM) using React and .NET",
       "Optimized the frontend code to improve the dashboard responsiveness and reduced load on the backend APIs",
@@ -45,9 +61,11 @@ export const employmentHistoryData: EmploymentEntry[] = [
   },
   {
     company: "Jina AI",
-    position: "Software Engineer Intern (DevOps Engineering)",
+    position: "Software Engineer Intern (DevOps)",
     location: "Berlin, Germany",
     dateRange: "Jan 2022 – May 2022",
+    type: "professional",
+    technologies: ["Python", "Docker", "GitHub Actions", "CloudWatch", "SES"],
     descriptionPoints: [
       "Implemented unit and integration tests; created and maintained a CI/CD pipeline for Jina Cloud (JCloud) using GitHub Actions",
       "Used AWS CloudWatch for production metrics and logging; deployed Lambda and AWS SES for deployment status notifications",
@@ -58,6 +76,13 @@ export const employmentHistoryData: EmploymentEntry[] = [
     position: "Research Software Engineer",
     location: "Connecticut, USA",
     dateRange: "Jun 2021 – Jan 2022",
+    type: "research",
+    technologies: [
+      "JavaScript",
+      "Firestore",
+      "Google Cloud",
+      "Browser Extensions",
+    ],
     descriptionPoints: [
       "Publication: Designing a Graphic User Interface for Global Privacy Control (DOI:10.56553/poppets-2024-0015)",
       "Developed a browser extension that attaches Do Not Track (DNT) signals to outgoing HTTP requests initiated from the browser",
@@ -70,6 +95,8 @@ export const employmentHistoryData: EmploymentEntry[] = [
     position: "Research Software Engineer",
     location: "Connecticut, USA",
     dateRange: "May 2020 – Jun 2021",
+    type: "research",
+    technologies: ["Bash", "Python", "HPC", "Molecular Dynamics"],
     descriptionPoints: [
       "Publication: Mutagenic Activation of GPX4: Approaches in Rational Design of Allosteric Drugs (DOI 10.1021/acsomega.2c01289)",
       "Automated batch protein molecular dynamics simulations using bash scripts, applying Markov State Model for data analysis",
