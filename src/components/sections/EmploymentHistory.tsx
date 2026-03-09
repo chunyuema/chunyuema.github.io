@@ -34,7 +34,7 @@ const EmploymentHistory: React.FC = () => {
   );
 
   return (
-    <div className="py-12 px-4 max-w-[1100px] mx-auto">
+    <div className="pt-2 pb-12 px-4 max-w-[1100px] mx-auto">
       
       {/* EXPLORER TABS */}
       <div className="glass-panel mb-16 overflow-hidden flex flex-row border-b border-white/10">
