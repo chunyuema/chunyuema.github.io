@@ -8,6 +8,7 @@ import { useSearchParams } from "next/navigation";
 import AboutMe from '../components/sections/AboutMe';
 import BlogPage from '../components/sections/Blogs';
 import Resume from '../components/sections/Resume';
+import Skills from '../components/sections/Skills';
 
 
 function HomeContent({ initialTab }: { initialTab: string }) {
@@ -17,7 +18,7 @@ function HomeContent({ initialTab }: { initialTab: string }) {
 
   useEffect(() => {
     const tab = searchParams.get("tab");
-    if (tab && ["aboutMe", "resume", "blogs"].includes(tab)) {
+    if (tab && ["aboutMe", "resume", "blogs", "skills"].includes(tab)) {
       setActiveTab(tab);
     }
   }, [searchParams]);
@@ -25,6 +26,7 @@ function HomeContent({ initialTab }: { initialTab: string }) {
   const navItems = [
     { label: "ABOUT_ME", value: "aboutMe" },
     { label: "EXPERIENCE", value: "resume" },
+    { label: "SKILLS", value: "skills" },
     { label: "BLOGS", value: "blogs" },
   ];
 
@@ -108,6 +110,7 @@ function HomeContent({ initialTab }: { initialTab: string }) {
         <div className="transition-all duration-500 animate-in fade-in slide-in-from-bottom-4">
           {activeTab === "aboutMe" && <AboutMe />}
           {activeTab === "resume" && <Resume />}
+          {activeTab === "skills" && <Skills />}
           {activeTab === "blogs" && <BlogPage />}
         </div>
       </main>
@@ -133,7 +136,7 @@ function HomeWrapper({
   const resolvedParams = React.use(searchParams);
   const tab =
     typeof resolvedParams.tab === "string" ? resolvedParams.tab : "aboutMe";
-  const initialTab = ["aboutMe", "resume", "blogs"].includes(tab)
+  const initialTab = ["aboutMe", "resume", "blogs", "skills"].includes(tab)
     ? tab
     : "aboutMe";
 
