@@ -1,130 +1,86 @@
-import { SkillCategory } from "../types/skills";
+import { SkillTheme } from "../types/skills";
 
-export const skillCategories: SkillCategory[] = [
+export const skillThemes: SkillTheme[] = [
   {
-    id: "languages",
-    title: "Programming_Languages",
+    id: "enterprise-dev",
+    title: "Enterprise_Development",
     icon: "HiCode",
-    description: "Core logic implementation and application framework expertise.",
+    description: "Cloud-native application logic and framework implementation.",
+    years: 3,
     skills: [
-      {
-        name: "Enterprise_Development",
-        years: 3,
-        items: [
-          { name: "Java (SpringBoot)", hasProductionExp: true, proficiency: "Advanced" },
-          { name: "TypeScript / JS (React, NodeJS)", hasProductionExp: true, proficiency: "Advanced" },
-          { name: "Python (Django)", hasProductionExp: true, proficiency: "Proficient" }
-        ]
-      },
-      {
-        name: "Systems_Development",
-        years: 1,
-        items: [
-          { name: "C++", hasProductionExp: false, proficiency: "Intermediate" }
-        ]
-      }
+      { name: "Java (SpringBoot)", hasProductionExp: true },
+      { name: "TypeScript / JS (React, NodeJS)", hasProductionExp: true },
+      { name: "Python (Django)", hasProductionExp: true }
     ]
   },
   {
-    id: "cloud-devops",
-    title: "Cloud_&_DevOps",
+    id: "container-orchestration",
+    title: "Containerization_&_Orchestration",
+    icon: "HiChip",
+    description: "Containerized deployment and high-availability orchestration.",
+    years: 3,
+    skills: [
+      { name: "Docker", hasProductionExp: true },
+      { name: "Kubernetes", hasProductionExp: true },
+      { name: "AWS ECS / EKS", hasProductionExp: true }
+    ]
+  },
+  {
+    id: "iac",
+    title: "Infrastructure_as_Code",
     icon: "HiCloud",
-    description: "Cloud-native infrastructure and automated provisioning for high-availability environments.",
+    description: "Automated provisioning and cloud infrastructure management.",
+    years: 3,
     skills: [
-      {
-        name: "Containerization",
-        years: 3,
-        items: [
-          { name: "Docker", hasProductionExp: true, proficiency: "Advanced" },
-          { name: "Kubernetes", hasProductionExp: true, proficiency: "Advanced" },
-          { name: "AWS ECS", hasProductionExp: true, proficiency: "Advanced" },
-          { name: "AWS EKS", hasProductionExp: true, proficiency: "Advanced" }
-        ]
-      },
-      {
-        name: "Infrastructure_as_Code",
-        years: 3,
-        items: [
-          { name: "Terraform", hasProductionExp: true, proficiency: "Advanced" },
-          { name: "AWS CloudFormation", hasProductionExp: true, proficiency: "Advanced" },
-          { name: "AWS CDK", hasProductionExp: true, proficiency: "Advanced" }
-        ]
-      },
-      {
-        name: "System_Reliability",
-        years: 3,
-        items: [
-          { name: "CI/CD Pipeline", hasProductionExp: true, proficiency: "Advanced" },
-          { name: "Nginx", hasProductionExp: true, proficiency: "Proficient" },
-          { name: "AWS VPC", hasProductionExp: true, proficiency: "Proficient" },
-          { name: "Route53", hasProductionExp: true, proficiency: "Proficient" }
-        ]
-      }
+      { name: "Terraform", hasProductionExp: true },
+      { name: "AWS CloudFormation", hasProductionExp: true },
+      { name: "AWS CDK", hasProductionExp: true }
     ]
   },
   {
-    id: "distributed-systems",
-    title: "Distributed_Systems",
+    id: "system-reliability",
+    title: "System_Reliability_&_Networking",
+    icon: "HiRefresh",
+    description: "Availability monitoring, CI/CD, and network configuration.",
+    years: 3,
+    skills: [
+      { name: "CI/CD Pipeline", hasProductionExp: true },
+      { name: "Nginx / Route53", hasProductionExp: true },
+      { name: "AWS VPC Networking", hasProductionExp: true }
+    ]
+  },
+  {
+    id: "distributed-arch",
+    title: "Distributed_Architecture",
     icon: "HiLightningBolt",
-    description: "Architecture patterns for resilient, high-availability distributed systems.",
+    description: "Communication patterns and architectural designs for scale.",
+    years: 3,
     skills: [
-      {
-        name: "Microservices_Architecture",
-        years: 3,
-        items: [
-          { name: "REST", hasProductionExp: true, proficiency: "Advanced" },
-          { name: "gRPC", hasProductionExp: true, proficiency: "Advanced" }
-        ]
-      },
-      {
-        name: "Design_Patterns",
-        years: 2,
-        items: [
-          { name: "Event-Driven Arch", hasProductionExp: true, proficiency: "Proficient" },
-          { name: "Architectural Patterns", hasProductionExp: true, proficiency: "Proficient" },
-          { name: "Distributed Consensus", hasProductionExp: false, proficiency: "Intermediate" }
-        ]
-      }
+      { name: "REST / gRPC", hasProductionExp: true },
+      { name: "Event-Driven Arch", hasProductionExp: true },
+      { name: "Architectural Patterns", hasProductionExp: true }
     ]
   },
   {
-    id: "data-persistence",
-    title: "Data_&_Databases",
+    id: "persistence",
+    title: "Data_Persistence_&_Messaging",
     icon: "HiDatabase",
     description: "State management, relational modeling, and high-throughput messaging.",
+    years: 3,
     skills: [
-      {
-        name: "Persistence_Layers",
-        years: 3,
-        items: [
-          { name: "PostgreSQL", hasProductionExp: true, proficiency: "Advanced" },
-          { name: "MySQL", hasProductionExp: true, proficiency: "Advanced" },
-          { name: "MongoDB", hasProductionExp: true, proficiency: "Proficient" },
-          { name: "Redis", hasProductionExp: true, proficiency: "Proficient" }
-        ]
-      },
-      {
-        name: "Messaging_&_Streaming",
-        years: 1,
-        items: [
-          { name: "Kafka", hasProductionExp: false, proficiency: "Intermediate" }
-        ]
-      }
+      { name: "PostgreSQL / MySQL", hasProductionExp: true },
+      { name: "MongoDB / Redis", hasProductionExp: true },
+      { name: "Kafka Messaging", hasProductionExp: false }
     ]
   },
   {
     id: "certifications",
-    title: "Certifications",
+    title: "Industry_Certifications",
     icon: "HiBadgeCheck",
-    description: "Professional certifications and verified industry knowledge.",
+    description: "Verified professional certifications and industry knowledge.",
+    years: 1,
     skills: [
-      {
-        name: "AWS_Specialization",
-        years: 1,
-        items: [
-          { name: "AWS Certified DevOps Associate (DVA-C02)", hasProductionExp: true, proficiency: "Advanced" }
-        ]
-      }
+      { name: "AWS Certified DevOps Associate (DVA-C02)", hasProductionExp: true }
     ]
   }
 ];
