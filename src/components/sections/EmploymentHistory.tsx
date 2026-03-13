@@ -1,62 +1,21 @@
 import React, { useState } from "react";
-import { HiStar, HiBriefcase, HiX, HiChip, HiLightningBolt, HiCode, HiTerminal, HiBeaker, HiDatabase, HiSearch } from "react-icons/hi";
+import { HiBriefcase, HiX, HiChip, HiCode, HiTerminal, HiBeaker } from "react-icons/hi";
 import { FaAws } from "react-icons/fa";
 import { EmploymentEntry } from "../../types/employment";
 import { employmentHistoryData } from "../../data/EmploymentEntry";
 
 const EmploymentHistory: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<"professional" | "research">("professional");
   const [selectedJob, setSelectedJob] = useState<EmploymentEntry | null>(null);
 
   const handleCardClick = (job: EmploymentEntry) => setSelectedJob(job);
   const handleClose = () => setSelectedJob(null);
 
-  const filteredJobs = employmentHistoryData.filter(job => job.type === activeTab);
-
-  const TabButton = ({ id, label, icon: Icon, count }: { id: "professional" | "research", label: string, icon: any, count: number }) => (
-    <button
-      onClick={() => setActiveTab(id)}
-      className={`flex-1 flex items-center justify-center gap-3 px-6 py-4 border-b-2 transition-all duration-300 group ${
-        activeTab === id 
-          ? "border-blue-500 bg-blue-500/5 text-white" 
-          : "border-transparent text-gray-500 hover:text-gray-300 hover:bg-white/5"
-      }`}
-    >
-      <Icon className={`w-5 h-5 transition-colors ${activeTab === id ? "text-blue-400" : "text-gray-600 group-hover:text-gray-400"}`} />
-      <div className="text-left">
-        <div className="text-[10px] font-mono uppercase tracking-widest opacity-50">Trace_Type</div>
-        <div className="text-sm font-bold uppercase tracking-tighter">{label}</div>
-      </div>
-      <span className={`ml-2 px-1.5 py-0.5 rounded text-[10px] font-mono ${activeTab === id ? "bg-blue-500/20 text-blue-400" : "bg-white/5 text-gray-600"}`}>
-        {count}
-      </span>
-    </button>
-  );
-
   return (
-    <div className="pt-2 pb-12 px-4 max-w-[1100px] mx-auto">
-      
-      {/* EXPLORER TABS */}
-      <div className="glass-panel mb-16 overflow-hidden flex flex-row border-b border-white/10">
-        <TabButton 
-          id="professional" 
-          label="Professional_Trace" 
-          icon={HiBriefcase} 
-          count={employmentHistoryData.filter(j => j.type === "professional").length} 
-        />
-        <div className="w-[1px] bg-white/10" />
-        <TabButton 
-          id="research" 
-          label="Research_Trace" 
-          icon={HiBeaker} 
-          count={employmentHistoryData.filter(j => j.type === "research").length} 
-        />
-      </div>
-
+    <>
       {/* TIMELINE VIEW */}
       <div className="relative border-l-2 border-dashed border-white/10 ml-4 md:ml-48 space-y-12 pb-10 animate-in fade-in slide-in-from-bottom-4 duration-500">
-        {filteredJobs.map((job, index) => {
-          const isCurrent = activeTab === "professional" && index === 0;
+        {employmentHistoryData.map((job, index) => {
+          const isCurrent = index === 0;
 
           return (
             <div key={index} className="relative pl-10 group">
@@ -97,7 +56,7 @@ const EmploymentHistory: React.FC = () => {
                       {job.company === "AWS Lambda" ? (
                           <FaAws className="w-4 h-4 text-[#FF9900]" />
                       ) : (
-                          activeTab === "professional" ? <HiBriefcase className="w-4 h-4 text-blue-400/70" /> : <HiBeaker className="w-4 h-4 text-purple-400/70" />
+                          job.type === "professional" ? <HiBriefcase className="w-4 h-4 text-blue-400/70" /> : <HiBeaker className="w-4 h-4 text-purple-400/70" />
                       )}
                       <div className="text-xs font-bold text-gray-300">
                           {job.company}
@@ -211,7 +170,7 @@ const EmploymentHistory: React.FC = () => {
           </div>
         </div>
       )}
-    </div>
+    </>
   );
 };
 
