@@ -5,15 +5,15 @@ import {
   HiLightningBolt,
   HiDatabase,
   HiBadgeCheck,
-  HiTerminal,
-  HiChevronRight,
-  HiCursorClick,
   HiRefresh,
   HiCheckCircle,
   HiAcademicCap,
+  HiChip,
+  HiTerminal,
+  HiChevronRight,
+  HiCursorClick,
 } from "react-icons/hi";
-import { skillCategories, currentlyExploring } from "../../data/SkillsEntry";
-import { Proficiency } from "../../types/skills";
+import { skillThemes, currentlyExploring } from "../../data/SkillsEntry";
 
 const ICON_MAP: Record<string, any> = {
   HiCode: HiCode,
@@ -21,48 +21,30 @@ const ICON_MAP: Record<string, any> = {
   HiLightningBolt: HiLightningBolt,
   HiDatabase: HiDatabase,
   HiBadgeCheck: HiBadgeCheck,
-};
-
-const PROFICIENCY_STYLES: Record<
-  Proficiency,
-  { border: string; text: string }
-> = {
-  Advanced: { border: "border-blue-500/50", text: "text-blue-400" },
-  Proficient: { border: "border-emerald-500/50", text: "text-emerald-400" },
-  Intermediate: { border: "border-amber-500/50", text: "text-amber-400" },
-  Learning: { border: "border-purple-500/50", text: "text-purple-400" },
+  HiRefresh: HiRefresh,
+  HiChip: HiChip,
 };
 
 const Skills: React.FC = () => {
-  const [activeCategory, setActiveCategory] = useState(skillCategories[0].id);
+  const [activeThemeId, setActiveThemeId] = useState(skillThemes[0].id);
 
-  const selectedCategory =
-    skillCategories.find((c) => c.id === activeCategory) || skillCategories[0];
-  const IconComponent = ICON_MAP[selectedCategory.icon];
+  const selectedTheme =
+    skillThemes.find((t) => t.id === activeThemeId) || skillThemes[0];
+  const IconComponent = ICON_MAP[selectedTheme.icon] || HiCode;
 
   return (
     <div className="flex flex-col lg:flex-row gap-8 items-start animate-in fade-in slide-in-from-bottom-4 duration-500">
       {/* SIDEBAR NAVIGATION */}
-      <aside className="w-full lg:w-72 lg:sticky lg:top-24 space-y-6 shrink-0">
-        <div className="glass-panel p-5 border-l-4 border-l-blue-500/50">
-          <div className="flex items-center gap-2 mb-2 text-blue-400 font-bold uppercase tracking-tighter text-xs">
-            <HiTerminal className="w-4 h-4" />
-            <span>Skills</span>
-          </div>
-          <p className="text-[10px] text-gray-500 font-mono leading-tight">
-            Navigation tree for technical stack and production metrics.
-          </p>
-        </div>
-
+      <aside className="w-full lg:w-96 lg:sticky lg:top-24 space-y-6 shrink-0">
         <nav className="space-y-2">
-          {skillCategories.map((category) => {
-            const CategoryIcon = ICON_MAP[category.icon];
-            const isActive = activeCategory === category.id;
+          {skillThemes.map((theme) => {
+            const ThemeIcon = ICON_MAP[theme.icon] || HiCode;
+            const isActive = activeThemeId === theme.id;
 
             return (
               <button
-                key={category.id}
-                onClick={() => setActiveCategory(category.id)}
+                key={theme.id}
+                onClick={() => setActiveThemeId(theme.id)}
                 className={`w-full flex items-center justify-between p-4 rounded-xl border transition-all group ${
                   isActive
                     ? "bg-blue-500/10 border-blue-500/30 text-white shadow-[0_0_15px_rgba(59,130,246,0.1)]"
@@ -70,11 +52,11 @@ const Skills: React.FC = () => {
                 }`}
               >
                 <div className="flex items-center gap-3">
-                  <CategoryIcon
+                  <ThemeIcon
                     className={`w-5 h-5 ${isActive ? "text-blue-400" : "text-gray-600 group-hover:text-gray-400"}`}
                   />
-                  <span className="text-[11px] font-bold uppercase tracking-widest truncate max-w-[150px]">
-                    {category.title.split("_").join(" ")}
+                  <span className="text-[11px] font-bold uppercase tracking-widest">
+                    {theme.title.split("_").join(" ")}
                   </span>
                 </div>
                 <HiChevronRight
@@ -131,68 +113,47 @@ const Skills: React.FC = () => {
                   <span>Contextual_Cluster</span>
                 </div>
                 <h2 className="text-3xl font-black text-white uppercase tracking-tight mb-2">
-                  {selectedCategory.title.split("_").join(" ")}
+                  {selectedTheme.title.split("_").join(" ")}
                 </h2>
                 <p className="text-gray-400 max-w-xl italic text-sm leading-relaxed">
-                  {selectedCategory.description}
+                  {selectedTheme.description}
                 </p>
+              </div>
+              <div className="text-right">
+                <span className="text-[10px] font-mono text-gray-600 uppercase">
+                  Experience:
+                </span>
+                <div className="text-sm font-mono font-bold text-gray-400">
+                  {selectedTheme.years} Years
+                </div>
               </div>
             </div>
 
-            {/* Themes Grid */}
-            <div className="space-y-8">
-              {selectedCategory.skills.map((theme, idx) => {
+            {/* Skill Items Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {selectedTheme.skills.map((skill, sIdx) => {
                 return (
                   <div
-                    key={idx}
-                    className="glass-panel p-6 bg-white/[0.01] border-l-2 border-l-white/10 group"
+                    key={sIdx}
+                    className={`p-4 rounded-lg border-l-4 ${skill.hasProductionExp ? "border-l-blue-500/50" : "border-l-amber-500/50"} bg-white/5 border-y border-r border-white/10 text-gray-300 hover:bg-white/[0.08] transition-all group/skill`}
                   >
-                    <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
-                      <div>
-                        <h3 className="text-lg font-bold text-white uppercase tracking-tight mb-1 group-hover:text-blue-400 transition-colors">
-                          {theme.name.split("_").join(" ")}
-                        </h3>
-                        <div className="flex items-center gap-2">
-                          <span className="text-[10px] font-mono text-gray-600 uppercase">
-                            Cluster_Experience:
-                          </span>
-                          <span className="text-[10px] font-mono font-bold text-gray-400">
-                            {theme.years} Years
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Skill Items (The Small Boxes) */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                      {theme.items.map((skill, sIdx) => {
-                        const style = PROFICIENCY_STYLES[skill.proficiency];
-                        return (
-                          <div
-                            key={sIdx}
-                            className={`p-4 rounded-lg border-l-4 ${style.border} bg-white/5 border-y border-r border-white/10 text-gray-300 hover:bg-white/[0.08] transition-all`}
-                          >
-                            <div className="flex flex-col gap-2">
-                              <span className="text-xs font-bold leading-tight truncate group-hover:text-white transition-colors">
-                                {skill.name}
-                              </span>
-                              <div className="flex items-center justify-between">
-                                {skill.hasProductionExp ? (
-                                  <div className="flex items-center gap-1 text-[8px] font-mono text-blue-400 uppercase font-black opacity-70 group-hover:opacity-100">
-                                    <HiCheckCircle className="w-3 h-3" />
-                                    <span>Prod_Ready</span>
-                                  </div>
-                                ) : (
-                                  <div className="flex items-center gap-1 text-[8px] font-mono text-amber-500 uppercase font-black opacity-70 group-hover:opacity-100">
-                                    <HiAcademicCap className="w-3 h-3" />
-                                    <span>Dev_Only</span>
-                                  </div>
-                                )}
-                              </div>
-                            </div>
+                    <div className="flex flex-col gap-2">
+                      <span className="text-xs font-bold leading-tight group-hover/skill:text-white transition-colors">
+                        {skill.name}
+                      </span>
+                      <div className="flex items-center justify-between">
+                        {skill.hasProductionExp ? (
+                          <div className="flex items-center gap-1 text-[8px] font-mono text-blue-400 uppercase font-black opacity-70 group-hover/skill:opacity-100">
+                            <HiCheckCircle className="w-3 h-3" />
+                            <span>Prod_Ready</span>
                           </div>
-                        );
-                      })}
+                        ) : (
+                          <div className="flex items-center gap-1 text-[8px] font-mono text-amber-500 uppercase font-black opacity-70 group-hover/skill:opacity-100">
+                            <HiAcademicCap className="w-3 h-3" />
+                            <span>Dev_Only</span>
+                          </div>
+                        )}
+                      </div>
                     </div>
                   </div>
                 );
