@@ -19,12 +19,11 @@ const AboutMe: React.FC = () => {
     const pillars: PillarData[] = [
         {
             id: "availability",
-            title: "Availability & Resilience",
-            description: "Designing architectures that maintain uptime and recover gracefully from failures.",
+            title: "Distributed Systems & Cloud Infrastructure",
+            description: "Architecting resilient, global-scale services that thrive in decentralized complexity.",
             longDescription: [
-                "**The Strategy:** My approach to distributed systems centers on 'Design for Failure'. I focus on building architectures that don't just survive outages but maintain service integrity through automated fault detection and isolation.",
-                "**Core Patterns:** Implementing circuit breakers, bulkhead isolation, and sophisticated load balancing to prevent cascading failures in high-traffic production environments.",
-                "**The Mission:** Ensuring that critical software infrastructure remains robust, predictable, and available, regardless of underlying component volatility."
+                "**The Philosophy:** I view infrastructure as the 'Macro' layer of systems engineering. I am focused on evolving my understanding of decentralized complexity—learning how to architect global-scale services that remain resilient against regional outages and network partitions while maintaining strict performance guarantees.",
+                "**Focus Areas:** Service orchestration (Kubernetes/Nomad), distributed consensus protocols (Raft/Paxos), event-driven architectures, and the evolution of cloud-native networking at scale."
             ],
             icon: <FaShieldAlt className="w-6 h-6" />,
             color: "text-blue-400",
@@ -32,12 +31,11 @@ const AboutMe: React.FC = () => {
         },
         {
             id: "observability",
-            title: "System Observability",
-            description: "Leveraging tracing and monitoring to gain transparency in complex software stacks.",
+            title: "Observability & Systems Reliability (SRE)",
+            description: "Treating the kernel and network stack as the source of truth for proactive system health.",
             longDescription: [
-                "**The Perspective:** Observability is about more than just monitoring; it's about understanding the internal state of a system from its external outputs. I work to eliminate 'black boxes' in complex microservices.",
-                "**Technical Stack:** Deep integration of distributed tracing, high-cardinality metrics, and structured logging to build a comprehensive, real-time map of system behavior.",
-                "**The Impact:** Reducing Mean Time to Resolution (MTTR) by enabling engineers to pinpoint root causes in seconds rather than hours through data-driven insights."
+                "**The Philosophy:** Reliability is a byproduct of transparency. I am committed to treating the kernel and the network stack as the ultimate source of truth, leveraging deep-system telemetry to move beyond 'Black Box' monitoring and into proactive, data-driven system health.",
+                "**Focus Areas:** eBPF-based tracing, Linux kernel internals, and performance profiling for heterogeneous compute clusters."
             ],
             icon: <HiEye className="w-6 h-6" />,
             color: "text-purple-400",
