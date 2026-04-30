@@ -85,6 +85,57 @@ const AboutMe: React.FC = () => {
 
                     {/* Right: Floating Bubbles (Desktop) */}
                     <div className="hidden lg:block lg:col-span-7 relative h-[600px] w-full">
+                        
+                        {/* Connection Lines SVG */}
+                        <svg className="absolute inset-0 w-full h-full pointer-events-none z-0 overflow-visible" viewBox="0 0 100 100" preserveAspectRatio="none">
+                            <defs>
+                                <linearGradient id="line-gradient-1" x1="0%" y1="0%" x2="100%" y2="0%">
+                                    <stop offset="0%" stopColor="rgba(59,130,246,0)" />
+                                    <stop offset="20%" stopColor="rgba(59,130,246,0.3)" />
+                                    <stop offset="100%" stopColor="rgba(59,130,246,0.6)" />
+                                </linearGradient>
+                                <linearGradient id="line-gradient-2" x1="0%" y1="0%" x2="100%" y2="0%">
+                                    <stop offset="0%" stopColor="rgba(168,85,247,0)" />
+                                    <stop offset="20%" stopColor="rgba(168,85,247,0.3)" />
+                                    <stop offset="100%" stopColor="rgba(168,85,247,0.6)" />
+                                </linearGradient>
+                                <linearGradient id="line-gradient-3" x1="0%" y1="0%" x2="100%" y2="0%">
+                                    <stop offset="0%" stopColor="rgba(251,146,60,0)" />
+                                    <stop offset="20%" stopColor="rgba(251,146,60,0.3)" />
+                                    <stop offset="100%" stopColor="rgba(251,146,60,0.6)" />
+                                </linearGradient>
+                            </defs>
+                            
+                            {/* Path to Pillar 1 (Top Left) */}
+                            <path 
+                                d="M -10 50 Q -5 20, 25 20" 
+                                stroke="url(#line-gradient-1)" 
+                                strokeWidth="0.4" 
+                                fill="none" 
+                                className="animate-dash"
+                            />
+                            
+                            {/* Path to Pillar 2 (Middle Right) */}
+                            <path 
+                                d="M -10 50 Q 20 50, 80 45" 
+                                stroke="url(#line-gradient-2)" 
+                                strokeWidth="0.4" 
+                                fill="none" 
+                                className="animate-dash"
+                                style={{ animationDuration: '4s' }}
+                            />
+                            
+                            {/* Path to Pillar 3 (Bottom Left) */}
+                            <path 
+                                d="M -10 50 Q -5 80, 30 85" 
+                                stroke="url(#line-gradient-3)" 
+                                strokeWidth="0.4" 
+                                fill="none" 
+                                className="animate-dash"
+                                style={{ animationDuration: '5s' }}
+                            />
+                        </svg>
+
                         {pillars.map((pillar, index) => {
                             const animations = ["animate-float", "animate-float-delayed", "animate-float-slow"];
                             const positions = [

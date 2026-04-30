@@ -72,4 +72,15 @@ body {
     animation: float-reverse 12s ease-in-out infinite;
     animation-delay: 1s;
   }
+
+  @keyframes dash {
+    to {
+      stroke-dashoffset: -20;
+    }
+  }
+
+  .animate-dash {
+    stroke-dasharray: 4 16;
+    animation: dash 3s linear infinite;
+  }
 }

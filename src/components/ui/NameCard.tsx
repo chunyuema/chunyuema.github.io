@@ -8,7 +8,10 @@ interface NameCardProps {
 }
 
 const NameCard: React.FC<NameCardProps> = ({ name, title }) => (
-  <div className="flex flex-col items-center gap-4 p-6 glass-panel w-full">
+  <div className="flex flex-col items-center gap-4 p-6 glass-panel w-full relative group">
+    {/* Source Glow Effect */}
+    <div className="absolute right-0 top-1/2 -translate-y-1/2 w-4 h-24 bg-blue-500/10 blur-xl opacity-0 group-hover:opacity-100 transition-opacity" />
+    
     <div className="relative w-40 h-40 rounded-full overflow-hidden border-2 border-white/20 shadow-lg" style={{ position: 'relative', width: '10rem', height: '10rem' }}>
       <Image
         src="/assets/profile.png"
