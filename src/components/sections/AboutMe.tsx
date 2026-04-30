@@ -45,11 +45,11 @@ const AboutMe: React.FC = () => {
         },
         {
             id: "hpc",
-            title: "High Performance Computing",
+            title: "High-Performance Computing (HPC)",
             description: "Bridging the gap between software and silicon with hardware-optimal execution.",
             longDescription: [
-                "**The Mission:** My work in HPC focuses on the 'Micro' layer—where every clock cycle and byte of memory matters. Through my studies at the University of Edinburgh, I am mastering the art of squeezing maximum performance out of the hardware to transform computationally expensive algorithms into highly efficient, close-to-metal implementations required for the next generation of AI and financial engines.",
-                "**Focus Areas:** Multi-core parallelism (OpenMP/MPI), GPU acceleration (CUDA), and low-level optimization (SIMD, cache locality, and memory hierarchy)."
+                "**The Philosophy:** In the 'Micro' layer, software must be an extension of the hardware. Through my studies at the University of Edinburgh, I am deepening my expertise in 'squeezing the silicon'—learning to minimize abstraction overhead and optimize memory-compute paths to transform expensive algorithms into high-velocity, close-to-metal implementations.",
+                "**Focus Areas:** Modern C++, parallel programming models (OpenMP/MPI), GPU acceleration (CUDA), and low-level optimization (SIMD, cache locality, and NUMA-aware scheduling)."
             ],
             icon: <FaMicrochip className="w-6 h-6" />,
             color: "text-orange-400",
