@@ -22,8 +22,8 @@ const AboutMe: React.FC = () => {
             title: "Distributed Systems & Cloud Infrastructure",
             description: "Architecting resilient, global-scale services that thrive in decentralized complexity.",
             longDescription: [
-                "**The Philosophy:** I view infrastructure as the 'Macro' layer of systems engineering. I am focused on evolving my understanding of decentralized complexity—learning how to architect global-scale services that remain resilient against regional outages and network partitions while maintaining strict performance guarantees.",
-                "**Focus Areas:** Service orchestration (Kubernetes/Nomad), distributed consensus protocols (Raft/Paxos), event-driven architectures, and the evolution of cloud-native networking at scale."
+                "**The Philosophy:** Infrastructure is the 'Macro' layer of systems engineering. I focus on navigating decentralized complexity to architect global-scale services that remain resilient against regional outages and network partitions while maintaining strict performance guarantees.",
+                "**Focus Areas:** Service Orchestration (Kubernetes/Nomad), Distributed Consensus (Raft/Paxos), and Cloud-Native Networking."
             ],
             icon: <FaShieldAlt className="w-6 h-6" />,
             color: "text-blue-400",
@@ -32,10 +32,10 @@ const AboutMe: React.FC = () => {
         {
             id: "observability",
             title: "Observability & Systems Reliability (SRE)",
-            description: "Treating the kernel and network stack as the source of truth for proactive system health.",
+            description: "Transforming raw telemetry into actionable insights for proactive, end-to-end system reliability.",
             longDescription: [
-                "**The Philosophy:** Reliability is a byproduct of transparency. I am committed to treating the kernel and the network stack as the ultimate source of truth, leveraging deep-system telemetry to move beyond 'Black Box' monitoring and into proactive, data-driven system health.",
-                "**Focus Areas:** eBPF-based tracing, Linux kernel internals, and performance profiling for heterogeneous compute clusters."
+                "**The Philosophy:** Reliability is a byproduct of transparency across the entire stack. I leverage deep-system telemetry—from the kernel and network layer to application-level traces—to move beyond ‘Black Box’ monitoring. My goal is to transform raw data into actionable insights, ensuring system health is proactive rather than reactive.",
+                "**Focus Areas:** Deep-System Insight (eBPF), End-to-End Observability (Tracing/Metrics), and Reliability Engineering (SLIs/SLOs)."
             ],
             icon: <HiEye className="w-6 h-6" />,
             color: "text-purple-400",
@@ -46,8 +46,8 @@ const AboutMe: React.FC = () => {
             title: "High-Performance Computing (HPC)",
             description: "Bridging the gap between software and silicon with hardware-optimal execution.",
             longDescription: [
-                "**The Philosophy:** In the 'Micro' layer, software must be an extension of the hardware. Through my studies at the University of Edinburgh, I am deepening my expertise in 'squeezing the silicon'—learning to minimize abstraction overhead and optimize memory-compute paths to transform expensive algorithms into high-velocity, close-to-metal implementations.",
-                "**Focus Areas:** Modern C++, parallel programming models (OpenMP/MPI), GPU acceleration (CUDA), and low-level optimization (SIMD, cache locality, and NUMA-aware scheduling)."
+                "**The Philosophy:** In the 'Micro' layer, software must be an extension of the hardware. I am dedicated to 'squeezing the silicon'—minimizing abstraction overhead and optimizing memory-compute paths to transform complex algorithms into high-velocity, close-to-metal implementations.",
+                "**Focus Areas:** Hardware-Aware C++, Parallel Programming (OpenMP/MPI), and GPU Acceleration (CUDA/SYCL)."
             ],
             icon: <FaMicrochip className="w-6 h-6" />,
             color: "text-orange-400",
