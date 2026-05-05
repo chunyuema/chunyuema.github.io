@@ -49,7 +49,7 @@ export default function BlogPostLayout({ post, recordMap, slug }: BlogPostLayout
           {/* Main Blog Header Info */}
           {post && (
             <div className={`p-8 md:p-12 border-b border-white/10 bg-white/[0.02] transition-all duration-500 ${isScrolled ? 'opacity-30' : 'opacity-100'}`}>
-              <div className="flex items-center gap-2 text-blue-400 text-sm mb-4 font-medium uppercase tracking-widest">
+              <div className="flex items-center gap-2 text-zinc-400 text-sm mb-4 font-medium uppercase tracking-widest">
                 <HiBookOpen className="w-4 h-4" />
                 <span>Blog Post</span>
               </div>
@@ -66,7 +66,7 @@ export default function BlogPostLayout({ post, recordMap, slug }: BlogPostLayout
                   })}
                 </span>
               </div>
-              <p className="text-gray-300 text-lg leading-relaxed max-w-3xl italic border-l-2 border-blue-500/30 pl-4">
+              <p className="text-gray-300 text-lg leading-relaxed max-w-3xl italic border-l-2 border-zinc-500/30 pl-4">
                 {post.content}
               </p>
             </div>

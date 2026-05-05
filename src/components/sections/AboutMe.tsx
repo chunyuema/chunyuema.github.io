@@ -10,6 +10,7 @@ interface PillarData {
     longDescription: string[];
     icon: React.ReactNode;
     color: string;
+    hoverColor: string;
     glowColor: string;
 }
 
@@ -27,6 +28,7 @@ const AboutMe: React.FC = () => {
             ],
             icon: <FaShieldAlt className="w-6 h-6" />,
             color: "text-blue-400",
+            hoverColor: "group-hover:text-blue-400",
             glowColor: "rgba(59,130,246,0.2)"
         },
         {
@@ -39,6 +41,7 @@ const AboutMe: React.FC = () => {
             ],
             icon: <HiEye className="w-6 h-6" />,
             color: "text-purple-400",
+            hoverColor: "group-hover:text-purple-400",
             glowColor: "rgba(168,85,247,0.2)"
         },
         {
@@ -51,6 +54,7 @@ const AboutMe: React.FC = () => {
             ],
             icon: <FaMicrochip className="w-6 h-6" />,
             color: "text-orange-400",
+            hoverColor: "group-hover:text-orange-400",
             glowColor: "rgba(251,146,60,0.2)"
         }
     ];
@@ -72,7 +76,7 @@ const AboutMe: React.FC = () => {
             <div className="relative min-h-[700px] flex items-center py-12">
                 
                 {/* Background Glow */}
-                <div className="absolute top-1/2 left-1/3 -translate-x-1/2 -translate-y-1/2 w-full max-w-[600px] aspect-square bg-blue-500/5 rounded-full blur-[100px] -z-10" />
+                <div className="absolute top-1/2 left-1/3 -translate-x-1/2 -translate-y-1/2 w-full max-w-[600px] aspect-square bg-zinc-500/5 rounded-full blur-[100px] -z-10" />
 
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full">
                     
@@ -168,7 +172,7 @@ const AboutMe: React.FC = () => {
                                         <div className={`p-3 rounded-xl bg-white/5 ${pillar.color} w-fit mb-4 group-hover:scale-110 group-hover:bg-white/10 transition-transform`}>
                                             {pillar.icon}
                                         </div>
-                                        <h4 className={`text-white font-bold mb-2 uppercase tracking-tight text-sm group-hover:${pillar.color} transition-colors`}>
+                                        <h4 className={`text-white font-bold mb-2 uppercase tracking-tight text-sm ${pillar.hoverColor} transition-colors`}>
                                             {pillar.title}
                                         </h4>
                                         <p className="text-gray-400 text-xs leading-relaxed group-hover:text-gray-300 transition-colors">

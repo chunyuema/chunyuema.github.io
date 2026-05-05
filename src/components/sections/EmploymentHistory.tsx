@@ -22,15 +22,15 @@ const EmploymentHistory: React.FC = () => {
               {/* Trace Span Icon */}
               <div className={`absolute -left-[13px] top-0 w-6 h-6 rounded-full flex items-center justify-center transition-all duration-500 z-10 ${
                 isCurrent 
-                  ? "bg-blue-500 shadow-[0_0_15px_rgba(59,130,246,0.6)]" 
-                  : "bg-[#0A0A12] border-2 border-white/20 group-hover:border-blue-500/50"
+                  ? "bg-zinc-500 shadow-[0_0_15px_rgba(161,161,170,0.6)]" 
+                  : "bg-[#0A0A12] border-2 border-white/20 group-hover:border-zinc-500/50"
               }`}>
                 {isCurrent && <div className="w-2 h-2 bg-white rounded-full animate-ping" />}
               </div>
 
               {/* Date & Metadata (Desktop Sidebar) */}
               <div className="hidden md:block absolute -left-44 top-0 w-36 text-right space-y-1">
-                <div className={`text-xs font-mono font-bold tracking-tighter ${isCurrent ? "text-blue-400" : "text-gray-500"}`}>
+                <div className={`text-xs font-mono font-bold tracking-tighter ${isCurrent ? "text-zinc-400" : "text-gray-500"}`}>
                   {job.dateRange}
                 </div>
                 <div className="text-[9px] font-mono text-gray-600 uppercase tracking-widest">
@@ -42,7 +42,7 @@ const EmploymentHistory: React.FC = () => {
               <div
                 onClick={() => handleCardClick(job)}
                 className={`glass-panel p-6 cursor-pointer hover:bg-white/[0.08] hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 border-l-4 ${
-                  isCurrent ? "border-l-blue-500" : "border-l-white/10 group-hover:border-l-blue-500/30"
+                  isCurrent ? "border-l-zinc-500" : "border-l-white/10 group-hover:border-l-zinc-500/30"
                 }`}
               >
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
@@ -56,7 +56,7 @@ const EmploymentHistory: React.FC = () => {
                       {job.company === "AWS Lambda" ? (
                           <FaAws className="w-4 h-4 text-[#FF9900]" />
                       ) : (
-                          job.type === "professional" ? <HiBriefcase className="w-4 h-4 text-blue-400/70" /> : <HiBeaker className="w-4 h-4 text-purple-400/70" />
+                          job.type === "professional" ? <HiBriefcase className="w-4 h-4 text-zinc-400/70" /> : <HiBeaker className="w-4 h-4 text-purple-400/70" />
                       )}
                       <div className="text-xs font-bold text-gray-300">
                           {job.company}
@@ -79,7 +79,7 @@ const EmploymentHistory: React.FC = () => {
                     )}
                 </div>
                 
-                <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-blue-500/60 group-hover:text-blue-400 transition-colors">
+                <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-zinc-500/60 group-hover:text-zinc-400 transition-colors">
                   <span>Open_Span_Details</span>
                   <HiCode className="w-4 h-4" />
                 </div>
@@ -123,13 +123,13 @@ const EmploymentHistory: React.FC = () => {
             <div className="p-8 overflow-y-auto custom-scrollbar flex-1">
               <div className="space-y-8">
                 <div>
-                    <div className="text-blue-400 font-mono text-xs mb-2">// Role Overview</div>
+                    <div className="text-zinc-400 font-mono text-xs mb-2">// Role Overview</div>
                     <h3 className="text-2xl font-bold text-white mb-1">{selectedJob.position}</h3>
                     <p className="text-gray-400 font-mono text-sm">{selectedJob.company} • {selectedJob.location} • {selectedJob.dateRange}</p>
                 </div>
 
                 <div>
-                    <div className="text-blue-400 font-mono text-xs mb-4">// System Impact & Contributions</div>
+                    <div className="text-zinc-400 font-mono text-xs mb-4">// System Impact & Contributions</div>
                     <ul className="space-y-4">
                         {selectedJob.descriptionPoints.map((point, i) => (
                         <li key={i} className="flex gap-4 group/item">
@@ -143,10 +143,10 @@ const EmploymentHistory: React.FC = () => {
                 </div>
 
                 <div>
-                    <div className="text-blue-400 font-mono text-xs mb-4">// Technical Stack</div>
+                    <div className="text-zinc-400 font-mono text-xs mb-4">// Technical Stack</div>
                     <div className="flex flex-wrap gap-2">
                         {selectedJob.technologies.map(tech => (
-                            <span key={tech} className="px-3 py-1 bg-blue-500/10 border border-blue-500/20 rounded text-xs font-mono text-blue-300">
+                            <span key={tech} className="px-3 py-1 bg-zinc-500/10 border border-zinc-500/20 rounded text-xs font-mono text-zinc-300">
                                 {tech}
                             </span>
                         ))}
@@ -162,7 +162,7 @@ const EmploymentHistory: React.FC = () => {
               </div>
               <button
                 onClick={handleClose}
-                className="px-6 py-2 bg-blue-600 hover:bg-blue-500 text-white font-mono text-xs font-bold uppercase tracking-widest rounded transition-all shadow-[0_0_15px_rgba(59,130,246,0.3)]"
+                className="px-6 py-2 bg-zinc-600 hover:bg-zinc-500 text-white font-mono text-xs font-bold uppercase tracking-widest rounded transition-all shadow-[0_0_15px_rgba(161,161,170,0.3)]"
               >
                 Return_To_Shell
               </button>

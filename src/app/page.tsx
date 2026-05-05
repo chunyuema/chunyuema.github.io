@@ -29,14 +29,14 @@ function HomeContent({ initialTab }: { initialTab: string }) {
   ];
 
   return (
-    <div className="min-h-screen bg-[#0A0A12] text-[#F2F0FF] font-mono selection:bg-blue-500/30">
+    <div className="min-h-screen bg-[#09090b] text-[#F2F0FF] font-mono selection:bg-zinc-500/30">
       {/* NAVIGATION */}
-      <header className="fixed top-0 left-0 right-0 h-16 bg-[#0A0A12]/80 backdrop-blur-xl border-b border-white/5 z-50">
+      <header className="fixed top-0 left-0 right-0 h-16 bg-[#09090b]/80 backdrop-blur-xl border-b border-white/5 z-50">
         <div className="container mx-auto h-full px-6 flex items-center justify-between">
           <div className="flex items-center gap-4">
-            <div className="w-2 h-2 rounded-full bg-blue-500 animate-pulse shadow-[0_0_8px_rgba(59,130,246,0.8)]" />
+            <div className="w-2 h-2 rounded-full bg-zinc-500 animate-pulse shadow-[0_0_8px_rgba(161,161,170,0.8)]" />
             <h1 className="text-sm font-black tracking-tighter uppercase italic group cursor-default">
-              CHUNYUE <span className="text-blue-500 not-italic">MA</span>
+              CHUNYUE <span className="text-zinc-500 not-italic">MA</span>
               <span className="hidden md:inline text-[10px] ml-2 text-gray-600 font-mono font-normal tracking-normal not-italic lowercase opacity-0 group-hover:opacity-100 transition-opacity">
                 --welcome to my personal website!
               </span>
@@ -51,7 +51,7 @@ function HomeContent({ initialTab }: { initialTab: string }) {
                 onClick={() => setActiveTab(item.value)}
                 className={`px-4 py-1.5 rounded-md transition-all duration-300 text-[11px] font-bold tracking-widest ${
                   activeTab === item.value
-                    ? "bg-blue-500/10 text-blue-400 border border-blue-500/20 shadow-[0_0_15px_rgba(59,130,246,0.1)]"
+                    ? "bg-zinc-500/10 text-zinc-400 border border-zinc-500/20 shadow-[0_0_15px_rgba(161,161,170,0.1)]"
                     : "text-gray-500 hover:text-gray-300 hover:bg-white/5 border border-transparent"
                 }`}
               >

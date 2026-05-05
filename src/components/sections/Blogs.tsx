@@ -10,7 +10,6 @@ import {
   HiArrowRight,
   HiChevronDown,
   HiEye,
-  HiLightningBolt,
 } from "react-icons/hi";
 import { FaMicrochip, FaShieldAlt } from "react-icons/fa";
 
@@ -82,12 +81,12 @@ const BlogPage: React.FC = () => {
       {/* TOP CONTROLS: Search & Pillars Side-by-Side */}
       <div className="flex flex-col lg:flex-row items-center gap-4">
         {/* Unified Search Bar */}
-        <div className="glass-panel p-1.5 flex items-center gap-3 border-l-4 border-l-blue-500/50 group focus-within:border-l-blue-400 transition-all flex-1 w-full">
-          <div className="pl-3 text-blue-400/50 group-focus-within:text-blue-400 transition-colors">
+        <div className="glass-panel p-1.5 flex items-center gap-3 border-l-4 border-l-zinc-500/50 group focus-within:border-l-zinc-400 transition-all flex-1 w-full">
+          <div className="pl-3 text-zinc-400/50 group-focus-within:text-zinc-400 transition-colors">
             <HiTerminal className="w-4 h-4" />
           </div>
           <div className="relative flex-1">
-            <HiSearch className="absolute left-0 top-1/2 -translate-y-1/2 text-gray-500 group-focus-within:text-blue-400 transition-colors w-4 h-4" />
+            <HiSearch className="absolute left-0 top-1/2 -translate-y-1/2 text-gray-500 group-focus-within:text-zinc-400 transition-colors w-4 h-4" />
             <input
               type="text"
               placeholder="grep content..."
@@ -151,9 +150,9 @@ const BlogPage: React.FC = () => {
                     href={`/blog/${getPageIdFromUrl(post.url)}`}
                     className="block group"
                   >
-                    <div className={`glass-panel p-5 flex flex-col md:flex-row md:items-center justify-between gap-6 hover:bg-white/[0.08] transition-all duration-300 group border-l-4 ${pillar ? `${pillar.borderColor} ${pillar.hoverBorder}` : "border-l-blue-500/50 hover:border-blue-500/30"}`}>
+                    <div className={`glass-panel p-5 flex flex-col md:flex-row md:items-center justify-between gap-6 hover:bg-white/[0.08] transition-all duration-300 group border-l-4 ${pillar ? `${pillar.borderColor} ${pillar.hoverBorder}` : "border-l-zinc-500/50 hover:border-zinc-500/30"}`}>
                       <div className="flex items-center gap-6 flex-1 min-w-0">
-                        <div className={`hidden sm:flex p-3 rounded-xl bg-white/5 border border-white/5 group-hover:bg-white/10 transition-all shrink-0 ${pillar ? pillar.color : "text-blue-400/70"}`}>
+                        <div className={`hidden sm:flex p-3 rounded-xl bg-white/5 border border-white/5 group-hover:bg-white/10 transition-all shrink-0 ${pillar ? pillar.color : "text-zinc-400/70"}`}>
                           {pillar ? React.cloneElement(pillar.icon as React.ReactElement, { className: "w-6 h-6" }) : <HiBookOpen className="h-6 w-6" />}
                         </div>
                         <div className="min-w-0 flex-1">
@@ -196,7 +195,7 @@ const BlogPage: React.FC = () => {
                       </div>
 
                       <div className="flex items-center gap-4 shrink-0 justify-end border-t md:border-t-0 border-white/5 pt-4 md:pt-0">
-                        <div className={`flex items-center gap-2 text-xs font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all translate-x-4 group-hover:translate-x-0 ${pillar ? pillar.color : "text-blue-500"}`}>
+                        <div className={`flex items-center gap-2 text-xs font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all translate-x-4 group-hover:translate-x-0 ${pillar ? pillar.color : "text-zinc-500"}`}>
                           <span>OPEN_LOG</span>
                           <HiArrowRight className="w-4 h-4" />
                         </div>
@@ -217,7 +216,7 @@ const BlogPage: React.FC = () => {
             <div className="flex justify-center pt-10">
               <button
                 onClick={() => setVisibleCount((prev) => prev + POSTS_PER_PAGE)}
-                className="flex items-center gap-3 px-8 py-3 bg-white/5 border border-white/10 rounded-full text-xs font-bold uppercase tracking-[0.2em] text-gray-400 hover:text-white hover:bg-white/10 hover:border-blue-500/30 transition-all group"
+                className="flex items-center gap-3 px-8 py-3 bg-white/5 border border-white/10 rounded-full text-xs font-bold uppercase tracking-[0.2em] text-gray-400 hover:text-white hover:bg-white/10 hover:border-zinc-500/30 transition-all group"
               >
                 <span>Load_More_Entries</span>
                 <HiChevronDown className="w-4 h-4 group-hover:translate-y-1 transition-transform" />

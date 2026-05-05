@@ -47,20 +47,20 @@ const Skills: React.FC = () => {
                 onClick={() => setActiveThemeId(theme.id)}
                 className={`w-full flex items-center justify-between p-4 rounded-xl border transition-all group ${
                   isActive
-                    ? "bg-blue-500/10 border-blue-500/30 text-white shadow-[0_0_15px_rgba(59,130,246,0.1)]"
+                    ? "bg-zinc-500/10 border-zinc-500/30 text-white shadow-[0_0_15px_rgba(161,161,170,0.1)]"
                     : "bg-white/5 border-transparent text-gray-400 hover:bg-white/[0.08] hover:border-white/10"
                 }`}
               >
                 <div className="flex items-center gap-3">
                   <ThemeIcon
-                    className={`w-5 h-5 ${isActive ? "text-blue-400" : "text-gray-600 group-hover:text-gray-400"}`}
+                    className={`w-5 h-5 ${isActive ? "text-zinc-400" : "text-gray-600 group-hover:text-gray-400"}`}
                   />
                   <span className="text-[11px] font-bold uppercase tracking-widest">
                     {theme.title.split("_").join(" ")}
                   </span>
                 </div>
                 <HiChevronRight
-                  className={`w-4 h-4 transition-transform ${isActive ? "text-blue-400 translate-x-1" : "text-gray-700"}`}
+                  className={`w-4 h-4 transition-transform ${isActive ? "text-zinc-400 translate-x-1" : "text-gray-700"}`}
                 />
               </button>
             );
@@ -108,7 +108,7 @@ const Skills: React.FC = () => {
             {/* Header */}
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10 pb-6 border-b border-white/5">
               <div>
-                <div className="flex items-center gap-2 text-blue-500/60 font-mono text-[10px] uppercase tracking-[0.3em] mb-2">
+                <div className="flex items-center gap-2 text-zinc-500/60 font-mono text-[10px] uppercase tracking-[0.3em] mb-2">
                   <HiCursorClick className="w-3 h-3" />
                   <span>Contextual_Cluster</span>
                 </div>
@@ -135,7 +135,7 @@ const Skills: React.FC = () => {
                 return (
                   <div
                     key={sIdx}
-                    className={`p-4 rounded-lg border-l-4 ${skill.hasProductionExp ? "border-l-blue-500/50" : "border-l-amber-500/50"} bg-white/5 border-y border-r border-white/10 text-gray-300 hover:bg-white/[0.08] transition-all group/skill`}
+                    className={`p-4 rounded-lg border-l-4 ${skill.hasProductionExp ? "border-l-zinc-500/50" : "border-l-amber-500/50"} bg-white/5 border-y border-r border-white/10 text-gray-300 hover:bg-white/[0.08] transition-all group/skill`}
                   >
                     <div className="flex flex-col gap-2">
                       <span className="text-xs font-bold leading-tight group-hover/skill:text-white transition-colors">
@@ -143,7 +143,7 @@ const Skills: React.FC = () => {
                       </span>
                       <div className="flex items-center justify-between">
                         {skill.hasProductionExp ? (
-                          <div className="flex items-center gap-1 text-[8px] font-mono text-blue-400 uppercase font-black opacity-70 group-hover/skill:opacity-100">
+                          <div className="flex items-center gap-1 text-[8px] font-mono text-zinc-400 uppercase font-black opacity-70 group-hover/skill:opacity-100">
                             <HiCheckCircle className="w-3 h-3" />
                             <span>Prod_Ready</span>
                           </div>
