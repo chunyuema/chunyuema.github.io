@@ -52,9 +52,9 @@ const AboutMe: React.FC = () => {
                 "**Focus Areas:** Hardware-Aware C++, Parallel Programming (OpenMP/MPI), and GPU Acceleration (CUDA/SYCL)."
             ],
             icon: <HiChip className="w-6 h-6" />,
-            color: "text-amber-400",
-            hoverColor: "group-hover:text-amber-400",
-            glowColor: "rgba(251,191,36,0.2)"
+            color: "text-rose-400",
+            hoverColor: "group-hover:text-rose-400",
+            glowColor: "rgba(251,113,133,0.2)"
         }
     ];
 
@@ -150,12 +150,12 @@ const AboutMe: React.FC = () => {
                             const borderColors = [
                                 pillar.id === 'availability' ? "border-l-cyan-500/50" : 
                                 pillar.id === 'observability' ? "border-l-indigo-500/50" : 
-                                "border-l-amber-500/50"
+                                "border-l-rose-500/50"
                             ];
                             const hoverBorders = [
                                 pillar.id === 'availability' ? "hover:border-l-cyan-400" : 
                                 pillar.id === 'observability' ? "hover:border-l-indigo-400" : 
-                                "hover:border-l-amber-400"
+                                "hover:border-l-rose-400"
                             ];
 
                             return (
@@ -191,7 +191,7 @@ const AboutMe: React.FC = () => {
                                 className={`glass-panel p-6 border-l-4 ${
                                     pillar.id === 'availability' ? "border-l-cyan-500/50" : 
                                     pillar.id === 'observability' ? "border-l-indigo-500/50" : 
-                                    "border-l-amber-500/50"
+                                    "border-l-rose-500/50"
                                 } active:scale-95 transition-all cursor-pointer`}
                                 onClick={() => setSelectedPillar(pillar)}
                             >
