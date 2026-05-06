@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import NameCard from "../ui/NameCard";
-import { HiEye, HiX } from "react-icons/hi";
-import { FaMicrochip, FaShieldAlt } from "react-icons/fa";
+import { HiCloud, HiShieldCheck, HiChip, HiX } from "react-icons/hi";
 
 interface PillarData {
     id: string;
@@ -26,10 +25,10 @@ const AboutMe: React.FC = () => {
                 "**The Philosophy:** Infrastructure is the 'Macro' layer of systems engineering. I focus on navigating decentralized complexity to architect global-scale services that remain resilient against regional outages and network partitions while maintaining strict performance guarantees.",
                 "**Focus Areas:** Service Orchestration (Kubernetes/Nomad), Distributed Consensus (Raft/Paxos), and Cloud-Native Networking."
             ],
-            icon: <FaShieldAlt className="w-6 h-6" />,
-            color: "text-blue-400",
-            hoverColor: "group-hover:text-blue-400",
-            glowColor: "rgba(59,130,246,0.2)"
+            icon: <HiCloud className="w-6 h-6" />,
+            color: "text-cyan-400",
+            hoverColor: "group-hover:text-cyan-400",
+            glowColor: "rgba(34,211,238,0.2)"
         },
         {
             id: "observability",
@@ -39,10 +38,10 @@ const AboutMe: React.FC = () => {
                 "**The Philosophy:** Reliability is a byproduct of transparency across the entire stack. I leverage deep-system telemetry—from the kernel and network layer to application-level traces—to move beyond ‘Black Box’ monitoring. My goal is to transform raw data into actionable insights, ensuring system health is proactive rather than reactive.",
                 "**Focus Areas:** Deep-System Insight (eBPF), End-to-End Observability (Tracing/Metrics), and Reliability Engineering (SLIs/SLOs)."
             ],
-            icon: <HiEye className="w-6 h-6" />,
-            color: "text-purple-400",
-            hoverColor: "group-hover:text-purple-400",
-            glowColor: "rgba(168,85,247,0.2)"
+            icon: <HiShieldCheck className="w-6 h-6" />,
+            color: "text-indigo-400",
+            hoverColor: "group-hover:text-indigo-400",
+            glowColor: "rgba(129,140,248,0.2)"
         },
         {
             id: "hpc",
@@ -52,10 +51,10 @@ const AboutMe: React.FC = () => {
                 "**The Philosophy:** In the 'Micro' layer, software must be an extension of the hardware. I am dedicated to 'squeezing the silicon'—minimizing abstraction overhead and optimizing memory-compute paths to transform complex algorithms into high-velocity, close-to-metal implementations.",
                 "**Focus Areas:** Hardware-Aware C++, Parallel Programming (OpenMP/MPI), and GPU Acceleration (CUDA/SYCL)."
             ],
-            icon: <FaMicrochip className="w-6 h-6" />,
-            color: "text-orange-400",
-            hoverColor: "group-hover:text-orange-400",
-            glowColor: "rgba(251,146,60,0.2)"
+            icon: <HiChip className="w-6 h-6" />,
+            color: "text-amber-400",
+            hoverColor: "group-hover:text-amber-400",
+            glowColor: "rgba(251,191,36,0.2)"
         }
     ];
 
@@ -94,19 +93,19 @@ const AboutMe: React.FC = () => {
                         <svg className="absolute inset-0 w-full h-full pointer-events-none z-0 overflow-visible" viewBox="0 0 100 100" preserveAspectRatio="none">
                             <defs>
                                 <linearGradient id="line-gradient-1" x1="0%" y1="0%" x2="100%" y2="0%">
-                                    <stop offset="0%" stopColor="rgba(59,130,246,0)" />
-                                    <stop offset="20%" stopColor="rgba(59,130,246,0.3)" />
-                                    <stop offset="100%" stopColor="rgba(59,130,246,0.6)" />
+                                    <stop offset="0%" stopColor="rgba(34,211,238,0)" />
+                                    <stop offset="20%" stopColor="rgba(34,211,238,0.3)" />
+                                    <stop offset="100%" stopColor="rgba(34,211,238,0.6)" />
                                 </linearGradient>
                                 <linearGradient id="line-gradient-2" x1="0%" y1="0%" x2="100%" y2="0%">
-                                    <stop offset="0%" stopColor="rgba(168,85,247,0)" />
-                                    <stop offset="20%" stopColor="rgba(168,85,247,0.3)" />
-                                    <stop offset="100%" stopColor="rgba(168,85,247,0.6)" />
+                                    <stop offset="0%" stopColor="rgba(129,140,248,0)" />
+                                    <stop offset="20%" stopColor="rgba(129,140,248,0.3)" />
+                                    <stop offset="100%" stopColor="rgba(129,140,248,0.6)" />
                                 </linearGradient>
                                 <linearGradient id="line-gradient-3" x1="0%" y1="0%" x2="100%" y2="0%">
-                                    <stop offset="0%" stopColor="rgba(251,146,60,0)" />
-                                    <stop offset="20%" stopColor="rgba(251,146,60,0.3)" />
-                                    <stop offset="100%" stopColor="rgba(251,146,60,0.6)" />
+                                    <stop offset="0%" stopColor="rgba(251,191,36,0)" />
+                                    <stop offset="20%" stopColor="rgba(251,191,36,0.3)" />
+                                    <stop offset="100%" stopColor="rgba(251,191,36,0.6)" />
                                 </linearGradient>
                             </defs>
                             
@@ -149,14 +148,14 @@ const AboutMe: React.FC = () => {
                             ];
                             const widths = ["w-72", "w-72", "w-80"];
                             const borderColors = [
-                                pillar.id === 'availability' ? "border-l-blue-500/50" : 
-                                pillar.id === 'observability' ? "border-l-purple-500/50" : 
-                                "border-l-orange-500/50"
+                                pillar.id === 'availability' ? "border-l-cyan-500/50" : 
+                                pillar.id === 'observability' ? "border-l-indigo-500/50" : 
+                                "border-l-amber-500/50"
                             ];
                             const hoverBorders = [
-                                pillar.id === 'availability' ? "hover:border-l-blue-400" : 
-                                pillar.id === 'observability' ? "hover:border-l-purple-400" : 
-                                "hover:border-l-orange-400"
+                                pillar.id === 'availability' ? "hover:border-l-cyan-400" : 
+                                pillar.id === 'observability' ? "hover:border-l-indigo-400" : 
+                                "hover:border-l-amber-400"
                             ];
 
                             return (
@@ -190,9 +189,9 @@ const AboutMe: React.FC = () => {
                             <div 
                                 key={pillar.id}
                                 className={`glass-panel p-6 border-l-4 ${
-                                    pillar.id === 'availability' ? "border-l-blue-500/50" : 
-                                    pillar.id === 'observability' ? "border-l-purple-500/50" : 
-                                    "border-l-orange-500/50"
+                                    pillar.id === 'availability' ? "border-l-cyan-500/50" : 
+                                    pillar.id === 'observability' ? "border-l-indigo-500/50" : 
+                                    "border-l-amber-500/50"
                                 } active:scale-95 transition-all cursor-pointer`}
                                 onClick={() => setSelectedPillar(pillar)}
                             >
@@ -239,9 +238,9 @@ const AboutMe: React.FC = () => {
                                     {selectedPillar.title}
                                 </h3>
                                 <div className={`h-1 w-16 ${
-                                    selectedPillar.id === 'availability' ? 'bg-blue-500/50' :
-                                    selectedPillar.id === 'observability' ? 'bg-purple-500/50' :
-                                    'bg-orange-500/50'
+                                    selectedPillar.id === 'availability' ? 'bg-cyan-500/50' :
+                                    selectedPillar.id === 'observability' ? 'bg-indigo-500/50' :
+                                    'bg-amber-500/50'
                                 } rounded-full mb-6`} />
                                 
                                 <div className="space-y-4">
@@ -257,9 +256,9 @@ const AboutMe: React.FC = () => {
                                 <button 
                                     onClick={() => setSelectedPillar(null)}
                                     className={`px-6 py-2 rounded-full ${
-                                        selectedPillar.id === 'availability' ? 'bg-blue-500/10 text-blue-400 border-blue-500/20' :
-                                        selectedPillar.id === 'observability' ? 'bg-purple-500/10 text-purple-400 border-purple-500/20' :
-                                        'bg-orange-500/10 text-orange-400 border-orange-500/20'
+                                        selectedPillar.id === 'availability' ? 'bg-cyan-500/10 text-cyan-400 border-cyan-500/20' :
+                                        selectedPillar.id === 'observability' ? 'bg-indigo-500/10 text-indigo-400 border-indigo-500/20' :
+                                        'bg-amber-500/10 text-amber-400 border-amber-500/20'
                                     } text-sm font-bold transition-all border`}
                                 >
                                     Back to Overview

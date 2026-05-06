@@ -9,36 +9,37 @@ import {
   HiTerminal,
   HiArrowRight,
   HiChevronDown,
-  HiEye,
+  HiCloud,
+  HiShieldCheck,
+  HiChip,
 } from "react-icons/hi";
-import { FaMicrochip, FaShieldAlt } from "react-icons/fa";
 
 const POSTS_PER_PAGE = 10;
 
 const PILLARS: Record<PillarId, { icon: React.ReactNode; label: string; color: string; borderColor: string; hoverBorder: string; bg: string }> = {
   availability: {
-    icon: <FaShieldAlt className="w-4 h-4" />,
+    icon: <HiCloud className="w-4 h-4" />,
     label: "Distributed Systems",
-    color: "text-blue-400",
-    borderColor: "border-l-blue-500/50",
-    hoverBorder: "hover:border-blue-500/30",
-    bg: "bg-blue-500/10"
+    color: "text-cyan-400",
+    borderColor: "border-l-cyan-500/50",
+    hoverBorder: "hover:border-cyan-500/30",
+    bg: "bg-cyan-500/10"
   },
   observability: {
-    icon: <HiEye className="w-4 h-4" />,
+    icon: <HiShieldCheck className="w-4 h-4" />,
     label: "Observability",
-    color: "text-purple-400",
-    borderColor: "border-l-purple-500/50",
-    hoverBorder: "hover:border-purple-500/30",
-    bg: "bg-purple-500/10"
+    color: "text-indigo-400",
+    borderColor: "border-l-indigo-500/50",
+    hoverBorder: "hover:border-indigo-500/30",
+    bg: "bg-indigo-500/10"
   },
   hpc: {
-    icon: <FaMicrochip className="w-4 h-4" />,
+    icon: <HiChip className="w-4 h-4" />,
     label: "HPC & Systems",
-    color: "text-orange-400",
-    borderColor: "border-l-orange-500/50",
-    hoverBorder: "hover:border-orange-500/30",
-    bg: "bg-orange-500/10"
+    color: "text-amber-400",
+    borderColor: "border-l-amber-500/50",
+    hoverBorder: "hover:border-amber-500/30",
+    bg: "bg-amber-500/10"
   }
 };
 
