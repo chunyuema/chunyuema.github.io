@@ -1,91 +1,128 @@
 import { SkillTheme } from "../types/skills";
 
 export const skillThemes: SkillTheme[] = [
+  // PILLAR 1: DISTRIBUTED SYSTEMS (The Macro Layer - Build & Orchestrate)
   {
-    id: "enterprise-dev",
-    title: "Enterprise_Development",
-    icon: "HiCode",
-    description: "Cloud-native application logic and framework implementation.",
+    id: "languages-backend",
+    pillarId: "availability",
+    title: "Cloud_Native_Development",
+    description: "Building scalable service logic and data persistence layers.",
     years: 3,
     skills: [
-      { name: "Java (SpringBoot)", hasProductionExp: true },
-      { name: "TypeScript / JS (React, NodeJS)", hasProductionExp: true },
-      { name: "Python (Django)", hasProductionExp: true }
-    ]
+      { name: "Java (Spring Boot)", hasProductionExp: true },
+      { name: "TypeScript / NodeJS", hasProductionExp: true },
+      { name: "Python (Django/FastAPI)", hasProductionExp: true },
+      { name: "PostgreSQL / DynamoDB", hasProductionExp: true },
+      { name: "Redis / ElastiCache", hasProductionExp: true },
+    ],
   },
   {
-    id: "container-orchestration",
-    title: "Containerization_&_Orchestration",
-    icon: "HiChip",
-    description: "Containerized deployment and high-availability orchestration.",
+    id: "orchestration",
+    pillarId: "availability",
+    title: "Container_&_Orchestration",
+    description:
+      "Architecting high-availability clusters and containerized lifecycles.",
     years: 3,
     skills: [
-      { name: "Docker", hasProductionExp: true },
       { name: "Kubernetes", hasProductionExp: true },
-      { name: "AWS ECS / EKS", hasProductionExp: true }
-    ]
+      { name: "Docker & Containerd", hasProductionExp: true },
+      { name: "AWS ECS / Fargate", hasProductionExp: true },
+      { name: "Nomad / Consul", hasProductionExp: false },
+    ],
   },
   {
-    id: "iac",
-    title: "Infrastructure_as_Code",
+    id: "iac-cloud",
+    pillarId: "availability",
+    title: "Infrastructure_As_Code",
     icon: "HiCloud",
-    description: "Automated provisioning and cloud infrastructure management.",
+    description: "Automated provisioning and cloud-native resource management.",
     years: 3,
     skills: [
       { name: "Terraform", hasProductionExp: true },
-      { name: "AWS CloudFormation", hasProductionExp: true },
-      { name: "AWS CDK", hasProductionExp: true }
-    ]
+      { name: "AWS CDK (TS/Java)", hasProductionExp: true },
+      { name: "CloudFormation", hasProductionExp: true },
+      { name: "Ansible", hasProductionExp: true },
+    ],
   },
   {
-    id: "system-reliability",
-    title: "System_Reliability_&_Networking",
-    icon: "HiRefresh",
-    description: "Availability monitoring, CI/CD, and network configuration.",
-    years: 3,
-    skills: [
-      { name: "CI/CD Pipeline", hasProductionExp: true },
-      { name: "Nginx / Route53", hasProductionExp: true },
-      { name: "AWS VPC Networking", hasProductionExp: true }
-    ]
-  },
-  {
-    id: "distributed-arch",
-    title: "Distributed_Architecture",
+    id: "arch-patterns",
+    pillarId: "availability",
+    title: "Distributed_Patterns",
     icon: "HiLightningBolt",
-    description: "Communication patterns and architectural designs for scale.",
+    description:
+      "Communication protocols and architectural designs for global scale.",
     years: 3,
     skills: [
-      { name: "REST / gRPC", hasProductionExp: true },
-      { name: "Event-Driven Arch", hasProductionExp: true },
-      { name: "Architectural Patterns", hasProductionExp: true }
-    ]
+      { name: "gRPC & Protobuf", hasProductionExp: true },
+      { name: "Event-Driven (SQS/SNS)", hasProductionExp: true },
+      { name: "RESTful API Design", hasProductionExp: true },
+      { name: "Kafka Messaging", hasProductionExp: false },
+    ],
   },
+
+  // PILLAR 2: OBSERVABILITY & RELIABILITY (The Transparency Layer - Monitor & Stabilize)
   {
-    id: "persistence",
-    title: "Data_Persistence_&_Messaging",
-    icon: "HiDatabase",
-    description: "State management, relational modeling, and high-throughput messaging.",
+    id: "sre-core",
+    pillarId: "observability",
+    title: "Reliability_Engineering",
+    icon: "HiShieldCheck",
+    description: "Continuous delivery and proactive system health monitoring.",
     years: 3,
     skills: [
-      { name: "PostgreSQL / MySQL", hasProductionExp: true },
-      { name: "MongoDB / Redis", hasProductionExp: true },
-      { name: "Kafka Messaging", hasProductionExp: false }
-    ]
+      { name: "GitHub Actions", hasProductionExp: true },
+      { name: "SLIs / SLOs / SLAs", hasProductionExp: true },
+      { name: "AWS CloudWatch / Metrics", hasProductionExp: true },
+      { name: "eBPF (Deep Insights)", hasProductionExp: false },
+    ],
   },
   {
-    id: "certifications",
-    title: "Industry_Certifications",
-    icon: "HiBadgeCheck",
-    description: "Verified professional certifications and industry knowledge.",
+    id: "networking",
+    pillarId: "observability",
+    title: "Systems_Networking",
+    icon: "HiRefresh",
+    description:
+      "Connectivity and traffic management across distributed environments.",
+    years: 3,
+    skills: [
+      { name: "AWS VPC Networking", hasProductionExp: true },
+      { name: "Nginx / Proxy Configuration", hasProductionExp: true },
+      { name: "Route53 / DNS", hasProductionExp: true },
+      { name: "Service Mesh (Istio)", hasProductionExp: false },
+    ],
+  },
+
+  // PILLAR 3: HPC & SYSTEMS (The Micro Layer - Optimize & Squeeze)
+  {
+    id: "low-level",
+    pillarId: "hpc",
+    title: "Systems_Programming",
+    icon: "HiChip",
+    description:
+      "Hardware-aware software development and close-to-metal optimization.",
+    years: 2,
+    skills: [
+      { name: "Rust", hasProductionExp: false },
+      { name: "C++", hasProductionExp: false },
+      { name: "Memory Management", hasProductionExp: true },
+      { name: "Linux Kernel Fundamentals", hasProductionExp: false },
+    ],
+  },
+  {
+    id: "parallel-compute",
+    pillarId: "hpc",
+    title: "Parallel_Execution",
+    icon: "HiChip",
+    description:
+      "Utilizing many-core architectures for high-velocity computation.",
     years: 1,
     skills: [
-      { name: "AWS Certified DevOps Associate (DVA-C02)", hasProductionExp: true }
-    ]
-  }
+      { name: "OpenMP", hasProductionExp: false },
+      { name: "MPI (Message Passing)", hasProductionExp: false },
+      { name: "SIMD / Vectorization", hasProductionExp: false },
+      { name: "CUDA (Foundations)", hasProductionExp: false },
+      { name: "GPU Acceleration", hasProductionExp: false },
+    ],
+  },
 ];
 
-export const currentlyExploring = [
-  { name: "Rust", focus: "Systems Programming" },
-  { name: "MPI / OpenMP", focus: "High Performance Computing" }
-];
+export const currentlyExploring = [];

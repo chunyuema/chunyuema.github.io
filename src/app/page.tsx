@@ -7,7 +7,8 @@ import { useSearchParams } from "next/navigation";
 // Existing components - we will need to migrate these too
 import AboutMe from '../components/sections/AboutMe';
 import BlogPage from '../components/sections/Blogs';
-import TechnicalProfile from '../components/sections/TechnicalProfile';
+import Skills from '../components/sections/Skills';
+import EmploymentHistory from '../components/sections/EmploymentHistory';
 
 
 function HomeContent({ initialTab }: { initialTab: string }) {
@@ -17,14 +18,15 @@ function HomeContent({ initialTab }: { initialTab: string }) {
 
   useEffect(() => {
     const tab = searchParams.get("tab");
-    if (tab && ["aboutMe", "expertise", "blogs"].includes(tab)) {
+    if (tab && ["aboutMe", "experience", "skills", "blogs"].includes(tab)) {
       setActiveTab(tab);
     }
   }, [searchParams]);
 
   const navItems = [
     { label: "ABOUT_ME", value: "aboutMe" },
-    { label: "EXPERTISE", value: "expertise" },
+    { label: "EXPERIENCE", value: "experience" },
+    { label: "SKILLS", value: "skills" },
     { label: "BLOGS", value: "blogs" },
   ];
 
@@ -107,7 +109,8 @@ function HomeContent({ initialTab }: { initialTab: string }) {
       <main className="pt-24 pb-12 container mx-auto px-6 max-w-5xl">
         <div className="transition-all duration-500 animate-in fade-in slide-in-from-bottom-4">
           {activeTab === "aboutMe" && <AboutMe />}
-          {activeTab === "expertise" && <TechnicalProfile />}
+          {activeTab === "experience" && <EmploymentHistory />}
+          {activeTab === "skills" && <Skills />}
           {activeTab === "blogs" && <BlogPage />}
         </div>
       </main>
@@ -133,7 +136,7 @@ function HomeWrapper({
   const resolvedParams = React.use(searchParams);
   const tab =
     typeof resolvedParams.tab === "string" ? resolvedParams.tab : "aboutMe";
-  const initialTab = ["aboutMe", "expertise", "blogs"].includes(tab)
+  const initialTab = ["aboutMe", "experience", "skills", "blogs"].includes(tab)
     ? tab
     : "aboutMe";
 
