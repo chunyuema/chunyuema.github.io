@@ -230,7 +230,7 @@ const AboutMe: React.FC = () => {
 
                         <div className="flex flex-col gap-6">
                             <div className={`p-3 rounded-xl bg-white/5 ${selectedPillar.color} w-fit`}>
-                                {React.cloneElement(selectedPillar.icon as React.ReactElement, { className: "w-8 h-8" })}
+                                {React.cloneElement(selectedPillar.icon as React.ReactElement<{ className?: string }>, { className: "w-8 h-8" })}
                             </div>
                             
                             <div>

@@ -130,7 +130,7 @@ const BlogPage: React.FC = () => {
               }`}
             >
               <span className={selectedPillar === id ? "opacity-100" : "opacity-50"}>
-                {React.cloneElement(data.icon as React.ReactElement, { className: "w-3 h-3" })}
+                {React.cloneElement(data.icon as React.ReactElement<{ className?: string }>, { className: "w-3 h-3" })}
               </span>
               <span>{data.label.toLowerCase()}</span>
             </button>
@@ -154,7 +154,7 @@ const BlogPage: React.FC = () => {
                     <div className={`glass-panel p-5 flex flex-col md:flex-row md:items-center justify-between gap-6 hover:bg-white/[0.08] transition-all duration-300 group border-l-4 ${pillar ? `${pillar.borderColor} ${pillar.hoverBorder}` : "border-l-zinc-500/50 hover:border-zinc-500/30"}`}>
                       <div className="flex items-center gap-6 flex-1 min-w-0">
                         <div className={`hidden sm:flex p-3 rounded-xl bg-white/5 border border-white/5 group-hover:bg-white/10 transition-all shrink-0 ${pillar ? pillar.color : "text-zinc-400/70"}`}>
-                          {pillar ? React.cloneElement(pillar.icon as React.ReactElement, { className: "w-6 h-6" }) : <HiBookOpen className="h-6 w-6" />}
+                          {pillar ? React.cloneElement(pillar.icon as React.ReactElement<{ className?: string }>, { className: "w-6 h-6" }) : <HiBookOpen className="h-6 w-6" />}
                         </div>
                         <div className="min-w-0 flex-1">
                           <div className="flex items-center gap-3 mb-1">
