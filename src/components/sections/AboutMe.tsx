@@ -52,9 +52,9 @@ const AboutMe: React.FC = () => {
                 "**Focus Areas:** Hardware-Aware C++, Parallel Programming (OpenMP/MPI), and GPU Acceleration (CUDA/SYCL)."
             ],
             icon: <HiChip className="w-6 h-6" />,
-            color: "text-rose-400",
-            hoverColor: "group-hover:text-rose-400",
-            glowColor: "rgba(251,113,133,0.2)"
+            color: "text-red-400",
+            hoverColor: "group-hover:text-red-400",
+            glowColor: "rgba(248,113,113,0.2)"
         }
     ];
 
@@ -103,9 +103,9 @@ const AboutMe: React.FC = () => {
                                     <stop offset="100%" stopColor="rgba(129,140,248,0.6)" />
                                 </linearGradient>
                                 <linearGradient id="line-gradient-3" x1="0%" y1="0%" x2="100%" y2="0%">
-                                    <stop offset="0%" stopColor="rgba(251,191,36,0)" />
-                                    <stop offset="20%" stopColor="rgba(251,191,36,0.3)" />
-                                    <stop offset="100%" stopColor="rgba(251,191,36,0.6)" />
+                                    <stop offset="0%" stopColor="rgba(248,113,113,0)" />
+                                    <stop offset="20%" stopColor="rgba(248,113,113,0.3)" />
+                                    <stop offset="100%" stopColor="rgba(248,113,113,0.6)" />
                                 </linearGradient>
                             </defs>
                             
@@ -240,7 +240,7 @@ const AboutMe: React.FC = () => {
                                 <div className={`h-1 w-16 ${
                                     selectedPillar.id === 'availability' ? 'bg-cyan-500/50' :
                                     selectedPillar.id === 'observability' ? 'bg-indigo-500/50' :
-                                    'bg-amber-500/50'
+                                    'bg-red-500/50'
                                 } rounded-full mb-6`} />
                                 
                                 <div className="space-y-4">
@@ -258,7 +258,7 @@ const AboutMe: React.FC = () => {
                                     className={`px-6 py-2 rounded-full ${
                                         selectedPillar.id === 'availability' ? 'bg-cyan-500/10 text-cyan-400 border-cyan-500/20' :
                                         selectedPillar.id === 'observability' ? 'bg-indigo-500/10 text-indigo-400 border-indigo-500/20' :
-                                        'bg-amber-500/10 text-amber-400 border-amber-500/20'
+                                        'bg-red-500/10 text-red-400 border-red-500/20'
                                     } text-sm font-bold transition-all border`}
                                 >
                                     Back to Overview

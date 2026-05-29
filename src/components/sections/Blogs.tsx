@@ -36,10 +36,10 @@ const PILLARS: Record<PillarId, { icon: React.ReactNode; label: string; color: s
   hpc: {
     icon: <HiChip className="w-4 h-4" />,
     label: "HPC & Systems",
-    color: "text-amber-400",
-    borderColor: "border-l-amber-500/50",
-    hoverBorder: "hover:border-amber-500/30",
-    bg: "bg-amber-500/10"
+    color: "text-red-400",
+    borderColor: "border-l-red-500/50",
+    hoverBorder: "hover:border-red-500/30",
+    bg: "bg-red-500/10"
   }
 };
 

@@ -43,13 +43,13 @@ const PILLAR_CONFIG = {
     hpc: { 
         label: "HPC", 
         icon: HiChip,
-        color: "text-rose-400", 
-        border: "border-t-rose-500/30", 
-        bg: "bg-rose-500/10", 
-        accent: "text-rose-500/70", 
-        shadow: "shadow-[0_0_20px_rgba(251,113,133,0.15)]",
-        activeBorder: "border-rose-500/40",
-        ring: "ring-rose-500/20"
+        color: "text-red-400", 
+        border: "border-t-red-500/30", 
+        bg: "bg-red-500/10", 
+        accent: "text-red-500/70", 
+        shadow: "shadow-[0_0_20px_rgba(239,68,68,0.15)]",
+        activeBorder: "border-red-500/40",
+        ring: "ring-red-500/20"
     }
 };
 
