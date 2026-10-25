@@ -6,10 +6,11 @@ import { useSearchParams } from "next/navigation";
 
 // Existing components - we will need to migrate these too
 import AboutMe from '../components/sections/AboutMe';
-import BlogPage from '../components/sections/Blogs';
 import Skills from '../components/sections/Skills';
 import EmploymentHistory from '../components/sections/EmploymentHistory';
 
+const NOTION_BLOG_URL =
+  "https://chunyue.notion.site/Chunyue-s-Blog-16fe5d67dda6805a8d7fec9d90520249";
 
 function HomeContent({ initialTab }: { initialTab: string }) {
   const searchParams = useSearchParams();
@@ -18,7 +19,12 @@ function HomeContent({ initialTab }: { initialTab: string }) {
 
   useEffect(() => {
     const tab = searchParams.get("tab");
-    if (tab && ["aboutMe", "experience", "skills", "blogs"].includes(tab)) {
+    if (tab === "blogs") {
+      window.location.replace(NOTION_BLOG_URL);
+      return;
+    }
+
+    if (tab && ["aboutMe", "experience", "skills"].includes(tab)) {
       setActiveTab(tab);
     }
   }, [searchParams]);
@@ -27,7 +33,7 @@ function HomeContent({ initialTab }: { initialTab: string }) {
     { label: "ABOUT_ME", value: "aboutMe" },
     { label: "EXPERIENCE", value: "experience" },
     { label: "SKILLS", value: "skills" },
-    { label: "BLOGS", value: "blogs" },
+    { label: "BLOGS", href: NOTION_BLOG_URL },
   ];
 
   return (
@@ -48,17 +54,29 @@ function HomeContent({ initialTab }: { initialTab: string }) {
           {/* DESKTOP NAV */}
           <nav className="hidden md:flex items-center gap-1">
             {navItems.map((item) => (
-              <button
-                key={item.value}
-                onClick={() => setActiveTab(item.value)}
-                className={`px-4 py-1.5 rounded-md transition-all duration-300 text-[11px] font-bold tracking-widest ${
-                  activeTab === item.value
+              "href" in item ? (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="px-4 py-1.5 rounded-md transition-all duration-300 text-[11px] font-bold tracking-widest text-gray-500 hover:text-gray-300 hover:bg-white/5 border border-transparent"
+                >
+                  {item.label}
+                </a>
+              ) : (
+                <button
+                  key={item.value}
+                  onClick={() => setActiveTab(item.value)}
+                  className={`px-4 py-1.5 rounded-md transition-all duration-300 text-[11px] font-bold tracking-widest ${
+                    activeTab === item.value
                     ? "bg-zinc-500/10 text-zinc-400 border border-zinc-500/20 shadow-[0_0_15px_rgba(161,161,170,0.1)]"
                     : "text-gray-500 hover:text-gray-300 hover:bg-white/5 border border-transparent"
-                }`}
-              >
-                {item.label}
-              </button>
+                  }`}
+                >
+                  {item.label}
+                </button>
+              )
             ))}
           </nav>
 
@@ -86,20 +104,32 @@ function HomeContent({ initialTab }: { initialTab: string }) {
               </button>
             </div>
             {navItems.map((item) => (
-              <button
-                key={item.value}
-                onClick={() => {
-                  setActiveTab(item.value);
-                  setIsMenuOpen(false);
-                }}
-                className={`text-left px-4 py-3 rounded-xl transition-all ${
-                  activeTab === item.value
+              "href" in item ? (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-left px-4 py-3 rounded-xl transition-all text-white/60 hover:bg-white/5"
+                >
+                  {item.label}
+                </a>
+              ) : (
+                <button
+                  key={item.value}
+                  onClick={() => {
+                    setActiveTab(item.value);
+                    setIsMenuOpen(false);
+                  }}
+                  className={`text-left px-4 py-3 rounded-xl transition-all ${
+                    activeTab === item.value
                     ? "bg-primary/20 text-primary border border-primary/30"
                     : "text-white/60 hover:bg-white/5"
-                }`}
-              >
-                {item.label}
-              </button>
+                  }`}
+                >
+                  {item.label}
+                </button>
+              )
             ))}
           </div>
         </div>
@@ -111,7 +141,6 @@ function HomeContent({ initialTab }: { initialTab: string }) {
           {activeTab === "aboutMe" && <AboutMe />}
           {activeTab === "experience" && <EmploymentHistory />}
           {activeTab === "skills" && <Skills />}
-          {activeTab === "blogs" && <BlogPage />}
         </div>
       </main>
     </div>
