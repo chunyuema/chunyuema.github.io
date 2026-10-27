@@ -82,7 +82,7 @@ const AboutMe: React.FC = () => {
                     {/* Left: NameCard */}
                     <div className="lg:col-span-5 flex justify-center lg:justify-start">
                         <div className="w-full max-w-sm">
-                            <NameCard name="Chunyue Ma" title="Software Engineer @ AWS Lambda" />
+                            <NameCard name="Chunyue Ma" title="Senior Software Engineer @ Appier" />
                         </div>
                     </div>
 
