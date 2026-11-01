@@ -2,10 +2,19 @@ import { EmploymentEntry } from "../types/employment";
 
 export const employmentHistoryData: EmploymentEntry[] = [
   {
+    company: "Appier",
+    position: "Senior Software Engineer",
+    location: "Tokyo, Japan",
+    dateRange: "Apr 2026 – Present",
+    type: "professional",
+    technologies: ["Go", "C++", "Terraform", "Ansible", "Redis", "Nginx"],
+    descriptionPoints: [],
+  },
+  {
     company: "AWS Lambda",
     position: "Software Engineer II",
     location: "Dublin, Ireland",
-    dateRange: "Sep 2024 – Present",
+    dateRange: "Sep 2024 – Mar 2026",
     type: "professional",
     technologies: ["Java", "CloudFormation", "Lambda", "Microservices", "CDK"],
     descriptionPoints: [
